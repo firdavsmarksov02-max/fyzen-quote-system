@@ -232,25 +232,36 @@ body{
 }
 
 .company-contact{
-  margin-top:18px;
+  margin-top:16px;
   color:#003f91;
   font-weight:700;
-  line-height:1.8;
 }
 
 .company-contact div{
-  display:flex;
+  display:grid;
+  grid-template-columns:24px 1fr;
   align-items:center;
-  gap:10px;
-  margin-bottom:8px;
+  column-gap:10px;
+  margin-bottom:7px;
 }
 
 .company-contact span{
-  width:22px;
+  width:24px;
+  height:24px;
   display:flex;
   align-items:center;
   justify-content:center;
+  color:#003f91;
   font-size:18px;
+  line-height:1;
+}
+
+.company-contact p{
+  margin:0;
+  color:#06162f;
+  font-size:15px;
+  font-weight:700;
+  line-height:1.25;
 }
 
 .table-wrap{
@@ -599,7 +610,12 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
 <div class="card-title">
 <div class="icon">🏢</div>
-О КОМПАНИИ:
+<div class="company-contact">
+  <div><span>☎</span><p>+998 97-250-18-77</p></div>
+  <div><span>✉</span><p>info@fyzen-lab.uz</p></div>
+  <div><span>🌐</span><p>fyzen.lab</p></div>
+  <div><span>📍</span><p>Узбекистан, г. Ташкент</p></div>
+</div>
 </div>
 
 <div class="company">
