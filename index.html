@@ -4,260 +4,583 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>FYZEN-LAB Commercial Offer</title>
-  .info-card textarea{
-  color:#003f91;
-  font-weight:600;
-}
 
 <style>
 *{box-sizing:border-box}
 :root{
-  --blue:#003f91;
-  --blue2:#0074d9;
-  --dark:#071b3a;
-  --light:#e7eef7;
-  --line:#d7e2ef;
+  --dark:#061f55;
+  --blue:#004a98;
+  --blue2:#0078d7;
+  --cyan:#00a4df;
+  --line:#d8e4f1;
+  --text:#06162f;
 }
 body{
   margin:0;
   background:#eaf1f8;
-  font-family:Arial,Helvetica,sans-serif;
-  color:var(--dark);
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--text);
 }
 .a4{
   width:960px;
   min-height:1358px;
-  margin:18px auto;
-  background:white;
+  margin:20px auto;
+  background:#fff;
   position:relative;
   overflow:hidden;
-  padding:70px 58px 92px;
-  box-shadow:0 20px 60px rgba(0,0,0,.18);
+  padding:62px 46px 92px;
+  box-shadow:0 18px 55px rgba(0,0,0,.16);
 }
 .top-shape{
-  position:absolute;top:0;left:0;width:100%;height:92px;
-  background:linear-gradient(135deg,#001d50,#0066c9);
-  clip-path:polygon(0 0,100% 0,88% 34%,18% 34%,0 70%);
+  position:absolute;top:0;left:0;width:100%;height:94px;
+  background:linear-gradient(135deg,#001b4b,#0069c8);
+  clip-path:polygon(0 0,100% 0,88% 28%,16% 28%,0 72%);
 }
-.top-line{
-  position:absolute;top:0;right:0;width:210px;height:50px;
-  border-left:9px solid white;transform:skewX(-35deg);opacity:.95;
-}
-.molecule{
-  position:absolute;right:-20px;top:88px;width:230px;height:190px;opacity:.18;
-  background:
-    radial-gradient(circle at 20% 30%,#0066c9 0 5px,transparent 6px),
-    radial-gradient(circle at 45% 22%,#0066c9 0 5px,transparent 6px),
-    radial-gradient(circle at 62% 48%,#0066c9 0 5px,transparent 6px),
-    radial-gradient(circle at 78% 25%,#0066c9 0 5px,transparent 6px),
-    radial-gradient(circle at 86% 70%,#0066c9 0 5px,transparent 6px);
-}
-.molecule:before{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(25deg,transparent 25%,#0066c9 26% 27%,transparent 28%),
-             linear-gradient(115deg,transparent 32%,#0066c9 33% 34%,transparent 35%),
-             linear-gradient(155deg,transparent 45%,#0066c9 46% 47%,transparent 48%);
+.top-stripe{
+  position:absolute;top:0;right:130px;width:34px;height:58px;background:white;
+  transform:skewX(-34deg);opacity:.95;
 }
 .bottom-shape{
   position:absolute;bottom:0;left:0;width:100%;height:92px;
-  background:linear-gradient(135deg,#001d50,#0069c8);
-  clip-path:polygon(0 24%,64% 62%,100% 20%,100% 100%,0 100%);
+  background:linear-gradient(135deg,#001b4b,#0069c8);
+  clip-path:polygon(0 24%,65% 66%,100% 24%,100% 100%,0 100%);
+}
+.molecule{
+  position:absolute;right:-25px;top:95px;width:230px;height:215px;opacity:.20;pointer-events:none;
+  background:
+    radial-gradient(circle at 20% 26%,#0069c8 0 5px,transparent 6px),
+    radial-gradient(circle at 42% 34%,#0069c8 0 5px,transparent 6px),
+    radial-gradient(circle at 62% 25%,#0069c8 0 5px,transparent 6px),
+    radial-gradient(circle at 78% 48%,#0069c8 0 5px,transparent 6px),
+    radial-gradient(circle at 54% 70%,#0069c8 0 5px,transparent 6px);
+}
+.molecule:before{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(24deg,transparent 27%,#0069c8 28% 29%,transparent 30%),
+    linear-gradient(115deg,transparent 39%,#0069c8 40% 41%,transparent 42%),
+    linear-gradient(160deg,transparent 50%,#0069c8 51% 52%,transparent 53%);
 }
 .header{
   display:grid;
-  grid-template-columns:1.05fr 1fr;
-  gap:42px;
-  margin-top:8px;
+  grid-template-columns:1fr 1.08fr;
+  gap:44px;
   align-items:center;
+  margin-top:10px;
+  position:relative;
+  z-index:2;
 }
-.logo-row{display:flex;gap:20px;align-items:center}
- .logo-img{
-  width:135px;
-  height:135px;
+.logo-row{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.logo-img{
+  width:116px;
+  height:116px;
   object-fit:contain;
   flex-shrink:0;
 }
-.logo-box{
-  width:86px;height:86px;border-radius:18px;
-  background:linear-gradient(135deg,#004899,#00a8d7);
-  display:flex;align-items:center;justify-content:center;
-  color:white;font-weight:900;font-size:30px;flex-shrink:0;
-  box-shadow:0 10px 20px rgba(0,74,157,.18);
+.logo-text h1{
+  margin:0;
+  font-size:44px;
+  line-height:.96;
+  letter-spacing:-1px;
+  color:#062a67;
+  font-weight:900;
 }
-.logo-text h1{font-size:41px;line-height:1;margin:0;color:#062a67;letter-spacing:-1px}
-.logo-text p{margin:10px 0 0;color:#009bd3;font-weight:900;font-size:17px}
+.logo-text p{
+  margin:13px 0 0;
+  color:#009bd3;
+  font-size:18px;
+  font-weight:900;
+}
 .title-box{
   border-left:2px solid #c7d8ea;
-  padding-left:28px;
-  min-height:100px;
+  padding-left:32px;
+  min-height:108px;
 }
-.title-box h2{margin:0 0 18px;color:#062a67;font-size:27px;line-height:1.1;font-weight:900}
-.title-row{display:flex;align-items:center;gap:10px;margin:8px 0;font-size:15px;font-weight:700}
-.title-row input{border:none;border-bottom:1px solid #b7c8da;padding:4px 8px;font-weight:800;color:#071b3a;width:178px;outline:none;background:transparent}
+.title-box h2{
+  margin:0 0 18px;
+  color:#062a67;
+  font-size:29px;
+  line-height:1.1;
+  font-weight:900;
+}
+.title-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:9px 0;
+  font-size:16px;
+  font-weight:700;
+}
+.title-row .mini-icon{color:#004a98;font-size:19px;width:20px;text-align:center}
+.title-row input{
+  border:none;
+  border-bottom:1px solid #b9cce0;
+  outline:none;
+  background:transparent;
+  width:170px;
+  padding:4px 8px;
+  font-size:16px;
+  font-weight:700;
+  color:#06162f;
+}
 .info{
-  display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:58px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:58px;
+  margin-top:52px;
+  position:relative;
+  z-index:2;
 }
-.info-card{border-left:2px solid #d8e4ef;padding-left:28px;min-height:210px}
-.icon-title{display:flex;align-items:center;gap:14px;color:#003e88;font-weight:900;font-size:20px;margin-bottom:18px}
-.icon{width:46px;height:46px;border-radius:50%;background:#003e88;color:white;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-.info-card textarea,.info-card input{width:100%;border:none;font-size:16px;line-height:1.6;resize:none;outline:none;color:#071b3a;overflow:hidden;background:transparent}
-.info-card input{font-weight:800;margin-bottom:14px}
-.table-wrap{margin-top:44px}
-table{width:100%;border-collapse:collapse;table-layout:auto}
-th{background:#004892;color:white;padding:15px 8px;font-size:13px;line-height:1.15;text-align:center;font-weight:900}
-td{border:1px solid #d8e4ef;padding:18px 12px;text-align:center;vertical-align:middle;font-size:16px}
-th:nth-child(1),td:nth-child(1){width:56px}
-th:nth-child(2),td:nth-child(2){width:270px}
+.info-card{
+  border-left:2px solid #d7e3f1;
+  padding-left:34px;
+  min-height:220px;
+}
+.icon-title{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  color:#003f91;
+  font-size:20px;
+  font-weight:900;
+  margin-bottom:18px;
+  text-transform:uppercase;
+}
+.icon{
+  width:48px;height:48px;border-radius:50%;background:#003f91;color:white;
+  display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;
+}
+.client-name{
+  font-size:17px;
+  font-weight:900;
+  margin:0 0 34px;
+}
+.client-text{
+  font-size:17px;
+  line-height:1.62;
+  color:#06162f;
+  max-width:410px;
+}
+.fyzen-blue{color:#003f91;font-weight:900}
+.company-text{
+  color:#003f91;
+  font-weight:700;
+  line-height:1.55;
+  font-size:17px;
+}
+.company-text strong{
+  display:block;
+  color:#06162f;
+  font-size:20px;
+  margin-bottom:8px;
+  font-weight:900;
+}
+.company-contact{
+  margin-top:18px;
+  color:#003f91;
+  font-weight:800;
+  line-height:1.75;
+}
+.company-contact span{
+  display:inline-block;
+  width:28px;
+  color:#003f91;
+  font-weight:900;
+}
+.table-wrap{
+  margin-top:34px;
+  position:relative;
+  z-index:2;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  background:white;
+}
+th{
+  background:#004892;
+  color:white;
+  padding:16px 8px;
+  font-size:14px;
+  line-height:1.15;
+  text-align:center;
+  font-weight:900;
+  border-right:1px solid rgba(255,255,255,.25);
+}
+td{
+  border:1px solid #d8e4f1;
+  padding:18px 12px;
+  text-align:center;
+  vertical-align:middle;
+  font-size:17px;
+  min-height:104px;
+}
+th:nth-child(1),td:nth-child(1){width:50px}
+th:nth-child(2),td:nth-child(2){width:255px}
 th:nth-child(3),td:nth-child(3){width:90px}
-th:nth-child(4),td:nth-child(4){width:155px}
-th:nth-child(5),td:nth-child(5){width:160px}
-th:nth-child(6),td:nth-child(6){width:170px}
-th:nth-child(7),td:nth-child(7){width:62px}
-td input{width:100%;border:none;text-align:center;font-size:16px;outline:none;font-weight:700;background:transparent;color:#071b3a}
-.product-desc input{text-align:left;font-weight:900;font-size:17px;margin-bottom:12px}
-.product-desc textarea{width:100%;border:none;resize:none;outline:none;text-align:left;font-size:14px;line-height:1.35;color:#071b3a;overflow:hidden;background:transparent}
-.img-cell input{font-size:11px;font-weight:500;color:#65758d;margin-top:8px}
-.product-img{width:100px;height:92px;object-fit:contain;display:block;margin:4px auto 8px}
-.actions{display:flex;gap:10px;margin:18px 0 0}
-button{background:#0069c8;color:white;border:none;border-radius:9px;padding:11px 16px;font-weight:900;cursor:pointer;font-size:14px}
-button:hover{background:#003e88}
-.remove-btn{width:36px;height:36px;border-radius:10px;padding:0;font-size:15px}
-.bottom-info{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;margin-top:38px;align-items:start}
-.terms{display:grid;gap:0;margin-top:6px}
-.term{display:grid;grid-template-columns:46px 1fr;gap:13px;align-items:center;border-bottom:1px solid #c7d8ea;padding:8px 0}
-.term .circle{width:36px;height:36px;border-radius:50%;background:#003e88;color:white;display:flex;align-items:center;justify-content:center;font-size:16px}
-.term input{border:none;outline:none;font-size:15px;width:100%;font-weight:600;background:transparent;color:#071b3a}
-.total-box{border:1px solid #c7d8ea;min-height:210px;background:white}
-.total-head{display:flex;align-items:stretch;border-bottom:1px solid #d7e2ef;background:#f6f9fd}
-.total-label{background:linear-gradient(135deg,#003e88,#0069c8);color:white;padding:18px 34px 18px 24px;font-weight:900;font-size:19px;clip-path:polygon(0 0,100% 0,82% 100%,0 100%)}
-.total-number{padding:17px 22px;font-size:29px;font-weight:900;color:#003e88;white-space:nowrap}
-.amount-words{padding:22px 28px;font-size:16px;line-height:1.55}
-.amount-words textarea{width:100%;border:none;resize:none;outline:none;margin-top:10px;font-size:16px;line-height:1.5;overflow:hidden;background:transparent;color:#071b3a}
-.signature{margin-top:34px;display:flex;align-items:flex-end;gap:26px;min-height:118px}
-.signature p{font-size:16px;margin:0 0 12px}
-.signature strong{font-size:18px;color:#071b3a}
-.stamp{width:108px;height:108px;border:3px solid #003e88;border-radius:50%;color:#003e88;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;transform:rotate(-8deg)}
-.footer-contact{position:absolute;right:70px;bottom:130px;color:#003e88;font-weight:900;font-size:15px;line-height:1.75}
-.footer-contact span{display:inline-block;width:22px;color:#003e88}
-.footer-text{position:absolute;bottom:24px;left:70px;color:white;font-weight:900;display:flex;gap:28px;align-items:center;font-size:16px}
+th:nth-child(4),td:nth-child(4){width:170px}
+th:nth-child(5),td:nth-child(5){width:170px}
+th:nth-child(6),td:nth-child(6){width:188px}
+th:nth-child(7),td:nth-child(7){width:58px}
+td input, td textarea{
+  width:100%;
+  border:none;
+  outline:none;
+  background:transparent;
+  color:#06162f;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.product-name{
+  text-align:left;
+  font-size:17px;
+  font-weight:900;
+  line-height:1.35;
+}
+.product-art{
+  margin-top:18px;
+  text-align:left;
+  font-size:15px;
+  line-height:1.35;
+  resize:none;
+  overflow:hidden;
+}
+.qty,.price{
+  text-align:center;
+  font-size:18px;
+  font-weight:700;
+}
+.imgUrl{
+  font-size:11px;
+  color:#7b8797;
+  text-align:center;
+  margin-top:6px;
+}
+.product-img{
+  width:105px;
+  height:100px;
+  object-fit:contain;
+  display:block;
+  margin:0 auto 8px;
+}
+.lineTotal{
+  font-weight:700;
+  font-size:18px;
+}
+.remove-btn{
+  width:34px;height:34px;border-radius:9px;background:#0070cf;color:white;border:none;font-weight:900;cursor:pointer;
+}
+.actions{
+  display:flex;
+  gap:12px;
+  margin:18px 0 0;
+}
+.actions button{
+  background:#0070cf;color:white;border:none;border-radius:9px;padding:11px 16px;font-weight:900;cursor:pointer;font-size:14px;
+}
+.actions button:hover,.remove-btn:hover{background:#003f91}
+.after-table{
+  display:grid;
+  grid-template-columns:1fr 1.18fr;
+  gap:50px;
+  margin-top:30px;
+  position:relative;
+  z-index:2;
+}
+.terms{padding-left:8px}
+.term{
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:14px;
+  align-items:center;
+  border-bottom:1px solid #c7d8ea;
+  padding:9px 0;
+}
+.term-icon{
+  width:36px;height:36px;border-radius:50%;background:#003f91;color:white;display:flex;align-items:center;justify-content:center;font-size:17px;
+}
+.term input{
+  border:none;
+  outline:none;
+  background:transparent;
+  font-size:16px;
+  line-height:1.25;
+  color:#06162f;
+  width:100%;
+}
+.total-box{
+  border:1px solid #c7d8ea;
+  background:white;
+  min-height:204px;
+}
+.total-head{
+  display:flex;
+  align-items:stretch;
+  border-bottom:1px solid #d8e4f1;
+  background:#f3f6fb;
+}
+.total-label{
+  background:linear-gradient(135deg,#003f91,#0070cf);
+  color:white;
+  padding:17px 42px 17px 28px;
+  font-size:20px;
+  font-weight:900;
+  clip-path:polygon(0 0,100% 0,82% 100%,0 100%);
+}
+.total-number{
+  padding:17px 22px;
+  color:#003f91;
+  font-size:28px;
+  font-weight:900;
+  white-space:nowrap;
+}
+.amount-words{
+  padding:20px 28px;
+  font-size:16px;
+  line-height:1.55;
+}
+.amount-words textarea{
+  margin-top:9px;
+  width:100%;
+  border:none;
+  resize:none;
+  outline:none;
+  background:transparent;
+  font-size:16px;
+  line-height:1.45;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#06162f;
+  overflow:hidden;
+}
+.signature-contact{
+  display:grid;
+  grid-template-columns:1fr 1.05fr;
+  gap:50px;
+  margin-top:24px;
+  position:relative;
+  z-index:2;
+}
+.signature{
+  display:flex;
+  align-items:flex-end;
+  gap:24px;
+  min-height:128px;
+}
+.signature p{margin:0 0 10px;font-size:16px;line-height:1.3}
+.signature strong{font-size:20px;font-weight:900;color:#06162f}
+.stamp{
+  width:116px;height:116px;border:3px solid #003f91;border-radius:50%;color:#003f91;
+  display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;font-size:13px;transform:rotate(-8deg);
+}
+.contacts{
+  color:#003f91;
+  font-weight:800;
+  font-size:17px;
+  line-height:1.65;
+  padding-left:38px;
+  border-left:2px solid #d7e3f1;
+}
+.contacts h3{
+  margin:0 0 8px;
+  color:#003f91;
+  font-size:19px;
+  font-weight:900;
+}
+.contacts span{display:inline-block;width:28px}
+.footer-text{
+  position:absolute;
+  left:62px;
+  bottom:24px;
+  color:white;
+  display:flex;
+  align-items:center;
+  gap:26px;
+  font-size:16px;
+  font-weight:900;
+  z-index:3;
+}
 @media print{
   @page{size:A4;margin:0}
   body{background:white}
-  .a4{margin:0;box-shadow:none;width:210mm;min-height:297mm;padding:18mm 13mm 22mm;transform:none}
+  .a4{margin:0;box-shadow:none;width:210mm;min-height:297mm;padding:14mm 10mm 20mm}
   .actions,.no-print,td:last-child,th:last-child{display:none!important}
   input,textarea{background:transparent!important}
-  .top-shape{height:24mm}.bottom-shape{height:24mm}
-}
-  .company-text{
-  color:#003f91;
-  font-weight:700;
-  line-height:1.8;
-  font-size:16px;
+  .top-shape{height:22mm}.bottom-shape{height:22mm}
 }
 </style>
 </head>
+
 <body>
 <div class="a4">
-  <div class="top-shape"></div><div class="top-line"></div><div class="molecule"></div><div class="bottom-shape"></div>
+  <div class="top-shape"></div>
+  <div class="top-stripe"></div>
+  <div class="molecule"></div>
+  <div class="bottom-shape"></div>
 
   <div class="header">
     <div class="logo-row">
-      <img src="./assets/photo_2026-05-08_01-44-02.jpg" class="logo-img">
-      <div class="logo-text"><h1>FYZEN-LAB</h1><p>SCIENCE WITHOUT LIMITS</p></div>
+      <img src="./assets/photo_2026-05-08_01-44-02.jpg" class="logo-img" alt="FYZEN-LAB logo">
+      <div class="logo-text">
+        <h1>FYZEN-LAB</h1>
+        <p>SCIENCE WITHOUT LIMITS</p>
+      </div>
     </div>
+
     <div class="title-box">
-      <h2>КОММЕРЧЕСКОЕ<br>ПРЕДЛОЖЕНИЕ</h2>
-      <div class="title-row">№ <input value="KP-FYZEN-223"></div>
-      <div class="title-row">Дата: <input type="date"></div>
+      <h2>КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</h2>
+      <div class="title-row"><span class="mini-icon">▣</span> № <input value="KP-FYZEN-223"></div>
+      <div class="title-row"><span class="mini-icon">▣</span> Дата: <input type="date" value="2025-05-17"></div>
     </div>
   </div>
 
   <div class="info">
     <div class="info-card">
       <div class="icon-title"><div class="icon">👤</div>КОМУ:</div>
-      <input value="Уважаемый клиент," />
-      <textarea rows="6">Благодарим за проявленный интерес к продукции компании FYZEN-LAB.
-
-Предлагаем Вам ознакомиться с коммерческим предложением на поставку следующего оборудования.</textarea>
+      <p class="client-name">Уважаемый клиент,</p>
+      <div class="client-text">
+        Благодарим за проявленный интерес к продукции компании <span class="fyzen-blue">FYZEN-LAB</span>.<br><br>
+        Предлагаем Вам ознакомиться с коммерческим предложением на поставку следующего оборудования.
+      </div>
     </div>
+
     <div class="info-card">
       <div class="icon-title"><div class="icon">🏢</div>О КОМПАНИИ:</div>
-    <div class="company-text">
-  <strong>FYZEN-LAB</strong><br>
-  Поставщик лабораторного оборудования и решений для контроля качества.<br><br>
-
-  ☎ +998 87 190 2002<br>
-  ✉ info@fyzen-lab.uz<br>
-  🌐 fyzen-lab.uz<br>
-  📍 Узбекистан
-</div>
+      <div class="company-text">
+        <strong>FYZEN-LAB</strong>
+        Поставщик лабораторного оборудования и решений для контроля качества.
+        <div class="company-contact">
+          <span>☎</span>+998 87 190 2002<br>
+          <span>✉</span>info@fyzen-lab.uz<br>
+          <span>🌐</span>fyzen-lab.uz<br>
+          <span>📍</span>Узбекистан
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="table-wrap">
     <table id="quoteTable">
       <tr>
-        <th>№</th><th>ОПИСАНИЕ ТОВАРА</th><th>КОЛ-ВО</th><th>ИЗОБРАЖЕНИЕ<br>URL</th><th>ЦЕНА ЗА ЕДИНИЦУ<br>С НДС (UZS)</th><th>ОБЩАЯ СТОИМОСТЬ<br>С НДС (UZS)</th><th class="no-print">X</th>
+        <th>№</th>
+        <th>ОПИСАНИЕ ТОВАРА</th>
+        <th>КОЛ-ВО</th>
+        <th>ИЗОБРАЖЕНИЕ<br>URL</th>
+        <th>ЦЕНА ЗА ЕДИНИЦУ<br>С НДС (UZS)</th>
+        <th>ОБЩАЯ СТОИМОСТЬ<br>С НДС (UZS)</th>
+        <th class="no-print">X</th>
       </tr>
       <tr>
         <td class="num">1</td>
-        <td class="product-desc"><input value="Измеритель освещения"><textarea rows="3">Артикул: UT383</textarea></td>
-        <td><input class="qty" type="number" value="1"></td>
-        <td class="img-cell"><img class="product-img"><input class="imgUrl" placeholder="image URL"></td>
-        <td><input class="price" type="number" value="0"></td>
+        <td>
+          <input class="product-name" value="Измеритель освещения мини-люксметр UT383">
+          <textarea class="product-art" rows="2">Артикул: UT383</textarea>
+        </td>
+        <td><input class="qty" type="number" value="4"></td>
+        <td>
+          <img class="product-img">
+          <input class="imgUrl" placeholder="image URL">
+        </td>
+        <td><input class="price" type="number" value="1350000"></td>
         <td class="lineTotal">0</td>
         <td><button class="remove-btn" onclick="removeRow(this)">X</button></td>
       </tr>
     </table>
   </div>
 
-  <div class="actions"><button onclick="addRow()">+ Добавить товар</button><button onclick="window.print()">Печать / PDF</button></div>
+  <div class="actions">
+    <button onclick="addRow()">+ Добавить товар</button>
+    <button onclick="window.print()">Печать / PDF</button>
+  </div>
 
-  <div class="bottom-info">
-    <div>
-      <div class="terms">
-        <div class="term"><div class="circle">🛡</div><input value="Гарантия на оборудование: 12 мес."></div>
-        <div class="term"><div class="circle">💳</div><input value="Условия платежа: 100% предоплата"></div>
-        <div class="term"><div class="circle">🚚</div><input value="Срок поставки: 12 недель"></div>
-        <div class="term"><div class="circle">ℹ</div><input value="Примечания: Цены указаны с учетом НДС"></div>
-      </div>
-      <div class="signature"><div><p>Директор компании Fyzen:</p><strong>Ф.Ж. Марксов</strong></div><div class="stamp">FYZEN-LAB</div></div>
+  <div class="after-table">
+    <div class="terms">
+      <div class="term"><div class="term-icon">🛡</div><input value="Гарантия на оборудование: 12 мес."></div>
+      <div class="term"><div class="term-icon">💳</div><input value="Условия платежа: 100% предоплата"></div>
+      <div class="term"><div class="term-icon">🚚</div><input value="Срок поставки: 12 недель"></div>
+      <div class="term"><div class="term-icon">ℹ</div><input value="Примечания: Цены указаны с учетом НДС"></div>
     </div>
+
     <div class="total-box">
-      <div class="total-head"><div class="total-label">ИТОГО:</div><div class="total-number"><span id="grandTotal">0</span> UZS</div></div>
-      <div class="amount-words"><strong>Сумма прописью:</strong><br><textarea id="amountWords" rows="4">Введите сумму прописью...</textarea></div>
+      <div class="total-head">
+        <div class="total-label">ИТОГО:</div>
+        <div class="total-number"><span id="grandTotal">0</span> UZS</div>
+      </div>
+      <div class="amount-words">
+        <strong>Сумма прописью:</strong><br>
+        <textarea id="amountWords" rows="4">Введите сумму прописью...</textarea>
+      </div>
     </div>
   </div>
 
-  <div class="footer-contact">
-    КОНТАКТЫ<br><span>☎</span>+998 87 190 2002<br><span>✈</span>@Fyzen_Lab_Official<br><span>✉</span>info@fyzen-lab.uz
+  <div class="signature-contact">
+    <div class="signature">
+      <div>
+        <p>Директор компании Fyzen:</p>
+        <strong>Ф.Ж. Марксов</strong>
+      </div>
+      <div class="stamp">FYZEN-LAB</div>
+    </div>
+
+    <div class="contacts">
+      <h3>КОНТАКТЫ</h3>
+      <span>☎</span>+998 87 190 2002<br>
+      <span>◎</span>fyzen.lab<br>
+      <span>✈</span>@fyzen_lab_saless<br>
+      <span>✉</span>info@fyzen-lab.uz
+    </div>
   </div>
-  <div class="footer-text"><span>🌐 FYZEN-LAB</span><span>|</span><span>SCIENCE WITHOUT LIMITS</span></div>
+
+  <div class="footer-text">
+    <span>🌐 FYZEN-LAB</span>
+    <span>|</span>
+    <span>SCIENCE WITHOUT LIMITS</span>
+  </div>
 </div>
+
 <script>
-function format(n){return Number(n).toLocaleString('ru-RU')}
+function format(n){
+  return Number(n).toLocaleString('ru-RU',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
 function calculate(){
-  let rows=document.querySelectorAll('#quoteTable tr');let grand=0;
+  const rows=document.querySelectorAll('#quoteTable tr');
+  let grand=0;
   rows.forEach((row,i)=>{
     if(i===0)return;
     row.querySelector('.num').innerText=i;
-    let qty=Number(row.querySelector('.qty').value)||0;
-    let price=Number(row.querySelector('.price').value)||0;
-    let total=qty*price;
+    const qty=Number(row.querySelector('.qty').value)||0;
+    const price=Number(row.querySelector('.price').value)||0;
+    const total=qty*price;
     row.querySelector('.lineTotal').innerText=format(total);
     grand+=total;
-    let url=row.querySelector('.imgUrl').value.trim();
-    let img=row.querySelector('.product-img');
-    img.src=url;img.style.display=url?'block':'none';
+    const url=row.querySelector('.imgUrl').value.trim();
+    const img=row.querySelector('.product-img');
+    img.src=url;
+    img.style.display=url?'block':'none';
   });
   document.getElementById('grandTotal').innerText=format(grand);
 }
 document.addEventListener('input',calculate);
 function addRow(){
-  let table=document.getElementById('quoteTable');let row=table.insertRow();
-  row.innerHTML=`<td class="num"></td><td class="product-desc"><input placeholder="Название товара"><textarea rows="3" placeholder="Артикул / описание"></textarea></td><td><input class="qty" type="number" value="1"></td><td class="img-cell"><img class="product-img"><input class="imgUrl" placeholder="image URL"></td><td><input class="price" type="number" value="0"></td><td class="lineTotal">0</td><td><button class="remove-btn" onclick="removeRow(this)">X</button></td>`;
+  const table=document.getElementById('quoteTable');
+  const row=table.insertRow();
+  row.innerHTML=`
+    <td class="num"></td>
+    <td><input class="product-name" placeholder="Название товара"><textarea class="product-art" rows="2" placeholder="Артикул:"></textarea></td>
+    <td><input class="qty" type="number" value="1"></td>
+    <td><img class="product-img"><input class="imgUrl" placeholder="image URL"></td>
+    <td><input class="price" type="number" value="0"></td>
+    <td class="lineTotal">0</td>
+    <td><button class="remove-btn" onclick="removeRow(this)">X</button></td>`;
   calculate();
 }
-function removeRow(btn){btn.closest('tr').remove();calculate()}
+function removeRow(btn){
+  btn.closest('tr').remove();
+  calculate();
+}
 calculate();
 </script>
 </body>
