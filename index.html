@@ -5,15 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>FYZEN-LAB Commercial Offer</title>
 .client-name-input{
-  border:0;
-  outline:none;
-  background:transparent;
-  font-size:18px;
-  font-weight:900;
-  color:#06162f;
   width:100%;
-  margin-bottom:35px;
+  border:none;
+  border-bottom:2px solid #1b4c96;
+  background:transparent;
+  outline:none;
+  padding:0 0 10px;
+  margin:0 0 28px;
+  font-size:18px;
+  font-weight:700;
+  color:#06162f;
   font-family:Arial,Helvetica,sans-serif;
+}
+
+.client-name-input:focus{
+  border-bottom:2px solid #0070cf;
 }
 <style>
 *{box-sizing:border-box}
@@ -661,13 +667,27 @@ td input,td textarea{
   </div>
 
   <div class="info">
-    <div class="card">
-      <div class="card-title"><div class="round">👤</div>КОМУ:</div>
-      <input class="client-name-input" value="Уважаемый клиент,">
-      <div class="client-text">
-        Благодарим за проявленный интерес к продукции компании <span class="blue">FYZEN-LAB</span>.<br><br>
-        Предлагаем Вам ознакомиться с коммерческим предложением на поставку следующего оборудования.
-      </div>
+  <div class="card">
+
+  <div class="card-title">
+    <div class="round">👤</div>
+    КОМУ:
+  </div>
+
+  <input 
+    class="client-name-input" 
+    value="Уважаемый клиент, SFS"
+  >
+
+  <div class="client-text">
+    Благодарим за проявленный интерес к продукции компании 
+    <span class="blue">FYZEN-LAB</span>.
+    <br><br>
+    Предлагаем Вам ознакомиться с коммерческим предложением 
+    на поставку следующего оборудования.
+  </div>
+
+</div>
     </div>
 
     <div class="card">
