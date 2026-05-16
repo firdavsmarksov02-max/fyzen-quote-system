@@ -4,89 +4,844 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>FYZEN-LAB Commercial Offer</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#eaf1f8;font-family:Arial,Helvetica,sans-serif;color:#071b3a}
-.page{width:1024px;min-height:1448px;margin:20px auto;background:#fff;position:relative;overflow:hidden;padding:70px 50px 105px;box-shadow:0 18px 55px rgba(0,0,0,.16)}
-.top{position:absolute;top:0;left:0;width:100%;height:105px;background:linear-gradient(135deg,#001744,#0069c8);clip-path:polygon(0 0,100% 0,88% 30%,16% 30%,0 72%)}
-.top:before{content:"";position:absolute;left:-40px;top:0;width:210px;height:60px;border-top:8px solid #fff;border-left:8px solid #fff;transform:skewX(-35deg)}
-.top:after{content:"";position:absolute;right:140px;top:0;width:32px;height:65px;background:#fff;transform:skewX(-35deg)}
-.molecule{position:absolute;right:-35px;top:92px;width:265px;height:240px;opacity:.18;background:radial-gradient(circle at 15% 26%,#0069c8 0 5px,transparent 6px),radial-gradient(circle at 38% 34%,#0069c8 0 5px,transparent 6px),radial-gradient(circle at 60% 25%,#0069c8 0 5px,transparent 6px),radial-gradient(circle at 80% 47%,#0069c8 0 5px,transparent 6px),radial-gradient(circle at 56% 70%,#0069c8 0 5px,transparent 6px)}
-.molecule:before{content:"";position:absolute;inset:0;background:linear-gradient(25deg,transparent 27%,#0069c8 28% 29%,transparent 30%),linear-gradient(112deg,transparent 39%,#0069c8 40% 41%,transparent 42%),linear-gradient(160deg,transparent 50%,#0069c8 51% 52%,transparent 53%)}
-.bottom{position:absolute;bottom:0;left:0;width:100%;height:108px;background:linear-gradient(135deg,#001744,#003e8d 60%,#0071d2);clip-path:polygon(0 16%,66% 70%,100% 18%,100% 100%,0 100%)}
-.bottom-cut{position:absolute;right:165px;bottom:54px;width:68px;height:86px;background:#fff;transform:skewX(-38deg);z-index:2}.bottom-light{position:absolute;right:0;bottom:0;width:235px;height:92px;background:#0b8ce3;clip-path:polygon(48% 100%,100% 0,100% 100%);z-index:2}
+
+body{
+  margin:0;
+  background:#eaf1f8;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#071b3a;
+}
+
+.page{
+  width:1024px;
+  min-height:1448px;
+  margin:20px auto;
+  background:#fff;
+  position:relative;
+  overflow:hidden;
+  padding:70px 50px 105px;
+  box-shadow:0 18px 55px rgba(0,0,0,.16);
+}
+
+/* TOP DESIGN */
+.top{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:105px;
+  background:linear-gradient(135deg,#001744,#0069c8);
+  clip-path:polygon(0 0,100% 0,88% 30%,16% 30%,0 72%);
+}
+
+.top:before{
+  content:"";
+  position:absolute;
+  left:-40px;
+  top:0;
+  width:210px;
+  height:60px;
+  border-top:8px solid #fff;
+  border-left:8px solid #fff;
+  transform:skewX(-35deg);
+}
+
+.top:after{
+  content:"";
+  position:absolute;
+  right:140px;
+  top:0;
+  width:32px;
+  height:65px;
+  background:#fff;
+  transform:skewX(-35deg);
+}
+
+/* BACKGROUND MOLECULE */
+.molecule{
+  position:absolute;
+  right:-35px;
+  top:92px;
+  width:265px;
+  height:240px;
+  opacity:.18;
+  background:
+    radial-gradient(circle at 15% 26%,#0069c8 0 5px,transparent 6px),
+    radial-gradient(circle at 38% 34%,#0069c8 0 5px,transparent 6px),
+    radial-gradient(circle at 60% 25%,#0069c8 0 5px,transparent 6px),
+    radial-gradient(circle at 80% 47%,#0069c8 0 5px,transparent 6px),
+    radial-gradient(circle at 56% 70%,#0069c8 0 5px,transparent 6px);
+}
+
+.molecule:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(25deg,transparent 27%,#0069c8 28% 29%,transparent 30%),
+    linear-gradient(112deg,transparent 39%,#0069c8 40% 41%,transparent 42%),
+    linear-gradient(160deg,transparent 50%,#0069c8 51% 52%,transparent 53%);
+}
+
+/* BOTTOM DESIGN */
+.bottom{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:108px;
+  background:linear-gradient(135deg,#001744,#003e8d 60%,#0071d2);
+  clip-path:polygon(0 16%,66% 70%,100% 18%,100% 100%,0 100%);
+}
+
+.bottom-cut{
+  position:absolute;
+  right:165px;
+  bottom:54px;
+  width:68px;
+  height:86px;
+  background:#fff;
+  transform:skewX(-38deg);
+  z-index:2;
+}
+
+.bottom-light{
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:235px;
+  height:92px;
+  background:#0b8ce3;
+  clip-path:polygon(48% 100%,100% 0,100% 100%);
+  z-index:2;
+}
+
+/* HEADER */
 .header{
-display:grid;
-grid-template-columns:1.2fr 1fr;
-gap:40px;
-align-items:center;
-margin-top:8px
+  position:relative;
+  z-index:3;
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:40px;
+  align-items:center;
+  margin-top:8px;
+}
+
 .brand{
-display:flex;
-align-items:center;
-gap:22px;
-flex-wrap:nowrap;
-}..brand img{
-width:90px;
-height:90px;
-object-fit:contain;
-flex-shrink:0;
-}.brand h1{
-margin:0;
-color:#062a67;
-font-size:38px;
-line-height:1;
-font-weight:900;
-letter-spacing:-1px;
-white-space:nowrap;
-}.brand p{margin:13px 0 0;color:#009bd3;font-size:18px;font-weight:900}.offer-title{border-left:2px solid #c7d8ea;padding-left:34px;min-height:112px}.offer-title h2{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex-wrap:nowrap;
+}
+
+.brand img{
+  width:90px;
+  height:90px;
+  object-fit:contain;
+  flex-shrink:0;
+}
+
+.brand-text h1{
+  margin:0;
+  color:#062a67;
+  font-size:38px;
+  line-height:0.95;
+  font-weight:900;
+  letter-spacing:-1px;
+  white-space:nowrap;
+}
+
+.brand-text p{
+  margin:10px 0 0;
+  color:#009bd3;
+  font-size:16px;
+  font-weight:900;
+  line-height:1.2;
+}
+
+.offer-title{
+  border-left:2px solid #c7d8ea;
+  padding-left:34px;
+  min-height:112px;
+}
+
+.offer-title h2{
   margin:0 0 18px;
   color:#062a67;
-  font-size:28px;
+  font-size:26px;
   line-height:1.1;
   font-weight:900;
   white-space:nowrap;
-}.meta{display:flex;gap:10px;align-items:center;margin:9px 0;font-size:17px;font-weight:700}.meta span{color:#004a98;width:22px}.meta input{border:0;border-bottom:1px solid #b9cce0;background:transparent;outline:0;width:172px;padding:4px 8px;font-size:17px;font-weight:700;color:#06162f}
-.info{position:relative;z-index:3;display:grid;grid-template-columns:1fr 1fr;gap:58px;margin-top:55px}.card{border-left:2px solid #d7e3f1;padding-left:36px;min-height:235px}.card-title{display:flex;align-items:center;gap:15px;color:#003f91;font-size:21px;font-weight:900;margin-bottom:18px;text-transform:uppercase}.round{width:50px;height:50px;border-radius:50%;background:#003f91;color:white;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}.client-name{font-size:18px;font-weight:900;margin:0 0 35px}.client-text{font-size:18px;line-height:1.62;color:#06162f;max-width:430px}.blue{color:#003f91;font-weight:900}.company{font-size:18px;line-height:1.55;color:#06162f;font-weight:600}.company strong{display:block;font-size:21px;margin-bottom:8px}.company-contact{margin-top:19px;color:#003f91;font-weight:800;line-height:1.75}.company-contact span{display:inline-block;width:30px}
-.table-wrap{position:relative;z-index:3;margin-top:36px}table{width:100%;border-collapse:collapse;table-layout:fixed;background:#fff}th{background:#004892;color:#fff;padding:17px 8px;font-size:14px;line-height:1.15;text-align:center;font-weight:900;border-right:1px solid rgba(255,255,255,.25)}td{border:1px solid #d8e4f1;padding:18px 12px;text-align:center;vertical-align:middle;height:126px;font-size:18px}th:nth-child(1),td:nth-child(1){width:52px}th:nth-child(2),td:nth-child(2){width:270px}th:nth-child(3),td:nth-child(3){width:94px}th:nth-child(4),td:nth-child(4){width:180px}th:nth-child(5),td:nth-child(5){width:180px}th:nth-child(6),td:nth-child(6){width:198px}th:nth-child(7),td:nth-child(7){width:56px}td input,td textarea{width:100%;border:0;outline:0;background:transparent;color:#06162f;font-family:Arial,Helvetica,sans-serif}.product-name{text-align:left;font-size:18px;font-weight:900;line-height:1.35}.product-art{margin-top:16px;text-align:left;font-size:16px;line-height:1.35;resize:none;overflow:hidden}.qty,.price{text-align:center;font-size:19px;font-weight:700}.imgUrl{font-size:11px;color:#7b8797;text-align:center;margin-top:6px}.product-img{width:112px;height:106px;object-fit:contain;display:block;margin:0 auto 8px}.lineTotal{font-weight:700;font-size:19px}.remove-btn{width:34px;height:34px;border-radius:9px;background:#0070cf;color:white;border:0;font-weight:900;cursor:pointer}.actions{position:relative;z-index:4;display:flex;gap:12px;margin:18px 0 0}.actions button{background:#0070cf;color:white;border:0;border-radius:9px;padding:11px 16px;font-weight:900;cursor:pointer;font-size:14px}
-.lower{position:relative;z-index:3;display:grid;grid-template-columns:1fr 1.18fr;gap:55px;margin-top:30px}.term{display:grid;grid-template-columns:50px 1fr;gap:15px;align-items:center;border-bottom:1px solid #c7d8ea;padding:10px 0}.term-icon{width:38px;height:38px;border-radius:50%;background:#003f91;color:white;display:flex;align-items:center;justify-content:center;font-size:17px}.term input{border:0;outline:0;background:transparent;font-size:17px;color:#06162f;width:100%}.total{border:1px solid #c7d8ea;background:#fff;min-height:214px}.total-head{display:flex;border-bottom:1px solid #d8e4f1;background:#f3f6fb}.total-label{background:linear-gradient(135deg,#003f91,#0070cf);color:#fff;padding:18px 44px 18px 30px;font-size:21px;font-weight:900;clip-path:polygon(0 0,100% 0,82% 100%,0 100%)}.total-number{padding:18px 22px;color:#003f91;font-size:29px;font-weight:900;white-space:nowrap}.words{padding:21px 29px;font-size:17px;line-height:1.55}.words textarea{margin-top:9px;width:100%;border:0;resize:none;outline:0;background:transparent;font-size:17px;line-height:1.45;font-family:Arial;color:#06162f;overflow:hidden}
-.signature-contact{position:relative;z-index:3;display:grid;grid-template-columns:1fr 1.05fr;gap:55px;margin-top:24px}.signature{display:flex;align-items:flex-end;gap:24px;min-height:135px}.signature p{margin:0 0 10px;font-size:17px}.signature strong{font-size:21px;font-weight:900}.stamp{width:122px;height:122px;border:3px solid #003f91;border-radius:50%;color:#003f91;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;font-size:13px;transform:rotate(-8deg)}.contacts{color:#003f91;font-weight:800;font-size:18px;line-height:1.65;padding-left:40px;border-left:2px solid #d7e3f1}.contacts h3{margin:0 0 8px;color:#003f91;font-size:20px;font-weight:900}.contacts span{display:inline-block;width:30px}.footer{position:absolute;left:63px;bottom:28px;color:white;display:flex;align-items:center;gap:26px;font-size:17px;font-weight:900;z-index:5}.footer-icon{width:44px;height:44px;border:1.8px solid rgba(255,255,255,.9);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:23px}.divider{height:38px;width:1px;background:rgba(255,255,255,.75)}
-@media print{@page{size:A4;margin:0}body{background:white}.page{margin:0;box-shadow:none;width:210mm;min-height:297mm;padding:13mm 9mm 20mm}.actions,.no-print,td:last-child,th:last-child{display:none!important}input,textarea{background:transparent!important}.top{height:22mm}.bottom{height:22mm}}
+}
+
+.meta{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin:9px 0;
+  font-size:17px;
+  font-weight:700;
+}
+
+.meta span{
+  color:#004a98;
+  width:22px;
+}
+
+.meta input{
+  border:0;
+  border-bottom:1px solid #b9cce0;
+  background:transparent;
+  outline:0;
+  width:172px;
+  padding:4px 8px;
+  font-size:17px;
+  font-weight:700;
+  color:#06162f;
+}
+
+/* INFO */
+.info{
+  position:relative;
+  z-index:3;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:58px;
+  margin-top:55px;
+}
+
+.card{
+  border-left:2px solid #d7e3f1;
+  padding-left:36px;
+  min-height:235px;
+}
+
+.card-title{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  color:#003f91;
+  font-size:21px;
+  font-weight:900;
+  margin-bottom:18px;
+  text-transform:uppercase;
+}
+
+.round{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#003f91;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  flex-shrink:0;
+}
+
+.client-name{
+  font-size:18px;
+  font-weight:900;
+  margin:0 0 35px;
+}
+
+.client-text{
+  font-size:18px;
+  line-height:1.62;
+  color:#06162f;
+  max-width:430px;
+}
+
+.blue{
+  color:#003f91;
+  font-weight:900;
+}
+
+.company{
+  font-size:18px;
+  line-height:1.55;
+  color:#06162f;
+  font-weight:600;
+}
+
+.company strong{
+  display:block;
+  font-size:21px;
+  margin-bottom:8px;
+}
+
+.company-contact{
+  margin-top:19px;
+  color:#003f91;
+  font-weight:800;
+  line-height:1.75;
+}
+
+.company-contact span{
+  display:inline-block;
+  width:30px;
+}
+
+/* TABLE */
+.table-wrap{
+  position:relative;
+  z-index:3;
+  margin-top:36px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  background:#fff;
+}
+
+th{
+  background:#004892;
+  color:#fff;
+  padding:17px 8px;
+  font-size:14px;
+  line-height:1.15;
+  text-align:center;
+  font-weight:900;
+  border-right:1px solid rgba(255,255,255,.25);
+}
+
+td{
+  border:1px solid #d8e4f1;
+  padding:18px 12px;
+  text-align:center;
+  vertical-align:middle;
+  height:126px;
+  font-size:18px;
+}
+
+th:nth-child(1),td:nth-child(1){width:52px}
+th:nth-child(2),td:nth-child(2){width:270px}
+th:nth-child(3),td:nth-child(3){width:94px}
+th:nth-child(4),td:nth-child(4){width:180px}
+th:nth-child(5),td:nth-child(5){width:180px}
+th:nth-child(6),td:nth-child(6){width:198px}
+th:nth-child(7),td:nth-child(7){width:56px}
+
+td input,td textarea{
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:#06162f;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+.product-name{
+  text-align:left;
+  font-size:18px;
+  font-weight:900;
+  line-height:1.35;
+}
+
+.product-art{
+  margin-top:16px;
+  text-align:left;
+  font-size:16px;
+  line-height:1.35;
+  resize:none;
+  overflow:hidden;
+}
+
+.qty,.price{
+  text-align:center;
+  font-size:19px;
+  font-weight:700;
+}
+
+.imgUrl{
+  font-size:11px;
+  color:#7b8797;
+  text-align:center;
+  margin-top:6px;
+}
+
+.product-img{
+  width:112px;
+  height:106px;
+  object-fit:contain;
+  display:block;
+  margin:0 auto 8px;
+}
+
+.lineTotal{
+  font-weight:700;
+  font-size:19px;
+}
+
+.remove-btn{
+  width:34px;
+  height:34px;
+  border-radius:9px;
+  background:#0070cf;
+  color:white;
+  border:0;
+  font-weight:900;
+  cursor:pointer;
+}
+
+/* BUTTONS */
+.actions{
+  position:relative;
+  z-index:4;
+  display:flex;
+  gap:12px;
+  margin:18px 0 0;
+}
+
+.actions button{
+  background:#0070cf;
+  color:white;
+  border:0;
+  border-radius:9px;
+  padding:11px 16px;
+  font-weight:900;
+  cursor:pointer;
+  font-size:14px;
+}
+
+/* LOWER */
+.lower{
+  position:relative;
+  z-index:3;
+  display:grid;
+  grid-template-columns:1fr 1.18fr;
+  gap:55px;
+  margin-top:30px;
+}
+
+.term{
+  display:grid;
+  grid-template-columns:50px 1fr;
+  gap:15px;
+  align-items:center;
+  border-bottom:1px solid #c7d8ea;
+  padding:10px 0;
+}
+
+.term-icon{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#003f91;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:17px;
+}
+
+.term input{
+  border:0;
+  outline:0;
+  background:transparent;
+  font-size:17px;
+  color:#06162f;
+  width:100%;
+}
+
+.total{
+  border:1px solid #c7d8ea;
+  background:#fff;
+  min-height:214px;
+}
+
+.total-head{
+  display:flex;
+  border-bottom:1px solid #d8e4f1;
+  background:#f3f6fb;
+}
+
+.total-label{
+  background:linear-gradient(135deg,#003f91,#0070cf);
+  color:#fff;
+  padding:18px 44px 18px 30px;
+  font-size:21px;
+  font-weight:900;
+  clip-path:polygon(0 0,100% 0,82% 100%,0 100%);
+}
+
+.total-number{
+  padding:18px 22px;
+  color:#003f91;
+  font-size:29px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.words{
+  padding:21px 29px;
+  font-size:17px;
+  line-height:1.55;
+}
+
+.words textarea{
+  margin-top:9px;
+  width:100%;
+  border:0;
+  resize:none;
+  outline:0;
+  background:transparent;
+  font-size:17px;
+  line-height:1.45;
+  font-family:Arial;
+  color:#06162f;
+  overflow:hidden;
+}
+
+/* SIGNATURE AND CONTACT */
+.signature-contact{
+  position:relative;
+  z-index:3;
+  display:grid;
+  grid-template-columns:1fr 1.05fr;
+  gap:55px;
+  margin-top:24px;
+}
+
+.signature{
+  display:flex;
+  align-items:flex-end;
+  gap:24px;
+  min-height:135px;
+}
+
+.signature p{
+  margin:0 0 10px;
+  font-size:17px;
+}
+
+.signature strong{
+  font-size:21px;
+  font-weight:900;
+}
+
+.stamp{
+  width:122px;
+  height:122px;
+  border:3px solid #003f91;
+  border-radius:50%;
+  color:#003f91;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-weight:900;
+  font-size:13px;
+  transform:rotate(-8deg);
+}
+
+.contacts{
+  color:#003f91;
+  font-weight:800;
+  font-size:18px;
+  line-height:1.65;
+  padding-left:40px;
+  border-left:2px solid #d7e3f1;
+}
+
+.contacts h3{
+  margin:0 0 8px;
+  color:#003f91;
+  font-size:20px;
+  font-weight:900;
+}
+
+.contacts span{
+  display:inline-block;
+  width:30px;
+}
+
+/* FOOTER */
+.footer{
+  position:absolute;
+  left:63px;
+  bottom:28px;
+  color:white;
+  display:flex;
+  align-items:center;
+  gap:26px;
+  font-size:17px;
+  font-weight:900;
+  z-index:5;
+}
+
+.footer-icon{
+  width:44px;
+  height:44px;
+  border:1.8px solid rgba(255,255,255,.9);
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:23px;
+}
+
+.divider{
+  height:38px;
+  width:1px;
+  background:rgba(255,255,255,.75);
+}
+
+@media print{
+  @page{size:A4;margin:0}
+
+  body{background:white}
+
+  .page{
+    margin:0;
+    box-shadow:none;
+    width:210mm;
+    min-height:297mm;
+    padding:13mm 9mm 20mm;
+  }
+
+  .actions,
+  .no-print,
+  td:last-child,
+  th:last-child{
+    display:none!important;
+  }
+
+  input,textarea{
+    background:transparent!important;
+  }
+
+  .top{height:22mm}
+  .bottom{height:22mm}
+}
 </style>
 </head>
+
 <body>
+
 <div class="page">
-<div class="top"></div><div class="top-white-line"></div><div class="top-stripe"></div><div class="molecule"></div><div class="bottom"></div><div class="bottom-cut"></div><div class="bottom-light"></div>
 
-<div class="header">
-  <div class="brand"><img src="./assets/photo_2026-05-08_01-44-02.jpg" alt="logo"><div><h1>FYZEN-LAB</h1><p>SCIENCE WITHOUT LIMITS</p></div></div>
-  <div class="offer-title"><h2>КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</h2><div class="meta"><span>▣</span>№ <input value="KP-FYZEN-223"></div><div class="meta"><span>▣</span>Дата: <input type="date" value="2025-05-17"></div></div>
+  <div class="top"></div>
+  <div class="molecule"></div>
+  <div class="bottom"></div>
+  <div class="bottom-cut"></div>
+  <div class="bottom-light"></div>
+
+  <div class="header">
+    <div class="brand">
+      <img src="./assets/photo_2026-05-08_01-44-02.jpg" alt="FYZEN-LAB Logo">
+      <div class="brand-text">
+        <h1>FYZEN-LAB</h1>
+        <p>SCIENCE WITHOUT LIMITS</p>
+      </div>
+    </div>
+
+    <div class="offer-title">
+      <h2>КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</h2>
+      <div class="meta"><span>▣</span>№ <input value="KP-FYZEN-223"></div>
+      <div class="meta"><span>▣</span>Дата: <input type="date" value="2025-05-17"></div>
+    </div>
+  </div>
+
+  <div class="info">
+    <div class="card">
+      <div class="card-title"><div class="round">👤</div>КОМУ:</div>
+      <p class="client-name">Уважаемый клиент,</p>
+      <div class="client-text">
+        Благодарим за проявленный интерес к продукции компании <span class="blue">FYZEN-LAB</span>.<br><br>
+        Предлагаем Вам ознакомиться с коммерческим предложением на поставку следующего оборудования.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><div class="round">🏢</div>О КОМПАНИИ:</div>
+      <div class="company">
+        <strong>FYZEN-LAB</strong>
+        Поставщик лабораторного оборудования и решений для контроля качества.
+        <div class="company-contact">
+          <span>☎</span>+998 87 190 2002<br>
+          <span>✉</span>info@fyzen-lab.uz<br>
+          <span>🌐</span>fyzen-lab.uz<br>
+          <span>📍</span>Узбекистан
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table id="quoteTable">
+      <tr>
+        <th>№</th>
+        <th>ОПИСАНИЕ ТОВАРА</th>
+        <th>КОЛ-ВО</th>
+        <th>ИЗОБРАЖЕНИЕ<br>URL</th>
+        <th>ЦЕНА ЗА ЕДИНИЦУ<br>С НДС (UZS)</th>
+        <th>ОБЩАЯ СТОИМОСТЬ<br>С НДС (UZS)</th>
+        <th class="no-print">X</th>
+      </tr>
+
+      <tr>
+        <td class="num">1</td>
+        <td>
+          <input class="product-name" value="Измеритель освещения мини-люксметр UT383">
+          <textarea class="product-art" rows="2">Артикул: UT383</textarea>
+        </td>
+        <td><input class="qty" type="number" value="4"></td>
+        <td><img class="product-img"><input class="imgUrl" placeholder="image URL"></td>
+        <td><input class="price" type="number" value="1350000"></td>
+        <td class="lineTotal">0</td>
+        <td><button class="remove-btn" onclick="removeRow(this)">X</button></td>
+      </tr>
+
+      <tr>
+        <td class="num">2</td>
+        <td>
+          <input class="product-name" value="Цифровой мультиметр UT61D">
+          <textarea class="product-art" rows="2">Артикул: UT61D</textarea>
+        </td>
+        <td><input class="qty" type="number" value="5"></td>
+        <td><img class="product-img"><input class="imgUrl" placeholder="image URL"></td>
+        <td><input class="price" type="number" value="3502000"></td>
+        <td class="lineTotal">0</td>
+        <td><button class="remove-btn" onclick="removeRow(this)">X</button></td>
+      </tr>
+
+      <tr>
+        <td class="num">3</td>
+        <td>
+          <input class="product-name" value="Фонарь тестовый взрывозащищенный ‘Молит-тест’">
+          <textarea class="product-art" rows="2">Артикул: ИОЛИТ-ТЕСТ</textarea>
+        </td>
+        <td><input class="qty" type="number" value="7"></td>
+        <td><img class="product-img"><input class="imgUrl" placeholder="image URL"></td>
+        <td><input class="price" type="number" value="21438912"></td>
+        <td class="lineTotal">0</td>
+        <td><button class="remove-btn" onclick="removeRow(this)">X</button></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="actions">
+    <button onclick="addRow()">+ Добавить товар</button>
+    <button onclick="window.print()">Печать / PDF</button>
+  </div>
+
+  <div class="lower">
+    <div>
+      <div class="term"><div class="term-icon">🛡</div><input value="Гарантия на оборудование: 12 мес."></div>
+      <div class="term"><div class="term-icon">💳</div><input value="Условия платежа: 100% предоплата"></div>
+      <div class="term"><div class="term-icon">🚚</div><input value="Срок поставки: 12 недель"></div>
+      <div class="term"><div class="term-icon">ℹ</div><input value="Примечания: Цены указаны с учетом НДС"></div>
+    </div>
+
+    <div class="total">
+      <div class="total-head">
+        <div class="total-label">ИТОГО:</div>
+        <div class="total-number"><span id="grandTotal">0</span> UZS</div>
+      </div>
+      <div class="words">
+        <strong>Сумма прописью:</strong><br>
+        <textarea rows="4">Введите сумму прописью...</textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="signature-contact">
+    <div class="signature">
+      <div>
+        <p>Директор компании Fyzen:</p>
+        <strong>Ф.Ж. Марксов</strong>
+      </div>
+      <div class="stamp">FYZEN-LAB</div>
+    </div>
+
+    <div class="contacts">
+      <h3>КОНТАКТЫ</h3>
+      <span>☎</span>+998 87 190 2002<br>
+      <span>◎</span>fyzen.lab<br>
+      <span>✈</span>@fyzen_lab_saless<br>
+      <span>✉</span>info@fyzen-lab.uz
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-icon">◎</div>
+    <span>FYZEN-LAB</span>
+    <div class="divider"></div>
+    <span>SCIENCE WITHOUT LIMITS</span>
+  </div>
+
 </div>
 
-<div class="info">
-  <div class="card"><div class="card-title"><div class="round">👤</div>КОМУ:</div><p class="client-name">Уважаемый клиент,</p><div class="client-text">Благодарим за проявленный интерес к продукции компании <span class="blue">FYZEN-LAB</span>.<br><br>Предлагаем Вам ознакомиться с коммерческим предложением на поставку следующего оборудования.</div></div>
-  <div class="card"><div class="card-title"><div class="round">🏢</div>О КОМПАНИИ:</div><div class="company"><strong>FYZEN-LAB</strong>Поставщик лабораторного оборудования и решений для контроля качества.<div class="company-contact"><span>☎</span>+998 87 190 2002<br><span>✉</span>info@fyzen-lab.uz<br><span>🌐</span>fyzen-lab.uz<br><span>📍</span>Узбекистан</div></div></div>
-</div>
-
-<div class="table-wrap"><table id="quoteTable"><tr><th>№</th><th>ОПИСАНИЕ ТОВАРА</th><th>КОЛ-ВО</th><th>ИЗОБРАЖЕНИЕ<br>URL</th><th>ЦЕНА ЗА ЕДИНИЦУ<br>С НДС (UZS)</th><th>ОБЩАЯ СТОИМОСТЬ<br>С НДС (UZS)</th><th class="no-print">X</th></tr>
-<tr><td class="num">1</td><td><input class="product-name" value="Измеритель освещения мини-люксметр UT383"><textarea class="product-art" rows="2">Артикул: UT383</textarea></td><td><input class="qty" type="number" value="4"></td><td><img class="product-img"><input class="imgUrl" placeholder="image URL"></td><td><input class="price" type="number" value="1350000"></td><td class="lineTotal">0</td><td><button class="remove-btn" onclick="removeRow(this)">X</button></td></tr>
-<tr><td class="num">2</td><td><input class="product-name" value="Цифровой мультиметр UT61D"><textarea class="product-art" rows="2">Артикул: UT61D</textarea></td><td><input class="qty" type="number" value="5"></td><td><img class="product-img"><input class="imgUrl" placeholder="image URL"></td><td><input class="price" type="number" value="3502000"></td><td class="lineTotal">0</td><td><button class="remove-btn" onclick="removeRow(this)">X</button></td></tr>
-<tr><td class="num">3</td><td><input class="product-name" value="Фонарь тестовый взрывозащищенный ‘Молит-тест’"><textarea class="product-art" rows="2">Артикул: ИОЛИТ-ТЕСТ</textarea></td><td><input class="qty" type="number" value="7"></td><td><img class="product-img"><input class="imgUrl" placeholder="image URL"></td><td><input class="price" type="number" value="21438912"></td><td class="lineTotal">0</td><td><button class="remove-btn" onclick="removeRow(this)">X</button></td></tr>
-</table></div>
-<div class="actions"><button onclick="addRow()">+ Добавить товар</button><button onclick="window.print()">Печать / PDF</button></div>
-
-<div class="lower"><div><div class="term"><div class="term-icon">🛡</div><input value="Гарантия на оборудование: 12 мес."></div><div class="term"><div class="term-icon">💳</div><input value="Условия платежа: 100% предоплата"></div><div class="term"><div class="term-icon">🚚</div><input value="Срок поставки: 12 недель"></div><div class="term"><div class="term-icon">ℹ</div><input value="Примечания: Цены указаны с учетом НДС"></div></div><div class="total"><div class="total-head"><div class="total-label">ИТОГО:</div><div class="total-number"><span id="grandTotal">0</span> UZS</div></div><div class="words"><strong>Сумма прописью:</strong><br><textarea rows="4">Введите сумму прописью...</textarea></div></div></div>
-<div class="signature-contact"><div class="signature"><div><p>Директор компании Fyzen:</p><strong>Ф.Ж. Марксов</strong></div><div class="stamp">FYZEN-LAB</div></div><div class="contacts"><h3>КОНТАКТЫ</h3><span>☎</span>+998 87 190 2002<br><span>◎</span>fyzen.lab<br><span>✈</span>@fyzen_lab_saless<br><span>✉</span>info@fyzen-lab.uz</div></div>
-<div class="footer"><div class="footer-icon">◎</div><span>FYZEN-LAB</span><div class="divider"></div><span>SCIENCE WITHOUT LIMITS</span></div>
-</div>
 <script>
-function format(n){return Number(n).toLocaleString('ru-RU',{minimumFractionDigits:2,maximumFractionDigits:2})}
-function calculate(){const rows=document.querySelectorAll('#quoteTable tr');let grand=0;rows.forEach((row,i)=>{if(i===0)return;row.querySelector('.num').innerText=i;const qty=Number(row.querySelector('.qty').value)||0;const price=Number(row.querySelector('.price').value)||0;const total=qty*price;row.querySelector('.lineTotal').innerText=format(total);grand+=total;const url=row.querySelector('.imgUrl').value.trim();const img=row.querySelector('.product-img');img.src=url;img.style.display=url?'block':'none'});document.getElementById('grandTotal').innerText=format(grand)}
-document.addEventListener('input',calculate);
-function addRow(){const t=document.getElementById('quoteTable');const r=t.insertRow();r.innerHTML=`<td class="num"></td><td><input class="product-name" placeholder="Название товара"><textarea class="product-art" rows="2" placeholder="Артикул:"></textarea></td><td><input class="qty" type="number" value="1"></td><td><img class="product-img"><input class="imgUrl" placeholder="image URL"></td><td><input class="price" type="number" value="0"></td><td class="lineTotal">0</td><td><button class="remove-btn" onclick="removeRow(this)">X</button></td>`;calculate()}
-function removeRow(btn){btn.closest('tr').remove();calculate()}calculate();
-</script>
-</body>
-</html>
+function format(n){
+  return Number(n).toLocaleString('ru-RU',{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  });
+}
 
+function calculate(){
+  const rows=document.querySelectorAll('#quoteTable tr');
+  let grand=0;
+
+  rows.forEach((row,i)=>{
+    if(i===0)return;
+
+    row.querySelector('.num').innerText=i;
+
+    const qty=Number(row.querySelector('.qty').value)||0;
+    const price=Number(row.querySelector('.price').value)||0;
+    const total=qty*price;
+
+    row.querySelector('.lineTotal').innerText=format(total);
+    grand+=total;
+
+    const url=row.querySelector('.imgUrl').value.trim();
+    const img=row.querySelector('.product-img');
+
+    img.src=url;
+    img.style.display=url?'block':'none';
+  });
+
+  document.getElementById('grandTotal').innerText=format(grand);
+}
+
+document.addEventListener('input',calculate);
+
+function addRow(){
+  const t=document.getElementById('quoteTable');
+  const r=t.insertRow();
+
+  r.innerHTML=`
+    <td class="num"></td>
+    <td>
+      <input class="product-name" placeholder="Название товара">
+      <textarea class="product-art" rows="2" placeholder="Артикул:"></textarea>
+    </td>
+    <td><input class="qty" type="number" value="1"></td>
+    <td><img class="product-img"><input class="imgUrl" placeholder="image URL"></td>
+    <td><input class="price" type="number" value="0"></td>
+    <td class="lineTotal">0</td>
+    <td><button class="remove-btn" onclick="removeRow(this)">X</button></td>
+  `;
+
+  calculate();
+}
+
+function removeRow(btn){
+  btn.closest('tr').remove();
+  calculate();
+}
+
+calculate();
+</script>
+
+</body>
 </html>
