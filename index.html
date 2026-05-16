@@ -824,11 +824,12 @@ function calculate(){
 
   document.getElementById('grandTotal').innerText=format(grand);
 
- let words = numberToWordsRu(Math.floor(grand));
+  let words = numberToWordsRu(Math.floor(grand));
+  words = words.charAt(0).toUpperCase() + words.slice(1);
 
-words = words.charAt(0).toUpperCase() + words.slice(1);
+  document.getElementById('totalWords').value = words;
+}
 
-document.getElementById('totalWords').value = words;
 document.addEventListener('input',calculate);
 
 function addRow(){
