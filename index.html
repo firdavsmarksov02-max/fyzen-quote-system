@@ -4,23 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>FYZEN-LAB Commercial Offer</title>
-.client-name-input{
-  width:100%;
-  border:none;
-  border-bottom:2px solid #1b4c96;
-  background:transparent;
-  outline:none;
-  padding:0 0 10px;
-  margin:0 0 28px;
-  font-size:18px;
-  font-weight:700;
-  color:#06162f;
-  font-family:Arial,Helvetica,sans-serif;
-}
 
-.client-name-input:focus{
-  border-bottom:2px solid #0070cf;
-}
 <style>
 *{box-sizing:border-box}
 
@@ -42,7 +26,6 @@ body{
   box-shadow:0 18px 55px rgba(0,0,0,.16);
 }
 
-/* TOP DESIGN */
 .top{
   position:absolute;
   top:0;
@@ -76,7 +59,6 @@ body{
   transform:skewX(-35deg);
 }
 
-/* BACKGROUND MOLECULE */
 .molecule{
   position:absolute;
   right:-35px;
@@ -102,7 +84,6 @@ body{
     linear-gradient(160deg,transparent 50%,#0069c8 51% 52%,transparent 53%);
 }
 
-/* BOTTOM DESIGN */
 .bottom{
   position:absolute;
   bottom:0;
@@ -140,28 +121,29 @@ body{
   position:relative;
   z-index:3;
   display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:28px;
+  grid-template-columns:1.15fr 1fr;
+  gap:40px;
   align-items:start;
   margin-top:18px;
 }
+
 .brand{
   display:flex;
-  align-items:flex-start;
+  align-items:center;
   gap:20px;
   flex-wrap:nowrap;
 }
 
 .brand img{
-  width:110px;
-  height:110px;
+  width:80px;
+  height:80px;
   object-fit:contain;
   flex-shrink:0;
-    margin-top:-10px;
+  margin-top:-18px;
 }
 
 .brand-text h1{
-  margin:8px 0 0;
+  margin:6px 0 0;
   color:#062a67;
   font-size:38px;
   line-height:0.95;
@@ -171,7 +153,7 @@ body{
 }
 
 .brand-text p{
- margin:8px 0 0;
+  margin:8px 0 0;
   color:#009bd3;
   font-size:16px;
   font-weight:900;
@@ -260,10 +242,22 @@ body{
   flex-shrink:0;
 }
 
-.client-name{
+.client-name-input{
+  width:100%;
+  border:none;
+  border-bottom:2px solid #1b4c96;
+  background:transparent;
+  outline:none;
+  padding:0 0 10px;
+  margin:0 0 28px;
   font-size:18px;
-  font-weight:900;
-  margin:0 0 35px;
+  font-weight:700;
+  color:#06162f;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+.client-name-input:focus{
+  border-bottom:2px solid #0070cf;
 }
 
 .client-text{
@@ -282,13 +276,14 @@ body{
   font-size:18px;
   line-height:1.55;
   color:#06162f;
-  font-weight:600;
+  font-weight:700;
 }
 
 .company strong{
   display:block;
   font-size:21px;
   margin-bottom:8px;
+  font-weight:900;
 }
 
 .company-contact{
@@ -407,7 +402,6 @@ td input,td textarea{
   cursor:pointer;
 }
 
-/* BUTTONS */
 .actions{
   position:relative;
   z-index:4;
@@ -516,7 +510,7 @@ td input,td textarea{
   overflow:hidden;
 }
 
-/* SIGNATURE AND CONTACT */
+/* SIGNATURE */
 .signature-contact{
   position:relative;
   z-index:3;
@@ -667,27 +661,15 @@ td input,td textarea{
   </div>
 
   <div class="info">
-  <div class="card">
+    <div class="card">
+      <div class="card-title"><div class="round">👤</div>КОМУ:</div>
 
-  <div class="card-title">
-    <div class="round">👤</div>
-    КОМУ:
-  </div>
+      <input class="client-name-input" value="Уважаемый клиент,">
 
-  <input 
-    class="client-name-input" 
-    value="Уважаемый клиент, SFS"
-  >
-
-  <div class="client-text">
-    Благодарим за проявленный интерес к продукции компании 
-    <span class="blue">FYZEN-LAB</span>.
-    <br><br>
-    Предлагаем Вам ознакомиться с коммерческим предложением 
-    на поставку следующего оборудования.
-  </div>
-
-</div>
+      <div class="client-text">
+        Благодарим за проявленный интерес к продукции компании <span class="blue">FYZEN-LAB</span>.<br><br>
+        Предлагаем Вам ознакомиться с коммерческим предложением на поставку следующего оборудования.
+      </div>
     </div>
 
     <div class="card">
@@ -726,32 +708,6 @@ td input,td textarea{
         <td><input class="qty" type="number" value="4"></td>
         <td><img class="product-img"><input class="imgUrl" placeholder="image URL"></td>
         <td><input class="price" type="number" value="1350000"></td>
-        <td class="lineTotal">0</td>
-        <td><button class="remove-btn" onclick="removeRow(this)">X</button></td>
-      </tr>
-
-      <tr>
-        <td class="num">2</td>
-        <td>
-          <input class="product-name" value="Цифровой мультиметр UT61D">
-          <textarea class="product-art" rows="2">Артикул: UT61D</textarea>
-        </td>
-        <td><input class="qty" type="number" value="5"></td>
-        <td><img class="product-img"><input class="imgUrl" placeholder="image URL"></td>
-        <td><input class="price" type="number" value="3502000"></td>
-        <td class="lineTotal">0</td>
-        <td><button class="remove-btn" onclick="removeRow(this)">X</button></td>
-      </tr>
-
-      <tr>
-        <td class="num">3</td>
-        <td>
-          <input class="product-name" value="Фонарь тестовый взрывозащищенный ‘Молит-тест’">
-          <textarea class="product-art" rows="2">Артикул: ИОЛИТ-ТЕСТ</textarea>
-        </td>
-        <td><input class="qty" type="number" value="7"></td>
-        <td><img class="product-img"><input class="imgUrl" placeholder="image URL"></td>
-        <td><input class="price" type="number" value="21438912"></td>
         <td class="lineTotal">0</td>
         <td><button class="remove-btn" onclick="removeRow(this)">X</button></td>
       </tr>
