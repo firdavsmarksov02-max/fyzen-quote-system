@@ -608,17 +608,19 @@ td input,td textarea{
 
 @media print{
 
-  input,textarea{
-    background:transparent!important;
-  }
-
-  .top{height:22mm}
-  .bottom{height:22mm}
-}
-   #quoteTable th:last-child,
-  #quoteTable td:last-child{
+  .no-print{
     display:none !important;
   }
+
+  #quoteTable th:last-child,
+  #quoteTable td:last-child{
+    width:0 !important;
+    padding:0 !important;
+    border:none !important;
+    display:none !important;
+  }
+
+}
 
 }
 </style>
@@ -691,7 +693,9 @@ td input,td textarea{
 
       <tr>
         <td class="num">1</td>
-        <td>
+        <td class="no-print">
+  <button class="remove-btn" onclick="removeRow(this)">X</button>
+</td>
           <input class="product-name" value="Измеритель освещения мини-люксметр UT383">
           <textarea class="product-art" rows="2">Артикул: UT383</textarea>
         </td>
