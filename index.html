@@ -52,19 +52,38 @@ body{
 
 .molecule{
   position:absolute;
-  top:110px;
-  right:-40px;
-  width:250px;
-  height:220px;
-  opacity:.15;
-  background:
-    radial-gradient(circle at 20% 20%,#006ed1 0 4px,transparent 5px),
-    radial-gradient(circle at 40% 30%,#006ed1 0 4px,transparent 5px),
-    radial-gradient(circle at 70% 25%,#006ed1 0 4px,transparent 5px),
-    radial-gradient(circle at 80% 55%,#006ed1 0 4px,transparent 5px),
-    radial-gradient(circle at 60% 80%,#006ed1 0 4px,transparent 5px);
+  top:90px;
+  right:-10px;
+  width:260px;
+  height:260px;
+  opacity:.22;
+  pointer-events:none;
 }
 
+.molecule::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 18% 22%, #9fc4e8 0 5px, transparent 6px),
+    radial-gradient(circle at 38% 34%, #9fc4e8 0 5px, transparent 6px),
+    radial-gradient(circle at 68% 26%, #9fc4e8 0 5px, transparent 6px),
+    radial-gradient(circle at 84% 46%, #9fc4e8 0 5px, transparent 6px),
+    radial-gradient(circle at 62% 76%, #9fc4e8 0 5px, transparent 6px),
+    radial-gradient(circle at 44% 58%, #9fc4e8 0 5px, transparent 6px),
+    radial-gradient(circle at 78% 82%, #9fc4e8 0 5px, transparent 6px),
+    radial-gradient(circle at 20% 78%, #9fc4e8 0 5px, transparent 6px);
+}
+
+.molecule::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(28deg, transparent 48%, #9fc4e8 49% 50%, transparent 51%),
+    linear-gradient(115deg, transparent 43%, #9fc4e8 44% 45%, transparent 46%),
+    linear-gradient(160deg, transparent 54%, #9fc4e8 55% 56%, transparent 57%);
+}
 .header{
   position:relative;
   z-index:3;
