@@ -48,11 +48,11 @@ body{
 
 .molecule{
   position:absolute;
-  top:85px;
-  right:0;
-  width:330px;
-  height:330px;
-  opacity:.42;
+  top:115px;
+  right:18px;
+  width:210px;
+  height:210px;
+  opacity:.22;
   pointer-events:none;
   overflow:hidden;
 }
@@ -63,16 +63,14 @@ body{
   inset:0;
 
   background:
-    radial-gradient(circle at 35% 8%, #006ed1 0 3px, transparent 4px),
-    radial-gradient(circle at 50% 18%, #9fc4e8 0 4px, transparent 5px),
-    radial-gradient(circle at 72% 12%, #bfd8f2 0 5px, transparent 6px),
-
-    radial-gradient(circle at 58% 34%, #8ab7e6 0 4px, transparent 5px),
-    radial-gradient(circle at 80% 38%, #bfd8f2 0 5px, transparent 6px),
-
-    radial-gradient(circle at 44% 58%, #006ed1 0 3px, transparent 4px),
-    radial-gradient(circle at 67% 68%, #9fc4e8 0 4px, transparent 5px),
-    radial-gradient(circle at 88% 76%, #bfd8f2 0 5px, transparent 6px);
+    radial-gradient(circle at 35% 8%, #006ed1 0 2px, transparent 3px),
+    radial-gradient(circle at 50% 18%, #9fc4e8 0 3px, transparent 4px),
+    radial-gradient(circle at 72% 12%, #bfd8f2 0 4px, transparent 5px),
+    radial-gradient(circle at 58% 34%, #8ab7e6 0 3px, transparent 4px),
+    radial-gradient(circle at 80% 38%, #bfd8f2 0 4px, transparent 5px),
+    radial-gradient(circle at 44% 58%, #006ed1 0 2px, transparent 3px),
+    radial-gradient(circle at 67% 68%, #9fc4e8 0 3px, transparent 4px),
+    radial-gradient(circle at 88% 76%, #bfd8f2 0 4px, transparent 5px);
 }
 
 .molecule::after{
@@ -81,13 +79,9 @@ body{
   inset:0;
 
   background:
-    linear-gradient(32deg, transparent 45%, rgba(0,112,207,.35) 46% 47%, transparent 48%),
-    linear-gradient(98deg, transparent 42%, rgba(0,112,207,.22) 43% 44%, transparent 45%),
-    linear-gradient(145deg, transparent 53%, rgba(0,112,207,.28) 54% 55%, transparent 56%);
-
-  mask-image:
-    radial-gradient(circle at 70% 35%, black 0 90px, transparent 92px),
-    radial-gradient(circle at 72% 68%, black 0 110px, transparent 112px);
+    linear-gradient(32deg, transparent 45%, rgba(0,112,207,.25) 46% 47%, transparent 48%),
+    linear-gradient(98deg, transparent 42%, rgba(0,112,207,.16) 43% 44%, transparent 45%),
+    linear-gradient(145deg, transparent 53%, rgba(0,112,207,.20) 54% 55%, transparent 56%);
 }
 .header{
   position:relative;
