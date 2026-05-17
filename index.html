@@ -701,37 +701,45 @@ th:nth-child(7),td:nth-child(7){width:30px}
 }
 
 @media print{
+
   @page{
     size:A4;
     margin:0;
   }
 
   html,body{
-    margin:0;
-    padding:0;
-    background:#fff;
     width:210mm;
     height:297mm;
+
+    margin:0;
+    padding:0;
+
     overflow:hidden;
+    background:#fff;
   }
 
   body{
-    padding:0;
+    padding:0!important;
   }
 
   .page{
     width:930px;
-    min-height:1120px;
+    min-height:1220px;
 
     margin:0;
+
     box-shadow:none;
 
     transform:scale(0.79);
     transform-origin:top left;
+
+    page-break-after:avoid;
+    page-break-inside:avoid;
   }
 
   .actions,
-  .imgFile{
+  .imgFile,
+  .remove-btn{
     display:none!important;
   }
 
@@ -739,7 +747,15 @@ th:nth-child(7),td:nth-child(7){width:30px}
   #quoteTable td:last-child{
     display:none!important;
   }
-}
+
+  textarea,
+  input{
+    border:none!important;
+    outline:none!important;
+    box-shadow:none!important;
+    resize:none!important;
+  }
+
 }
 </style>
 </head>
