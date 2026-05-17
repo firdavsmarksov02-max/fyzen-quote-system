@@ -462,41 +462,79 @@ th:nth-child(7),td:nth-child(7){width:30px}
 .signature-contact{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:45px;
-  margin-top:22px;
+  gap:40px;
+  margin-top:30px;
+  align-items:center;
 }
 
 .signature{
+  position:relative;
+  min-height:180px;
+  padding:20px 10px;
   display:flex;
   align-items:flex-end;
-  gap:20px;
+  gap:28px;
 }
 
-.signature p{
-  font-size:15px;
+.signature::before{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,#c5d8ea,transparent);
 }
 
-.signature h2{
-  color:#06162f;
-  font-size:22px;
+.signature-text{
+  position:relative;
+  z-index:2;
+}
+
+.signature-role{
+  color:#5e6b7c;
+  font-size:14px;
+  margin-bottom:8px;
+  font-weight:600;
+}
+
+.signature-name{
+  color:#001f5c;
+  font-size:34px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:.5px;
+}
+
+.signature-line{
+  width:160px;
+  height:2px;
+  margin-top:16px;
+  background:linear-gradient(90deg,#003f91,transparent);
 }
 
 .stamp{
-  width:100px;
-  height:100px;
-  border:3px solid #003f91;
-  border-radius:50%;
+  width:160px;
+  height:160px;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#003f91;
-  font-weight:900;
-  transform:rotate(-10deg);
+  position:relative;
+}
+
+.stamp img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  opacity:.96;
+  transform:rotate(-8deg);
+  filter:contrast(1.06) saturate(1.08);
+  mix-blend-mode:multiply;
 }
 
 .manager-lux{
   background:#fff;
-  min-height:170px;
+  min-height:180px;
   padding:18px;
   display:flex;
   flex-direction:column;
@@ -817,12 +855,15 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
   <div class="signature-contact">
     <div class="signature">
-      <div>
-        <p>Директор компании Fyzen:</p>
-        <h2>Ф.Ж. Марксов</h2>
+      <div class="signature-text">
+        <div class="signature-role">Директор компании Fyzen:</div>
+        <div class="signature-name">Ф.Ж. Марксов</div>
+        <div class="signature-line"></div>
       </div>
 
-      <div class="stamp">FYZEN-LAB</div>
+      <div class="stamp">
+        <img src="./assets/photo_2026-05-17_06-36-33.jpg">
+      </div>
     </div>
 
     <div class="manager-lux">
