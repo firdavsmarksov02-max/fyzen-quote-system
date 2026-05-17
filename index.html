@@ -502,23 +502,38 @@ th:nth-child(7),td:nth-child(7){width:30px}
   text-align:center;
 }
 
-.manager-top{
+.manager-top-input{
+  border:none;
+  background:transparent;
+  width:100%;
+  text-align:center;
   color:#b88413;
   font-size:15px;
   font-weight:900;
   letter-spacing:.5px;
+  outline:none;
   margin-bottom:10px;
 }
 
-.manager-name{
+.manager-name-input{
+  border:none;
+  background:transparent;
+  width:100%;
+  text-align:center;
   font-size:27px;
   font-weight:900;
   color:#003f91;
+  outline:none;
 }
 
-.manager-role{
+.manager-role-input{
+  border:none;
+  background:transparent;
+  width:100%;
+  text-align:center;
   font-size:18px;
   color:#06162f;
+  outline:none;
   margin-top:5px;
 }
 
@@ -533,9 +548,6 @@ th:nth-child(7),td:nth-child(7){width:30px}
   align-items:center;
   justify-content:center;
   gap:14px;
-  font-size:24px;
-  font-weight:900;
-  color:#003f91;
 }
 
 .manager-phone span{
@@ -547,6 +559,17 @@ th:nth-child(7),td:nth-child(7){width:30px}
   align-items:center;
   justify-content:center;
   color:#003f91;
+  font-size:20px;
+}
+
+.manager-phone-input{
+  border:none;
+  background:transparent;
+  font-size:24px;
+  font-weight:900;
+  color:#003f91;
+  outline:none;
+  width:260px;
 }
 /* FOOTER */
 .bottom{
@@ -820,21 +843,27 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
    <div class="manager-lux">
 
-  <div class="manager-top">СОТРУДНИК ПО ПРОДАЖАМ</div>
+  <input class="manager-top-input"
+  value="СОТРУДНИК ПО ПРОДАЖАМ">
 
-  <div class="manager-name">Фирдавс Марксов</div>
+  <input class="manager-name-input"
+  value="Фирдавс Марксов">
 
-  <div class="manager-role">Sales Manager</div>
+  <input class="manager-role-input"
+  value="Sales Manager">
 
   <div class="manager-divider"></div>
 
   <div class="manager-phone">
+
     <span>☎</span>
-    +998 97 250 18 77
+
+    <input class="manager-phone-input"
+    value="+998 97 250 18 77">
+
   </div>
 
 </div>
-  </div>
 
   <div class="bottom"></div>
 
