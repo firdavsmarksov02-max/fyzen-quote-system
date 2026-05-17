@@ -459,21 +459,16 @@ th:nth-child(7),td:nth-child(7){width:30px}
   font-weight:700;
 }
 
-.signature-contact{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  margin-top:30px;
-  align-items:center;
-}
-
 .signature{
   position:relative;
   min-height:180px;
-  padding:20px 10px;
+
+  padding-top:8px;
+
   display:flex;
-  align-items:flex-end;
-  gap:28px;
+  align-items:flex-start;
+
+  gap:30px;
 }
 
 .signature::before{
@@ -483,7 +478,12 @@ th:nth-child(7),td:nth-child(7){width:30px}
   bottom:0;
   width:100%;
   height:1px;
-  background:linear-gradient(90deg,transparent,#c5d8ea,transparent);
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #c5d8ea,
+    transparent
+  );
 }
 
 .signature-text{
