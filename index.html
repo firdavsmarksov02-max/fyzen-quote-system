@@ -458,16 +458,19 @@ th:nth-child(7),td:nth-child(7){width:30px}
   color:#003f91;
   font-weight:700;
 }
-
+.signature-contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  margin-top:30px;
+  align-items:start;
+}
 .signature{
   position:relative;
   min-height:180px;
-
-  padding-top:8px;
-
   display:flex;
   align-items:flex-start;
-
+  justify-content:space-between;
   gap:30px;
 }
 
@@ -553,15 +556,10 @@ th:nth-child(7),td:nth-child(7){width:30px}
 }
 
 .manager-lux{
-  background:#fff;
   min-height:180px;
-
-  padding-top:8px;
-
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
-
   text-align:center;
 }
 
