@@ -25,7 +25,6 @@ body{
   box-shadow:0 18px 55px rgba(0,0,0,.16);
 }
 
-/* TOP */
 .top{
   position:absolute;
   top:0;
@@ -47,7 +46,6 @@ body{
   transform:skewX(-35deg);
 }
 
-/* MOLECULE */
 .molecule{
   position:absolute;
   top:90px;
@@ -81,7 +79,6 @@ body{
     linear-gradient(160deg, transparent 54%, #9fc4e8 55% 56%, transparent 57%);
 }
 
-/* HEADER */
 .header{
   position:relative;
   z-index:3;
@@ -157,7 +154,6 @@ body{
   color:#003f91;
 }
 
-/* INFO */
 .info{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -264,7 +260,6 @@ body{
   font-weight:700;
 }
 
-/* TABLE */
 .table-wrap{
   margin-top:35px;
 }
@@ -347,6 +342,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
 .lineTotal{
   font-weight:700;
+  font-size:16px;
 }
 
 .remove-btn{
@@ -377,7 +373,6 @@ th:nth-child(7),td:nth-child(7){width:30px}
   cursor:pointer;
 }
 
-/* LOWER */
 .lower{
   display:grid;
   grid-template-columns:1.08fr .92fr;
@@ -455,7 +450,6 @@ th:nth-child(7),td:nth-child(7){width:30px}
   font-weight:700;
 }
 
-/* SIGNATURE + MANAGER */
 .signature-contact{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -562,7 +556,6 @@ th:nth-child(7),td:nth-child(7){width:30px}
   width:245px;
 }
 
-/* PREMIUM FOOTER */
 .bottom{
   position:absolute;
   left:0;
@@ -632,12 +625,8 @@ th:nth-child(7),td:nth-child(7){width:30px}
   font-weight:700;
 }
 
-/* PRINT */
 @media print{
-  @page{
-    size:A4;
-    margin:0;
-  }
+  @page{size:A4;margin:0}
 
   html,body{
     width:210mm;
@@ -762,7 +751,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
           <input class="imgUrl" placeholder="image URL">
         </td>
 
-        <td><input class="price" type="number" value="1350000"></td>
+        <td><input class="price" value="1 350 000,00"></td>
 
         <td class="lineTotal">0</td>
 
@@ -862,6 +851,15 @@ function format(n){
   });
 }
 
+function parseMoney(value){
+  return Number(String(value).replace(/\s/g,'').replace(',', '.')) || 0;
+}
+
+function formatMoneyInput(input){
+  const num=parseMoney(input.value);
+  input.value=num ? format(num) : '';
+}
+
 function numberToWordsRu(num){
   const ones=['','один','два','три','четыре','пять','шесть','семь','восемь','девять'];
   const teens=['десять','одиннадцать','двенадцать','тринадцать','четырнадцать','пятнадцать','шестнадцать','семнадцать','восемнадцать','девятнадцать'];
@@ -911,7 +909,7 @@ function calculate(){
     row.querySelector('.num').innerText=i;
 
     const qty=Number(row.querySelector('.qty').value)||0;
-    const price=Number(row.querySelector('.price').value)||0;
+    const price=parseMoney(row.querySelector('.price').value);
     const total=qty*price;
 
     row.querySelector('.lineTotal').innerText=format(total);
@@ -933,6 +931,19 @@ function calculate(){
 
 document.addEventListener('input',calculate);
 
+document.addEventListener('blur',function(e){
+  if(e.target.classList.contains('price')){
+    formatMoneyInput(e.target);
+    calculate();
+  }
+},true);
+
+document.addEventListener('focus',function(e){
+  if(e.target.classList.contains('price')){
+    e.target.value=String(parseMoney(e.target.value) || '');
+  }
+},true);
+
 function addRow(){
   const table=document.getElementById('quoteTable');
   const row=table.insertRow();
@@ -952,7 +963,7 @@ function addRow(){
       <input class="imgUrl" placeholder="image URL">
     </td>
 
-    <td><input class="price" type="number" value="0"></td>
+    <td><input class="price" value="0"></td>
 
     <td class="lineTotal">0</td>
 
