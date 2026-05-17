@@ -29,6 +29,7 @@ body{
   box-shadow:0 18px 55px rgba(0,0,0,.16);
 }
 
+/* TOP */
 .top{
   position:absolute;
   top:0;
@@ -50,6 +51,7 @@ body{
   transform:skewX(-35deg);
 }
 
+/* MOLECULE */
 .molecule{
   position:absolute;
   top:90px;
@@ -84,6 +86,8 @@ body{
     linear-gradient(115deg, transparent 43%, #9fc4e8 44% 45%, transparent 46%),
     linear-gradient(160deg, transparent 54%, #9fc4e8 55% 56%, transparent 57%);
 }
+
+/* HEADER */
 .header{
   position:relative;
   z-index:3;
@@ -101,11 +105,13 @@ body{
 }
 
 .brand img{
-  width:100px;
-  height:100px;
+  width:96px;
+  height:96px;
   object-fit:contain;
   margin-top:0;
+  display:block;
 }
+
 .brand-text{
   margin-top:0;
 }
@@ -162,6 +168,7 @@ body{
   color:#003f91;
 }
 
+/* INFO */
 .info{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -204,8 +211,8 @@ body{
   font-weight:700;
   outline:none;
   text-align:left;
-  font-family:'Montserrat',sans-serif;
   color:#061b3d;
+  font-family:Arial,sans-serif;
 }
 
 .client-text{
@@ -221,20 +228,26 @@ body{
 
 .company{
   font-size:16px;
-  line-height:1.7;
-  font-weight:700;
+  line-height:1.6;
 }
 
 .company strong{
   display:block;
   margin-bottom:10px;
-  font-size:20px;
+  font-size:22px;
+  font-weight:900;
+  color:#06162f;
+}
+
+.company p{
+  margin:0;
+  color:#06162f;
+  font-size:15px;
+  font-weight:600;
 }
 
 .company-contact{
-  margin-top:16px;
-  color:#003f91;
-  font-weight:700;
+  margin-top:18px;
 }
 
 .company-contact div{
@@ -242,7 +255,7 @@ body{
   grid-template-columns:24px 1fr;
   align-items:center;
   column-gap:10px;
-  margin-bottom:7px;
+  margin-bottom:8px;
 }
 
 .company-contact span{
@@ -253,17 +266,16 @@ body{
   justify-content:center;
   color:#003f91;
   font-size:18px;
-  line-height:1;
 }
 
 .company-contact p{
   margin:0;
-  color:#06162f;
+  color:#003f91;
   font-size:15px;
   font-weight:700;
-  line-height:1.25;
 }
 
+/* TABLE */
 .table-wrap{
   margin-top:35px;
 }
@@ -376,6 +388,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
   cursor:pointer;
 }
 
+/* LOWER */
 .lower{
   display:grid;
   grid-template-columns:1.08fr .92fr;
@@ -491,6 +504,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
   margin-bottom:10px;
 }
 
+/* FOOTER */
 .bottom{
   position:absolute;
   left:0;
@@ -519,6 +533,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
   background:rgba(255,255,255,.7);
 }
 
+/* PRINT */
 @media print{
   @page{
     size:A4;
@@ -557,232 +572,228 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
 <div class="page">
 
-<div class="top"></div>
-<div class="molecule"></div>
+  <div class="top"></div>
+  <div class="molecule"></div>
 
-<div class="header">
+  <div class="header">
 
-<div class="brand">
-<img src="./assets/photo_2026-05-08_01-44-02.jpg">
+    <div class="brand">
+      <img src="./assets/photo_2026-05-08_01-44-02.jpg">
 
-<div class="brand-text">
-<h1>FYZEN-LAB</h1>
-<p>SCIENCE WITHOUT LIMITS</p>
-</div>
-</div>
+      <div class="brand-text">
+        <h1>FYZEN-LAB</h1>
+        <p>SCIENCE WITHOUT LIMITS</p>
+      </div>
+    </div>
 
-<div class="offer">
-<h2>КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</h2>
+    <div class="offer">
+      <h2>КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</h2>
 
-<div class="meta">
-<div>№</div>
-<input value="FYZJ-223">
-</div>
+      <div class="meta">
+        <div>№</div>
+        <input value="FYZJ-223">
+      </div>
 
-<div class="meta">
-<div>Дата:</div>
-<input type="date" value="2025-05-17">
-</div>
+      <div class="meta">
+        <div>Дата:</div>
+        <input type="date" value="2025-05-17">
+      </div>
+    </div>
 
-</div>
-
-</div>
-
-<div class="info">
-
-<div class="card">
-
-<div class="card-title">
-<div class="icon">👤</div>
-КОМУ:
-</div>
-
-<input class="client-name" value="Уважаемый клиент,">
-
-<div class="client-text">
-Благодарим за проявленный интерес к продукции компании <span class="blue">FYZEN-LAB</span>.<br><br>
-Предлагаем Вам ознакомиться с коммерческим предложением на поставку следующего оборудования.
-</div>
-
-</div>
-
-<div class="card">
-
-  <div class="card-title">
-    <div class="icon">🏢</div>
-    О КОМПАНИИ:
   </div>
 
-  <div class="company">
+  <div class="info">
 
-    <strong>FYZEN-LAB</strong>
+    <div class="card">
 
-    <p>
-      Поставщик лабораторного оборудования и решений для контроля качества.
-    </p>
-
-    <div class="company-contact">
-
-      <div>
-        <span>☎</span>
-        <p>+998 87 190 2002</p>
+      <div class="card-title">
+        <div class="icon">👤</div>
+        КОМУ:
       </div>
 
-      <div>
-        <span>✉</span>
-        <p>info@fyzen-lab.uz</p>
+      <input class="client-name" value="Уважаемый клиент,">
+
+      <div class="client-text">
+        Благодарим за проявленный интерес к продукции компании <span class="blue">FYZEN-LAB</span>.<br><br>
+        Предлагаем Вам ознакомиться с коммерческим предложением на поставку следующего оборудования.
       </div>
 
-      <div>
-        <span>🌐</span>
-        <p>fyzen-lab.uz</p>
+    </div>
+
+    <div class="card">
+
+      <div class="card-title">
+        <div class="icon">🏢</div>
+        О КОМПАНИИ:
       </div>
 
-      <div>
-        <span>📍</span>
-        <p>Узбекистан</p>
+      <div class="company">
+        <strong>FYZEN-LAB</strong>
+
+        <p>Поставщик лабораторного оборудования и решений для контроля качества.</p>
+
+        <div class="company-contact">
+
+          <div>
+            <span>☎</span>
+            <p>+998 87 190 2002</p>
+          </div>
+
+          <div>
+            <span>✉</span>
+            <p>info@fyzen-lab.uz</p>
+          </div>
+
+          <div>
+            <span>🌐</span>
+            <p>fyzen-lab.uz</p>
+          </div>
+
+          <div>
+            <span>📍</span>
+            <p>Узбекистан</p>
+          </div>
+
+        </div>
+
       </div>
 
     </div>
 
   </div>
 
-</div>
+  <div class="table-wrap">
 
-<div class="table-wrap">
+    <table id="quoteTable">
 
-<table id="quoteTable">
+      <tr>
+        <th>№</th>
+        <th>ОПИСАНИЕ ТОВАРА</th>
+        <th>КОЛ-ВО</th>
+        <th>ИЗОБРАЖЕНИЕ URL</th>
+        <th>ЦЕНА ЗА ЕДИНИЦУ С НДС (UZS)</th>
+        <th>ОБЩАЯ СТОИМОСТЬ С НДС (UZS)</th>
+        <th class="no-print">X</th>
+      </tr>
 
-<tr>
-<th>№</th>
-<th>ОПИСАНИЕ ТОВАРА</th>
-<th>КОЛ-ВО</th>
-<th>ИЗОБРАЖЕНИЕ URL</th>
-<th>ЦЕНА ЗА ЕДИНИЦУ С НДС (UZS)</th>
-<th>ОБЩАЯ СТОИМОСТЬ С НДС (UZS)</th>
-<th class="no-print">X</th>
-</tr>
+      <tr>
 
-<tr>
+        <td class="num">1</td>
 
-<td class="num">1</td>
+        <td>
+          <input class="product-name" value="Измеритель освещения мини-люксметр UT383">
+          <textarea class="product-art" rows="2">Артикул: UT383</textarea>
+        </td>
 
-<td>
-<input class="product-name" value="Измеритель освещения мини-люксметр UT383">
-<textarea class="product-art" rows="2">Артикул: UT383</textarea>
-</td>
+        <td>
+          <input class="qty" type="number" value="4">
+        </td>
 
-<td>
-<input class="qty" type="number" value="4">
-</td>
+        <td>
+          <img class="product-img">
+          <input class="imgUrl" placeholder="image URL">
+        </td>
 
-<td>
-<img class="product-img">
-<input class="imgUrl" placeholder="image URL">
-</td>
+        <td>
+          <input class="price" type="number" value="1350000">
+        </td>
 
-<td>
-<input class="price" type="number" value="1350000">
-</td>
+        <td class="lineTotal">0</td>
 
-<td class="lineTotal">
-0
-</td>
+        <td class="no-print">
+          <button class="remove-btn" onclick="removeRow(this)">X</button>
+        </td>
 
-<td class="no-print">
-<button class="remove-btn" onclick="removeRow(this)">X</button>
-</td>
+      </tr>
 
-</tr>
+    </table>
 
-</table>
+  </div>
 
-</div>
+  <div class="actions">
+    <button onclick="addRow()">+ Добавить товар</button>
+    <button onclick="window.print()">Печать / PDF</button>
+  </div>
 
-<div class="actions">
-<button onclick="addRow()">+ Добавить товар</button>
-<button onclick="window.print()">Печать / PDF</button>
-</div>
+  <div class="lower">
 
-<div class="lower">
+    <div>
 
-<div>
+      <div class="term">
+        <div class="term-icon">🛡</div>
+        <input value="Гарантия на оборудование: 12 мес.">
+      </div>
 
-<div class="term">
-<div class="term-icon">🛡</div>
-<input value="Гарантия на оборудование: 12 мес.">
-</div>
+      <div class="term">
+        <div class="term-icon">💳</div>
+        <input value="Условия платежа: 100% предоплата">
+      </div>
 
-<div class="term">
-<div class="term-icon">💳</div>
-<input value="Условия платежа: 100% предоплата">
-</div>
+      <div class="term">
+        <div class="term-icon">🚚</div>
+        <input value="Срок поставки: 12 недель">
+      </div>
 
-<div class="term">
-<div class="term-icon">🚚</div>
-<input value="Срок поставки: 12 недель">
-</div>
+      <div class="term">
+        <div class="term-icon">ℹ</div>
+        <input value="Примечания: Цены указаны с учетом НДС">
+      </div>
 
-<div class="term">
-<div class="term-icon">ℹ</div>
-<input value="Примечания: Цены указаны с учетом НДС">
-</div>
+    </div>
 
-</div>
+    <div class="total">
 
-<div class="total">
+      <div class="total-head">
+        <div class="total-label">ИТОГО:</div>
+        <div class="total-number">
+          <span id="grandTotal">0</span> UZS
+        </div>
+      </div>
 
-<div class="total-head">
-<div class="total-label">ИТОГО:</div>
-<div class="total-number">
-<span id="grandTotal">0</span> UZS
-</div>
-</div>
+      <div class="words">
+        <strong>Сумма прописью:</strong>
+        <textarea id="totalWords" rows="4"></textarea>
+      </div>
 
-<div class="words">
-<strong>Сумма прописью:</strong>
-<textarea id="totalWords" rows="4"></textarea>
-</div>
+    </div>
 
-</div>
+  </div>
 
-</div>
+  <div class="signature-contact">
 
-<div class="signature-contact">
+    <div class="signature">
 
-<div class="signature">
+      <div>
+        <p>Директор компании Fyzen:</p>
+        <h2>Ф.Ж. Марксов</h2>
+      </div>
 
-<div>
-<p>Директор компании Fyzen:</p>
-<h2>Ф.Ж. Марксов</h2>
-</div>
+      <div class="stamp">
+        FYZEN-LAB
+      </div>
 
-<div class="stamp">
-FYZEN-LAB
-</div>
+    </div>
 
-</div>
+    <div class="contacts">
 
-<div class="contacts">
+      <h3>КОНТАКТЫ</h3>
 
-<h3>КОНТАКТЫ</h3>
+      ☎ +998 87 190 2002<br>
+      ◎ fyzen.lab<br>
+      ✈ @fyzen_lab_saless<br>
+      ✉ info@fyzen-lab.uz
 
-☎ +998 87 190 2002<br>
-◎ fyzen.lab<br>
-✈ @fyzen_lab_saless<br>
-✉ info@fyzen-lab.uz
+    </div>
 
-</div>
+  </div>
 
-</div>
+  <div class="bottom"></div>
 
-<div class="bottom"></div>
-
-<div class="footer">
-<div>◎ FYZEN-LAB</div>
-<div class="footer-divider"></div>
-<div>SCIENCE WITHOUT LIMITS</div>
-</div>
+  <div class="footer">
+    <div>◎ FYZEN-LAB</div>
+    <div class="footer-divider"></div>
+    <div>SCIENCE WITHOUT LIMITS</div>
+  </div>
 
 </div>
 
