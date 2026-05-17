@@ -335,20 +335,17 @@ th:nth-child(7),td:nth-child(7){width:30px}
   font-weight:700;
 }
 
-.imgUrl{
+.imgFile{
   width:100%;
-  border:none;
-  outline:none;
-  text-align:center;
   font-size:10px;
-  color:#7d8897;
+  margin-top:8px;
 }
 
 .product-img{
   width:90px;
   height:90px;
   object-fit:contain;
-  display:block;
+  display:none;
   margin:auto;
 }
 
@@ -656,7 +653,8 @@ th:nth-child(7),td:nth-child(7){width:30px}
     transform-origin:top left;
   }
 
-  .actions{
+  .actions,
+  .imgFile{
     display:none!important;
   }
 
@@ -742,7 +740,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
         <th>№</th>
         <th>ОПИСАНИЕ ТОВАРА</th>
         <th>КОЛ-ВО</th>
-        <th>ИЗОБРАЖЕНИЕ URL</th>
+        <th>ИЗОБРАЖЕНИЕ</th>
         <th>ЦЕНА ЗА ЕДИНИЦУ С НДС (UZS)</th>
         <th>ОБЩАЯ СТОИМОСТЬ С НДС (UZS)</th>
         <th class="no-print">X</th>
@@ -760,7 +758,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
         <td>
           <img class="product-img">
-          <input class="imgUrl" placeholder="image URL">
+          <input class="imgFile" type="file" accept="image/*">
         </td>
 
         <td><input class="price" value="1 350 000,00"></td>
@@ -926,12 +924,6 @@ function calculate(){
 
     row.querySelector('.lineTotal').innerText=format(total);
     grand+=total;
-
-    const url=row.querySelector('.imgUrl').value.trim();
-    const img=row.querySelector('.product-img');
-
-    img.src=url;
-    img.style.display=url?'block':'none';
   });
 
   document.getElementById('grandTotal').innerText=format(grand);
@@ -956,6 +948,17 @@ document.addEventListener('focus',function(e){
   }
 },true);
 
+document.addEventListener('change',function(e){
+  if(e.target.classList.contains('imgFile')){
+    const file=e.target.files[0];
+    if(!file)return;
+
+    const img=e.target.closest('td').querySelector('.product-img');
+    img.src=URL.createObjectURL(file);
+    img.style.display='block';
+  }
+});
+
 function addRow(){
   const table=document.getElementById('quoteTable');
   const row=table.insertRow();
@@ -972,7 +975,7 @@ function addRow(){
 
     <td>
       <img class="product-img">
-      <input class="imgUrl" placeholder="image URL">
+      <input class="imgFile" type="file" accept="image/*">
     </td>
 
     <td><input class="price" value="0"></td>
