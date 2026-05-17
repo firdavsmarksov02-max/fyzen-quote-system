@@ -6,11 +6,7 @@
 <title>FYZEN-LAB Quote System</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
   background:#e9eff6;
@@ -25,7 +21,7 @@ body{
   background:#fff;
   position:relative;
   overflow:hidden;
-  padding:60px 38px 95px;
+  padding:60px 38px 105px;
   box-shadow:0 18px 55px rgba(0,0,0,.16);
 }
 
@@ -72,9 +68,7 @@ body{
     radial-gradient(circle at 68% 26%, #9fc4e8 0 5px, transparent 6px),
     radial-gradient(circle at 84% 46%, #9fc4e8 0 5px, transparent 6px),
     radial-gradient(circle at 62% 76%, #9fc4e8 0 5px, transparent 6px),
-    radial-gradient(circle at 44% 58%, #9fc4e8 0 5px, transparent 6px),
-    radial-gradient(circle at 78% 82%, #9fc4e8 0 5px, transparent 6px),
-    radial-gradient(circle at 20% 78%, #9fc4e8 0 5px, transparent 6px);
+    radial-gradient(circle at 44% 58%, #9fc4e8 0 5px, transparent 6px);
 }
 
 .molecule::after{
@@ -108,12 +102,7 @@ body{
   width:96px;
   height:96px;
   object-fit:contain;
-  margin-top:0;
   display:block;
-}
-
-.brand-text{
-  margin-top:0;
 }
 
 .brand-text h1{
@@ -466,6 +455,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
   font-weight:700;
 }
 
+/* SIGNATURE + MANAGER */
 .signature-contact{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -477,6 +467,15 @@ th:nth-child(7),td:nth-child(7){width:30px}
   display:flex;
   align-items:flex-end;
   gap:20px;
+}
+
+.signature p{
+  font-size:15px;
+}
+
+.signature h2{
+  color:#06162f;
+  font-size:22px;
 }
 
 .stamp{
@@ -494,24 +493,21 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
 .manager-lux{
   background:#fff;
-  min-height:215px;
+  min-height:170px;
   padding:18px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   text-align:center;
-  
 }
-  .manager-name-input{
-  margin-bottom:14px;
-}
+
 .manager-top-input{
   border:none;
   background:transparent;
   width:100%;
   text-align:center;
   color:#b88413;
-  font-size:15px;
+  font-size:14px;
   font-weight:900;
   letter-spacing:.5px;
   outline:none;
@@ -523,16 +519,17 @@ th:nth-child(7),td:nth-child(7){width:30px}
   background:transparent;
   width:100%;
   text-align:center;
-  font-size:27px;
+  font-size:25px;
   font-weight:900;
   color:#003f91;
   outline:none;
+  margin-bottom:14px;
 }
 
 .manager-divider{
   height:2px;
   background:linear-gradient(90deg,transparent,#003f91,transparent);
-  margin:18px 0;
+  margin:12px 0;
 }
 
 .manager-phone{
@@ -540,136 +537,87 @@ th:nth-child(7),td:nth-child(7){width:30px}
   align-items:center;
   justify-content:center;
   gap:14px;
+  margin-top:8px;
 }
 
 .manager-phone span{
-  width:42px;
-  height:42px;
+  width:38px;
+  height:38px;
   border-radius:50%;
   border:2px solid #003f91;
   display:flex;
   align-items:center;
   justify-content:center;
   color:#003f91;
-  font-size:20px;
+  font-size:18px;
 }
 
 .manager-phone-input{
   border:none;
   background:transparent;
-  font-size:24px;
+  font-size:22px;
   font-weight:900;
   color:#003f91;
   outline:none;
-  width:260px;
+  width:245px;
 }
-/* FOOTER */
+
+/* PREMIUM FOOTER */
 .bottom{
   position:absolute;
   left:0;
   bottom:0;
   width:100%;
-  height:92px;
+  height:86px;
   overflow:hidden;
-  background:#fff;
+  background:linear-gradient(90deg,#001744 0%,#002f86 58%,#0084e8 100%);
+  clip-path:polygon(0 18%,58% 52%,100% 0,100% 100%,0 100%);
 }
 
 .bottom::before{
   content:"";
   position:absolute;
-  left:0;
+  right:35%;
   bottom:0;
-  width:68%;
-  height:92px;
-
-  background:linear-gradient(
-    135deg,
-    #00144d 0%,
-    #002f8c 55%,
-    #001d63 100%
-  );
-
-  clip-path:polygon(
-    0 12%,
-    100% 46%,
-    78% 100%,
-    0 100%
-  );
-}
-
-.bottom::after{
-  content:"";
-  position:absolute;
-  right:0;
-  bottom:0;
-  width:38%;
-  height:92px;
-
-  background:linear-gradient(
-    135deg,
-    #0a84ff 0%,
-    #0056d6 55%,
-    #0037a3 100%
-  );
-
-  clip-path:polygon(
-    0 100%,
-    100% 0,
-    100% 100%
-  );
-}
-
-.cut{
-  position:absolute;
-  right:27%;
-  bottom:0;
-  width:180px;
-  height:92px;
-  background:#fff;
-
-  clip-path:polygon(
-    18% 100%,
-    100% 0,
-    100% 100%
-  );
+  width:58px;
+  height:86px;
+  background:white;
+  transform:skewX(-38deg);
 }
 
 .footer{
   position:absolute;
   left:38px;
-  bottom:28px;
+  bottom:26px;
   z-index:5;
-
   display:flex;
   align-items:center;
-  gap:18px;
-
-  color:#fff;
+  gap:16px;
+  color:white;
+  font-family:Arial,sans-serif;
+  font-weight:900;
 }
 
 .footer-left{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
 }
 
 .footer-icon{
-  width:34px;
-  height:34px;
-
-  border:2px solid rgba(255,255,255,.9);
-  border-radius:10px;
-
+  width:32px;
+  height:32px;
+  border:2px solid rgba(255,255,255,.92);
+  border-radius:9px;
   display:flex;
   align-items:center;
   justify-content:center;
-
-  font-size:16px;
+  font-size:15px;
 }
 
 .footer-brand{
-  font-size:16px;
-  font-weight:900;
+  font-size:15px;
+  letter-spacing:.3px;
 }
 
 .footer-divider{
@@ -679,11 +627,10 @@ th:nth-child(7),td:nth-child(7){width:30px}
 }
 
 .footer-text{
-  font-size:15px;
+  font-size:14px;
+  letter-spacing:.5px;
   font-weight:700;
-  letter-spacing:.7px;
 }
-
 
 /* PRINT */
 @media print{
@@ -728,7 +675,6 @@ th:nth-child(7),td:nth-child(7){width:30px}
   <div class="molecule"></div>
 
   <div class="header">
-
     <div class="brand">
       <img src="./assets/photo_2026-05-08_01-44-02.jpg">
 
@@ -751,13 +697,10 @@ th:nth-child(7),td:nth-child(7){width:30px}
         <input type="date" value="2025-05-17">
       </div>
     </div>
-
   </div>
 
   <div class="info">
-
     <div class="card">
-
       <div class="card-title">
         <div class="icon">👤</div>
         КОМУ:
@@ -769,11 +712,9 @@ th:nth-child(7),td:nth-child(7){width:30px}
         Благодарим за проявленный интерес к продукции компании <span class="blue">FYZEN-LAB</span>.<br><br>
         Предлагаем Вам ознакомиться с коммерческим предложением на поставку следующего оборудования.
       </div>
-
     </div>
 
     <div class="card">
-
       <div class="card-title">
         <div class="icon">🏢</div>
         О КОМПАНИИ:
@@ -785,39 +726,17 @@ th:nth-child(7),td:nth-child(7){width:30px}
         <p>Поставщик лабораторного оборудования и решений для контроля качества.</p>
 
         <div class="company-contact">
-
-          <div>
-            <span>☎</span>
-            <p>+998 87 190 2002</p>
-          </div>
-
-          <div>
-            <span>✉</span>
-            <p>info@fyzen-lab.uz</p>
-          </div>
-
-          <div>
-            <span>🌐</span>
-            <p>fyzen-lab.uz</p>
-          </div>
-
-          <div>
-            <span>📍</span>
-            <p>Узбекистан</p>
-          </div>
-
+          <div><span>☎</span><p>+998 87 190 2002</p></div>
+          <div><span>✉</span><p>info@fyzen-lab.uz</p></div>
+          <div><span>🌐</span><p>fyzen-lab.uz</p></div>
+          <div><span>📍</span><p>Узбекистан</p></div>
         </div>
-
       </div>
-
     </div>
-
   </div>
 
   <div class="table-wrap">
-
     <table id="quoteTable">
-
       <tr>
         <th>№</th>
         <th>ОПИСАНИЕ ТОВАРА</th>
@@ -829,7 +748,6 @@ th:nth-child(7),td:nth-child(7){width:30px}
       </tr>
 
       <tr>
-
         <td class="num">1</td>
 
         <td>
@@ -837,29 +755,22 @@ th:nth-child(7),td:nth-child(7){width:30px}
           <textarea class="product-art" rows="2">Артикул: UT383</textarea>
         </td>
 
-        <td>
-          <input class="qty" type="number" value="4">
-        </td>
+        <td><input class="qty" type="number" value="4"></td>
 
         <td>
           <img class="product-img">
           <input class="imgUrl" placeholder="image URL">
         </td>
 
-        <td>
-          <input class="price" type="number" value="1350000">
-        </td>
+        <td><input class="price" type="number" value="1350000"></td>
 
         <td class="lineTotal">0</td>
 
         <td class="no-print">
           <button class="remove-btn" onclick="removeRow(this)">X</button>
         </td>
-
       </tr>
-
     </table>
-
   </div>
 
   <div class="actions">
@@ -868,9 +779,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
   </div>
 
   <div class="lower">
-
     <div>
-
       <div class="term">
         <div class="term-icon">🛡</div>
         <input value="Гарантия на оборудование: 12 мес.">
@@ -890,11 +799,9 @@ th:nth-child(7),td:nth-child(7){width:30px}
         <div class="term-icon">ℹ</div>
         <input value="Примечания: Цены указаны с учетом НДС">
       </div>
-
     </div>
 
     <div class="total">
-
       <div class="total-head">
         <div class="total-label">ИТОГО:</div>
         <div class="total-number">
@@ -906,73 +813,44 @@ th:nth-child(7),td:nth-child(7){width:30px}
         <strong>Сумма прописью:</strong>
         <textarea id="totalWords" rows="4"></textarea>
       </div>
-
     </div>
-
   </div>
 
   <div class="signature-contact">
-
     <div class="signature">
-
       <div>
         <p>Директор компании Fyzen:</p>
         <h2>Ф.Ж. Марксов</h2>
       </div>
 
-      <div class="stamp">
-        FYZEN-LAB
+      <div class="stamp">FYZEN-LAB</div>
+    </div>
+
+    <div class="manager-lux">
+      <input class="manager-top-input" value="СОТРУДНИК ПО ПРОДАЖАМ">
+      <input class="manager-name-input" value="Фирдавс Марксов">
+
+      <div class="manager-divider"></div>
+
+      <div class="manager-phone">
+        <span>☎</span>
+        <input class="manager-phone-input" value="+998 97 250 18 77">
       </div>
-
     </div>
-
-   <div class="manager-lux">
-
-  <input class="manager-top-input"
-  value="СОТРУДНИК ПО ПРОДАЖАМ">
-
-  <input class="manager-name-input"
-  value="Фирдавс Марксов">
-
-  <div class="manager-divider"></div>
-
-  <div class="manager-phone">
-
-    <span>☎</span>
-
-    <input class="manager-phone-input"
-    value="+998 97 250 18 77">
-
   </div>
 
-</div>
-<div class="bottom">
+  <div class="bottom"></div>
 
-  <div class="cut"></div>
-
-</div>
-
-<div class="footer">
-
-  <div class="footer-left">
-
-    <div class="footer-icon">
-      🌐
+  <div class="footer">
+    <div class="footer-left">
+      <div class="footer-icon">🌐</div>
+      <div class="footer-brand">FYZEN-LAB</div>
     </div>
 
-    <div class="footer-brand">
-      FYZEN-LAB
-    </div>
+    <div class="footer-divider"></div>
 
+    <div class="footer-text">SCIENCE WITHOUT LIMITS</div>
   </div>
-
-  <div class="footer-divider"></div>
-
-  <div class="footer-text">
-    SCIENCE WITHOUT LIMITS
-  </div>
-
-</div>
 
 </div>
 
@@ -985,28 +863,10 @@ function format(n){
 }
 
 function numberToWordsRu(num){
-
-  const ones=[
-    '', 'один', 'два', 'три', 'четыре', 'пять',
-    'шесть', 'семь', 'восемь', 'девять'
-  ];
-
-  const teens=[
-    'десять','одиннадцать','двенадцать','тринадцать',
-    'четырнадцать','пятнадцать','шестнадцать',
-    'семнадцать','восемнадцать','девятнадцать'
-  ];
-
-  const tens=[
-    '', '', 'двадцать','тридцать','сорок',
-    'пятьдесят','шестьдесят','семьдесят',
-    'восемьдесят','девяносто'
-  ];
-
-  const hundreds=[
-    '', 'сто','двести','триста','четыреста',
-    'пятьсот','шестьсот','семьсот','восемьсот','девятьсот'
-  ];
+  const ones=['','один','два','три','четыре','пять','шесть','семь','восемь','девять'];
+  const teens=['десять','одиннадцать','двенадцать','тринадцать','четырнадцать','пятнадцать','шестнадцать','семнадцать','восемнадцать','девятнадцать'];
+  const tens=['','','двадцать','тридцать','сорок','пятьдесят','шестьдесят','семьдесят','восемьдесят','девяносто'];
+  const hundreds=['','сто','двести','триста','четыреста','пятьсот','шестьсот','семьсот','восемьсот','девятьсот'];
 
   function convert999(n){
     let result='';
@@ -1030,99 +890,75 @@ function numberToWordsRu(num){
   if(num===0) return 'ноль сум';
 
   let result='';
-
   const millions=Math.floor(num/1000000);
   const thousands=Math.floor((num%1000000)/1000);
   const rest=num%1000;
 
-  if(millions){
-    result+=convert999(millions)+' миллион ';
-  }
-
-  if(thousands){
-    result+=convert999(thousands)+' тысяч ';
-  }
-
-  if(rest){
-    result+=convert999(rest);
-  }
+  if(millions) result+=convert999(millions)+' миллион ';
+  if(thousands) result+=convert999(thousands)+' тысяч ';
+  if(rest) result+=convert999(rest);
 
   return result.trim()+' сум';
 }
 
 function calculate(){
-
   const rows=document.querySelectorAll('#quoteTable tr');
   let grand=0;
 
   rows.forEach((row,i)=>{
-
     if(i===0)return;
 
     row.querySelector('.num').innerText=i;
 
     const qty=Number(row.querySelector('.qty').value)||0;
     const price=Number(row.querySelector('.price').value)||0;
-
     const total=qty*price;
 
     row.querySelector('.lineTotal').innerText=format(total);
-
     grand+=total;
 
     const url=row.querySelector('.imgUrl').value.trim();
     const img=row.querySelector('.product-img');
 
     img.src=url;
-
     img.style.display=url?'block':'none';
   });
 
   document.getElementById('grandTotal').innerText=format(grand);
 
-  let words = numberToWordsRu(Math.floor(grand));
-  words = words.charAt(0).toUpperCase() + words.slice(1);
-
-  document.getElementById('totalWords').value = words;
+  let words=numberToWordsRu(Math.floor(grand));
+  words=words.charAt(0).toUpperCase()+words.slice(1);
+  document.getElementById('totalWords').value=words;
 }
 
 document.addEventListener('input',calculate);
 
 function addRow(){
-
   const table=document.getElementById('quoteTable');
-
   const row=table.insertRow();
 
   row.innerHTML=`
+    <td class="num"></td>
 
-  <td class="num"></td>
+    <td>
+      <input class="product-name" placeholder="Название товара">
+      <textarea class="product-art" rows="2" placeholder="Артикул:"></textarea>
+    </td>
 
-  <td>
-  <input class="product-name" placeholder="Название товара">
-  <textarea class="product-art" rows="2" placeholder="Артикул:"></textarea>
-  </td>
+    <td><input class="qty" type="number" value="1"></td>
 
-  <td>
-  <input class="qty" type="number" value="1">
-  </td>
+    <td>
+      <img class="product-img">
+      <input class="imgUrl" placeholder="image URL">
+    </td>
 
-  <td>
-  <img class="product-img">
-  <input class="imgUrl" placeholder="image URL">
-  </td>
+    <td><input class="price" type="number" value="0"></td>
 
-  <td>
-  <input class="price" type="number" value="0">
-  </td>
+    <td class="lineTotal">0</td>
 
-  <td class="lineTotal">
-  0
-  </td>
-
-  <td class="no-print">
-  <button class="remove-btn" onclick="removeRow(this)">X</button>
-  </td>
+    <td class="no-print">
+      <button class="remove-btn" onclick="removeRow(this)">X</button>
+    </td>
   `;
 
   calculate();
