@@ -52,7 +52,7 @@ body{
   right:0;
   width:260px;
   height:520px;
-  opacity:.25;
+  opacity:.23;
   pointer-events:none;
   z-index:0;
   overflow:hidden;
@@ -64,16 +64,27 @@ body{
   inset:0;
 
   background:
-    radial-gradient(circle at 35% 6%, #2b7fd8 0 3px, transparent 4px),
-    radial-gradient(circle at 58% 12%, #8bbdf0 0 3px, transparent 4px),
-    radial-gradient(circle at 78% 20%, #b9d7f6 0 4px, transparent 5px),
-    radial-gradient(circle at 42% 35%, #2b7fd8 0 3px, transparent 4px),
-    radial-gradient(circle at 70% 52%, #8bbdf0 0 3px, transparent 4px),
-    radial-gradient(circle at 48% 70%, #2b7fd8 0 3px, transparent 4px),
+    radial-gradient(circle at 18% 8%, #1b7edb 0 3px, transparent 4px),
+    radial-gradient(circle at 34% 18%, #8fc1f0 0 4px, transparent 5px),
+    radial-gradient(circle at 12% 34%, #b9d8f7 0 3px, transparent 4px),
+    radial-gradient(circle at 28% 48%, #1b7edb 0 3px, transparent 4px),
+    radial-gradient(circle at 18% 66%, #8fc1f0 0 4px, transparent 5px),
+    radial-gradient(circle at 36% 82%, #1b7edb 0 3px, transparent 4px);
+}
 
-    linear-gradient(30deg, transparent 46%, rgba(43,127,216,.25) 47% 48%, transparent 49%),
-    linear-gradient(90deg, transparent 46%, rgba(43,127,216,.18) 47% 48%, transparent 49%),
-    linear-gradient(150deg, transparent 46%, rgba(43,127,216,.22) 47% 48%, transparent 49%);
+.molecule::after{
+  content:"";
+  position:absolute;
+  top:0;
+  right:-35px;
+  width:230px;
+  height:520px;
+
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='230' height='520' viewBox='0 0 230 520'%3E%3Cg fill='none' stroke='%238FC1F0' stroke-width='1.2' opacity='.65'%3E%3Cpolygon points='115,20 155,43 155,89 115,112 75,89 75,43'/%3E%3Cpolygon points='155,112 195,135 195,181 155,204 115,181 115,135'/%3E%3Cpolygon points='115,204 155,227 155,273 115,296 75,273 75,227'/%3E%3Cpolygon points='155,330 195,353 195,399 155,422 115,399 115,353'/%3E%3Cpolygon points='105,420 145,443 145,489 105,512 65,489 65,443'/%3E%3Cline x1='155' y1='89' x2='155' y2='112'/%3E%3Cline x1='115' y1='181' x2='115' y2='204'/%3E%3Cline x1='155' y1='273' x2='155' y2='330'/%3E%3Cline x1='115' y1='399' x2='105' y2='420'/%3E%3C/g%3E%3Cg fill='%231B7EDB' opacity='.55'%3E%3Ccircle cx='75' cy='43' r='4'/%3E%3Ccircle cx='155' cy='43' r='4'/%3E%3Ccircle cx='195' cy='135' r='4'/%3E%3Ccircle cx='75' cy='227' r='4'/%3E%3Ccircle cx='195' cy='353' r='4'/%3E%3Ccircle cx='105' cy='512' r='4'/%3E%3C/g%3E%3Cg fill='%238FC1F0' opacity='.18'%3E%3Cpolygon points='160,215 205,240 205,290 160,315 115,290 115,240'/%3E%3Cpolygon points='180,385 225,410 225,460 180,485 135,460 135,410'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:right top;
 }
 .header{
   position:relative;
