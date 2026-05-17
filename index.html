@@ -492,18 +492,62 @@ th:nth-child(7),td:nth-child(7){width:30px}
   transform:rotate(-10deg);
 }
 
-.contacts{
-  border-left:2px solid #d7e3f1;
-  padding-left:28px;
+.manager-lux{
+  border:2px solid #c58b17;
+  border-radius:18px;
+  padding:22px 28px;
   color:#003f91;
-  font-weight:700;
-  line-height:1.8;
+  background:linear-gradient(135deg,#ffffff,#f8fbff);
+  box-shadow:0 10px 25px rgba(0,63,145,.12);
+  text-align:center;
 }
 
-.contacts h3{
+.manager-top{
+  color:#b88413;
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:.5px;
   margin-bottom:10px;
 }
 
+.manager-name{
+  font-size:27px;
+  font-weight:900;
+  color:#003f91;
+}
+
+.manager-role{
+  font-size:18px;
+  color:#06162f;
+  margin-top:5px;
+}
+
+.manager-divider{
+  height:2px;
+  background:linear-gradient(90deg,transparent,#003f91,transparent);
+  margin:18px 0;
+}
+
+.manager-phone{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  font-size:24px;
+  font-weight:900;
+  color:#003f91;
+}
+
+.manager-phone span{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:2px solid #003f91;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#003f91;
+}
 /* FOOTER */
 .bottom{
   position:absolute;
@@ -774,17 +818,22 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
     </div>
 
-    <div class="contacts">
+   <div class="manager-lux">
 
-      <h3>КОНТАКТЫ</h3>
+  <div class="manager-top">СОТРУДНИК ПО ПРОДАЖАМ</div>
 
-      ☎ +998 87 190 2002<br>
-      ◎ fyzen.lab<br>
-      ✈ @fyzen_lab_saless<br>
-      ✉ info@fyzen-lab.uz
+  <div class="manager-name">Фирдавс Марксов</div>
 
-    </div>
+  <div class="manager-role">Sales Manager</div>
 
+  <div class="manager-divider"></div>
+
+  <div class="manager-phone">
+    <span>☎</span>
+    +998 97 250 18 77
+  </div>
+
+</div>
   </div>
 
   <div class="bottom"></div>
