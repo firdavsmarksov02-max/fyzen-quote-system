@@ -471,12 +471,16 @@ th:nth-child(7),td:nth-child(7){width:30px}
 .signature{
   position:relative;
   min-height:180px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:30px;
-}
 
+  display:flex;
+  align-items:flex-start;
+
+  justify-content:space-between;
+
+  gap:30px;
+
+  padding-top:8px;
+}
 .signature::before{
   content:"";
   position:absolute;
@@ -495,6 +499,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
 .signature-text{
   position:relative;
   z-index:2;
+  padding-top:6px;
 }
 
 .signature-role{
@@ -566,10 +571,15 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
 .manager-lux{
   min-height:180px;
+
   display:flex;
   flex-direction:column;
+
   justify-content:flex-start;
+
   text-align:center;
+
+  padding-top:6px;
 }
 
 .manager-top-input{
