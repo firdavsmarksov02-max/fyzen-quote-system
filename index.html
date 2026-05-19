@@ -775,7 +775,18 @@ th:nth-child(7),td:nth-child(7){width:30px}
     box-shadow:none!important;
     resize:none!important;
   }
+table{
+  page-break-inside:auto;
+}
 
+tr{
+  page-break-inside:avoid;
+  page-break-after:auto;
+}
+
+td, th{
+  page-break-inside:avoid;
+}
 }
 </style>
 </head>
