@@ -659,16 +659,17 @@ th:nth-child(7),td:nth-child(7){width:30px}
 }
 
 .bottom{
-  position:absolute;
-  left:0;
-  top:0;
-  width:100%;
+  position:relative;
+  left:-38px;
+  width:calc(100% + 76px);
   height:86px;
-  overflow:hidden;
+  margin-top:20px;
 
   background:linear-gradient(90deg,#001744 0%,#002f86 58%,#0084e8 100%);
   clip-path:polygon(0 18%,58% 52%,100% 0,100% 100%,0 100%);
+  overflow:hidden;
 }
+
 
 .bottom::before{
   content:"";
@@ -682,9 +683,9 @@ th:nth-child(7),td:nth-child(7){width:30px}
 }
 
 .footer{
-  position:absolute;
-  left:38px;
-  top:27px;
+  position:relative;
+  margin-top:-60px;
+  margin-left:0;
   z-index:5;
 
   display:flex;
