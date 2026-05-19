@@ -767,31 +767,34 @@ th:nth-child(7),td:nth-child(7){width:30px}
     margin:0;
   }
 
- html,body{
-  width:210mm;
-  margin:0;
-  padding:0;
-  background:#fff;
-}
+  html,
+  body{
+    width:210mm;
+    margin:0;
+    padding:0;
+    background:#fff;
+  }
 
   body{
     padding:0!important;
   }
 
   .page{
-  width:980px;
+    width:980px;
 
-  min-height:auto;
+    min-height:auto;
 
-  margin:0 auto;
+    margin:0 auto;
 
-  box-shadow:none;
+    box-shadow:none;
 
-  transform:none;
+    overflow:visible!important;
 
-  page-break-after:auto;
-  page-break-inside:auto;
-}
+    transform:none;
+
+    page-break-after:auto;
+    page-break-inside:auto;
+  }
 
   .actions,
   .imgFile,
@@ -811,24 +814,74 @@ th:nth-child(7),td:nth-child(7){width:30px}
     box-shadow:none!important;
     resize:none!important;
   }
-table{
-  page-break-inside:auto;
-}
 
-tr{
-  page-break-inside:avoid;
-  page-break-after:auto;
-}
+  table{
+    page-break-inside:auto;
+  }
 
-td, th{
-  page-break-inside:avoid;
-}
+  tr{
+    page-break-inside:avoid;
+    page-break-after:auto;
+  }
 
-.footer-area,
-.signature-contact{
-  break-inside:avoid;
-  page-break-inside:avoid;
-}
+  td,
+  th{
+    page-break-inside:avoid;
+  }
+
+  .signature-contact,
+  .footer-area{
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+
+  .footer-area{
+    margin-top:0!important;
+    padding-top:0!important;
+  }
+
+  .bottom{
+    position:relative!important;
+
+    left:0!important;
+
+    width:100%!important;
+
+    height:88px!important;
+
+    margin:0!important;
+
+    transform:none!important;
+
+    clip-path:none!important;
+
+    overflow:hidden;
+
+    background:
+      linear-gradient(
+        97deg,
+        #001744 0%,
+        #001744 56%,
+        #ffffff 56%,
+        #ffffff 60%,
+        #0084e8 60%,
+        #0084e8 100%
+      )!important;
+  }
+
+  .bottom::before{
+    display:none!important;
+  }
+
+  .footer{
+    position:absolute!important;
+
+    left:40px!important;
+    bottom:24px!important;
+
+    z-index:10!important;
+  }
+
 }
 </style>
 </head>
