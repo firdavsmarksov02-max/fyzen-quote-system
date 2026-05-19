@@ -1,14 +1,12 @@
-# FYZEN-LAB Fixed index.html
-
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FYZEN-LAB Quote System</title>
+<title>FYZEN-LAB Quote</title>
 
 <style>
+
 *{
   margin:0;
   padding:0;
@@ -16,22 +14,28 @@
 }
 
 body{
-  background:#e9eff6;
+  background:#e9eef5;
   font-family:Arial,sans-serif;
   padding:20px;
 }
 
 .page{
   width:980px;
+  min-height:1220px;
+
   margin:auto;
   background:#fff;
+
   position:relative;
+
   overflow:visible;
-  padding:60px 38px 0;
+
+  padding:60px 38px 105px;
+
   box-shadow:0 18px 55px rgba(0,0,0,.16);
-  display:flex;
-  flex-direction:column;
 }
+
+/* TOP */
 
 .top{
   position:absolute;
@@ -39,22 +43,98 @@ body{
   left:0;
   width:100%;
   height:95px;
+
   background:linear-gradient(135deg,#001a4d,#006ed1);
-  clip-path:polygon(0 0,100% 0,88% 28%,16% 28%,0 70%);
+
+  clip-path:polygon(
+    0 0,
+    100% 0,
+    88% 28%,
+    16% 28%,
+    0 70%
+  );
 }
+
+.top:after{
+  content:"";
+  position:absolute;
+
+  right:120px;
+  top:0;
+
+  width:25px;
+  height:60px;
+
+  background:#fff;
+
+  transform:skewX(-35deg);
+}
+
+/* MOLECULE */
+
+.molecule{
+  position:absolute;
+  top:70px;
+  right:0;
+
+  width:260px;
+  height:520px;
+
+  opacity:.23;
+
+  pointer-events:none;
+  z-index:0;
+  overflow:hidden;
+}
+
+.molecule::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(circle at 18% 8%, #1b7edb 0 3px, transparent 4px),
+    radial-gradient(circle at 34% 18%, #8fc1f0 0 4px, transparent 5px),
+    radial-gradient(circle at 12% 34%, #b9d8f7 0 3px, transparent 4px),
+    radial-gradient(circle at 28% 48%, #1b7edb 0 3px, transparent 4px),
+    radial-gradient(circle at 18% 66%, #8fc1f0 0 4px, transparent 5px),
+    radial-gradient(circle at 36% 82%, #1b7edb 0 3px, transparent 4px);
+}
+
+.molecule::after{
+  content:"";
+  position:absolute;
+  top:0;
+  right:-35px;
+
+  width:230px;
+  height:520px;
+
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='230' height='520' viewBox='0 0 230 520'%3E%3Cg fill='none' stroke='%238FC1F0' stroke-width='1.2' opacity='.65'%3E%3Cpolygon points='115,20 155,43 155,89 115,112 75,89 75,43'/%3E%3Cpolygon points='155,112 195,135 195,181 155,204 115,181 115,135'/%3E%3Cpolygon points='115,204 155,227 155,273 115,296 75,273 75,227'/%3E%3Cpolygon points='155,330 195,353 195,399 155,422 115,399 115,353'/%3E%3Cpolygon points='105,420 145,443 145,489 105,512 65,489 65,443'/%3E%3Cline x1='155' y1='89' x2='155' y2='112'/%3E%3Cline x1='115' y1='181' x2='115' y2='204'/%3E%3Cline x1='155' y1='273' x2='155' y2='330'/%3E%3Cline x1='115' y1='399' x2='105' y2='420'/%3E%3C/g%3E%3Cg fill='%231B7EDB' opacity='.55'%3E%3Ccircle cx='75' cy='43' r='4'/%3E%3Ccircle cx='155' cy='43' r='4'/%3E%3Ccircle cx='195' cy='135' r='4'/%3E%3Ccircle cx='75' cy='227' r='4'/%3E%3Ccircle cx='195' cy='353' r='4'/%3E%3Ccircle cx='105' cy='512' r='4'/%3E%3C/g%3E%3Cg fill='%238FC1F0' opacity='.18'%3E%3Cpolygon points='160,215 205,240 205,290 160,315 115,290 115,240'/%3E%3Cpolygon points='180,385 225,410 225,460 180,485 135,460 135,410'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:right top;
+}
+
+/* HEADER */
 
 .header{
   position:relative;
   z-index:3;
+
   display:grid;
   grid-template-columns:1fr 1fr;
+
   gap:30px;
+  align-items:start;
 }
 
 .brand{
   display:flex;
   align-items:center;
   gap:18px;
+  margin-top:8px;
 }
 
 .brand img{
@@ -91,28 +171,38 @@ body{
 .meta{
   display:grid;
   grid-template-columns:50px 170px;
+
   align-items:center;
   column-gap:12px;
+
   margin-bottom:12px;
+
   color:#003f91;
   font-weight:700;
 }
 
 .meta input{
   width:170px;
+
   border:none;
   border-bottom:2px solid #bfd1e5;
+
   outline:none;
   background:transparent;
+
   padding:4px 0;
+
   font-size:15px;
   font-weight:700;
   color:#003f91;
 }
 
+/* INFO */
+
 .info{
   display:grid;
   grid-template-columns:1fr 1fr;
+
   gap:40px;
   margin-top:50px;
 }
@@ -126,18 +216,23 @@ body{
   display:flex;
   align-items:center;
   gap:12px;
+
   color:#003f91;
   font-weight:900;
   font-size:20px;
+
   margin-bottom:18px;
 }
 
 .icon{
   width:42px;
   height:42px;
+
   border-radius:50%;
+
   background:#003f91;
   color:#fff;
+
   display:flex;
   align-items:center;
   justify-content:center;
@@ -145,11 +240,15 @@ body{
 
 .client-name{
   width:100%;
+
   border:none;
   border-bottom:2px solid #003f91;
+
   padding-bottom:8px;
+
   font-size:16px;
   font-weight:700;
+
   outline:none;
 }
 
@@ -164,6 +263,8 @@ body{
   font-weight:900;
 }
 
+/* TABLE */
+
 .table-wrap{
   margin-top:35px;
 }
@@ -177,9 +278,12 @@ table{
 th{
   background:#004d9f;
   color:#fff;
+
   padding:14px 6px;
+
   font-size:12px;
   font-weight:900;
+
   border:1px solid rgba(255,255,255,.2);
 }
 
@@ -193,10 +297,12 @@ td{
 .product-name,
 .product-art{
   width:100%;
+
   border:none;
   outline:none;
-  background:transparent;
   resize:vertical;
+
+  background:transparent;
   font-family:Arial,sans-serif;
 }
 
@@ -229,12 +335,16 @@ td{
 .remove-btn{
   width:22px;
   height:22px;
+
   border:none;
   border-radius:6px;
+
   background:#0070cf;
   color:#fff;
+
   font-size:11px;
   font-weight:900;
+
   cursor:pointer;
 }
 
@@ -247,41 +357,35 @@ td{
 .actions button{
   background:#0070cf;
   border:none;
+
   color:#fff;
+
   padding:10px 14px;
+
   border-radius:8px;
+
   font-weight:900;
   cursor:pointer;
 }
 
+/* SIGNATURE */
+
 .signature-contact{
   display:grid;
   grid-template-columns:1fr 1fr;
+
   gap:60px;
-  margin-top:18px;
+
+  margin-top:30px;
   align-items:start;
+
   break-inside:avoid;
-  page-break-inside:avoid;
 }
 
 .signature{
-  position:relative;
-  min-height:180px;
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
-  gap:30px;
-  padding-top:8px;
-}
-
-.signature::before{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:100%;
-  height:1px;
-  background:linear-gradient(90deg,transparent,#c5d8ea,transparent);
 }
 
 .signature-role{
@@ -295,67 +399,70 @@ td{
   font-size:32px;
   font-weight:900;
   color:#003f91;
-  margin-top:22px;
+
+  margin-top:20px;
 }
 
 .signature-line{
   width:160px;
   height:2px;
-  margin-top:16px;
-  background:linear-gradient(90deg,#003f91,transparent);
-}
 
-.stamp{
-  width:190px;
-  height:190px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  margin-top:16px;
+
+  background:linear-gradient(
+    90deg,
+    #003f91,
+    transparent
+  );
 }
 
 .stamp img{
   width:180px;
-  height:180px;
-  object-fit:contain;
   mix-blend-mode:multiply;
 }
 
 .manager-lux{
-  min-height:180px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
   text-align:center;
-  padding-top:6px;
-}
-
-.manager-top-input,
-.manager-name-input,
-.manager-phone-input{
-  border:none;
-  background:transparent;
-  outline:none;
 }
 
 .manager-top-input{
+  border:none;
+  background:transparent;
+
+  text-align:center;
+
   color:#b88413;
+
   font-size:14px;
   font-weight:900;
-  text-align:center;
+
+  outline:none;
 }
 
 .manager-name-input{
+  border:none;
+  background:transparent;
+
+  text-align:center;
+
   font-size:25px;
   font-weight:900;
   color:#003f91;
-  text-align:center;
-  margin:12px 0;
+
+  margin-top:10px;
+  outline:none;
 }
 
 .manager-divider{
   height:2px;
-  background:linear-gradient(90deg,transparent,#003f91,transparent);
   margin:12px 0;
+
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #003f91,
+    transparent
+  );
 }
 
 .manager-phone{
@@ -368,58 +475,84 @@ td{
 .manager-phone span{
   width:38px;
   height:38px;
+
   border-radius:50%;
   border:2px solid #003f91;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   color:#003f91;
 }
 
 .manager-phone-input{
+  border:none;
+  background:transparent;
+
   font-size:22px;
   font-weight:900;
+
   color:#003f91;
+
+  outline:none;
 }
 
-.footer-area{
-  position:relative;
-  left:-38px;
-  width:calc(100% + 76px);
-  margin-top:auto;
-  height:86px;
-  break-inside:avoid;
-  page-break-inside:avoid;
-}
+/* FOOTER */
 
 .bottom{
   position:relative;
+
   width:100%;
   height:86px;
-  background:linear-gradient(90deg,#001744 0%,#002f86 58%,#0084e8 100%);
-  clip-path:polygon(0 18%,58% 52%,100% 0,100% 100%,0 100%);
+
+  margin-top:20px;
+
+  background:linear-gradient(
+    90deg,
+    #001744 0%,
+    #002f86 58%,
+    #0084e8 100%
+  );
+
+  clip-path:polygon(
+    0 18%,
+    58% 52%,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+
   overflow:hidden;
 }
 
 .bottom::before{
   content:"";
   position:absolute;
+
   right:35%;
   bottom:0;
+
   width:58px;
   height:86px;
-  background:#fff;
+
+  background:white;
+
   transform:skewX(-38deg);
 }
 
 .footer{
   position:absolute;
+
   left:40px;
-  bottom:22px;
-  z-index:5;
+  bottom:28px;
+
+  z-index:10;
+
   display:flex;
   align-items:center;
   gap:16px;
+
   color:#fff;
   font-family:Arial,sans-serif;
   font-weight:900;
@@ -434,8 +567,10 @@ td{
 .footer-icon{
   width:32px;
   height:32px;
+
   border:2px solid rgba(255,255,255,.92);
   border-radius:9px;
+
   display:flex;
   align-items:center;
   justify-content:center;
@@ -444,41 +579,27 @@ td{
 .footer-divider{
   width:1px;
   height:24px;
+
   background:rgba(255,255,255,.75);
 }
 
-@media print{
+/* PRINT */
 
-  *{
-    -webkit-print-color-adjust:exact!important;
-    print-color-adjust:exact!important;
-  }
+@media print{
 
   @page{
     size:A4;
     margin:0;
   }
 
-  html,
   body{
-    width:210mm;
-    margin:0;
-    padding:0;
     background:#fff;
-  }
-
-  body{
-    padding:0!important;
+    padding:0;
   }
 
   .page{
-    width:980px;
-    margin:0 auto;
     box-shadow:none;
-    overflow:visible!important;
-    page-break-after:auto;
-    page-break-inside:auto;
-    display:block!important;
+    margin:0 auto;
   }
 
   .actions,
@@ -492,81 +613,82 @@ td{
 
   tr{
     page-break-inside:avoid;
-    page-break-after:auto;
   }
 
-  td,
-  th{
-    page-break-inside:avoid;
-  }
-
-  .signature-contact,
-  .footer-area{
-    break-inside:avoid;
-    page-break-inside:avoid;
-  }
 }
 
 </style>
 </head>
+
 <body>
 
 <div class="page">
 
 <div class="top"></div>
+<div class="molecule"></div>
 
 <div class="header">
-  <div class="brand">
-    <img src="./assets/logo.png">
 
-    <div class="brand-text">
-      <h1>FYZEN-LAB</h1>
-      <p>SCIENCE WITHOUT LIMITS</p>
-    </div>
-  </div>
+<div class="brand">
 
-  <div class="offer">
-    <h2>КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</h2>
+<img src="./assets/logo.png">
 
-    <div class="meta">
-      <div>№</div>
-      <input value="FYZJ-223">
-    </div>
+<div class="brand-text">
+<h1>FYZEN-LAB</h1>
+<p>SCIENCE WITHOUT LIMITS</p>
+</div>
 
-    <div class="meta">
-      <div>Дата:</div>
-      <input type="date">
-    </div>
-  </div>
+</div>
+
+<div class="offer">
+
+<h2>КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</h2>
+
+<div class="meta">
+<div>№</div>
+<input value="FYZJ-223">
+</div>
+
+<div class="meta">
+<div>Дата:</div>
+<input type="date" value="2025-05-17">
+</div>
+
+</div>
+
 </div>
 
 <div class="info">
 
-  <div class="card">
-    <div class="card-title">
-      <div class="icon">👤</div>
-      КОМУ:
-    </div>
+<div class="card">
 
-    <input class="client-name" value="Уважаемый клиент,">
+<div class="card-title">
+<div class="icon">👤</div>
+КОМУ:
+</div>
 
-    <div class="client-text">
-      Благодарим за проявленный интерес к продукции компании
-      <span class="blue">FYZEN-LAB</span>.
-    </div>
-  </div>
+<input class="client-name" value="Уважаемый клиент,">
 
-  <div class="card">
-    <div class="card-title">
-      <div class="icon">🏢</div>
-      О КОМПАНИИ:
-    </div>
+<div class="client-text">
+Благодарим за проявленный интерес к продукции компании
+<span class="blue">FYZEN-LAB</span>.
+</div>
 
-    <div class="client-text">
-      <span class="blue">FYZEN-LAB</span><br><br>
-      Поставщик лабораторного оборудования.
-    </div>
-  </div>
+</div>
+
+<div class="card">
+
+<div class="card-title">
+<div class="icon">🏢</div>
+О КОМПАНИИ:
+</div>
+
+<div class="client-text">
+<span class="blue">FYZEN-LAB</span><br><br>
+Поставщик лабораторного оборудования.
+</div>
+
+</div>
 
 </div>
 
@@ -575,37 +697,39 @@ td{
 <table id="quoteTable">
 
 <tr>
-  <th>№</th>
-  <th>ОПИСАНИЕ ТОВАРА</th>
-  <th>КОЛ-ВО</th>
-  <th>ЦЕНА</th>
-  <th>ОБЩАЯ СТОИМОСТЬ</th>
-  <th>X</th>
+<th>№</th>
+<th>ОПИСАНИЕ ТОВАРА</th>
+<th>КОЛ-ВО</th>
+<th>ЦЕНА</th>
+<th>ОБЩАЯ СТОИМОСТЬ</th>
+<th>X</th>
 </tr>
 
 <tr>
-  <td>1</td>
 
-  <td>
-    <textarea class="product-name">Измеритель освещения</textarea>
-    <textarea class="product-art">Артикул: UT383</textarea>
-  </td>
+<td class="num">1</td>
 
-  <td>
-    <input class="qty" type="number" value="1">
-  </td>
+<td>
+<textarea class="product-name">Измеритель освещения мини-люксметр UT383</textarea>
+<textarea class="product-art">Артикул: UT383</textarea>
+</td>
 
-  <td>
-    <input class="price" value="1350000">
-  </td>
+<td>
+<input class="qty" type="number" value="4">
+</td>
 
-  <td class="lineTotal">
-    1350000
-  </td>
+<td>
+<input class="price" value="1350000">
+</td>
 
-  <td>
-    <button class="remove-btn">X</button>
-  </td>
+<td class="lineTotal">
+5400000
+</td>
+
+<td>
+<button class="remove-btn">X</button>
+</td>
+
 </tr>
 
 </table>
@@ -613,71 +737,82 @@ td{
 </div>
 
 <div class="actions">
-  <button>+ Добавить товар</button>
-  <button onclick="window.print()">Печать / PDF</button>
+<button>+ Добавить товар</button>
+<button onclick="window.print()">Печать / PDF</button>
 </div>
 
 <div class="signature-contact">
 
-  <div class="signature">
+<div class="signature">
 
-    <div>
-      <div class="signature-role">
-        Директор компании FYZEN-LAB:
-      </div>
+<div>
 
-      <div class="signature-name">
-        Марксов Ф.Ж.
-      </div>
+<div class="signature-role">
+Директор компании FYZEN-LAB:
+</div>
 
-      <div class="signature-line"></div>
-    </div>
+<div class="signature-name">
+Марксов Ф.Ж.
+</div>
 
-    <div class="stamp">
-      <img src="./assets/stamp.png.png">
-    </div>
-
-  </div>
-
-  <div class="manager-lux">
-
-    <input class="manager-top-input" value="СОТРУДНИК ПО ПРОДАЖАМ">
-
-    <input class="manager-name-input" value="Фирдавс Марксов">
-
-    <div class="manager-divider"></div>
-
-    <div class="manager-phone">
-      <span>☎</span>
-
-      <input class="manager-phone-input" value="+998 97 250 18 77">
-    </div>
-
-  </div>
+<div class="signature-line"></div>
 
 </div>
 
-<div class="footer-area">
+<div class="stamp">
+<img src="./assets/stamp.png.png">
+</div>
 
-  <div class="bottom"></div>
+</div>
 
-  <div class="footer">
+<div class="manager-lux">
 
-    <div class="footer-left">
-      <div class="footer-icon">🌐</div>
-      <div>FYZEN-LAB</div>
-    </div>
+<input class="manager-top-input" value="СОТРУДНИК ПО ПРОДАЖАМ">
 
-    <div class="footer-divider"></div>
+<input class="manager-name-input" value="Фирдавс Марксов">
 
-    <div>SCIENCE WITHOUT LIMITS</div>
+<div class="manager-divider"></div>
 
-  </div>
+<div class="manager-phone">
+
+<span>☎</span>
+
+<input class="manager-phone-input"
+value="+998 97 250 18 77">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="bottom"></div>
+
+<div class="footer">
+
+<div class="footer-left">
+
+<div class="footer-icon">
+🌐
+</div>
+
+<div>
+FYZEN-LAB
+</div>
+
+</div>
+
+<div class="footer-divider"></div>
+
+<div>
+SCIENCE WITHOUT LIMITS
+</div>
 
 </div>
 
 </div>
 
 </body>
+</html>
 </html>
 ```
