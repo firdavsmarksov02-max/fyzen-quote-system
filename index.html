@@ -771,39 +771,39 @@ th:nth-child(7),td:nth-child(7){width:30px}
     print-color-adjust:exact!important;
   }
 
-  @page{
-    size:A4;
-    margin:0;
-  }
+ @page{
+  size:A4;
+  margin:0;
+}
 
-  html,
-  body{
-    width:210mm;
-    margin:0;
-    padding:0;
-    background:#fff;
-  }
+html,
+body{
+  width:210mm;
+  height:auto;
+}
 
   body{
     padding:0!important;
   }
 
   .page{
-    width:980px;
+  width:210mm;
 
-    min-height:auto;
+  min-height:297mm;
 
-    margin:0 auto;
+  margin:0 auto;
 
-    box-shadow:none;
+  background:#fff;
 
-    overflow:visible!important;
+  box-shadow:none;
 
-    transform:none;
+  overflow:visible!important;
 
-    page-break-after:auto;
-    page-break-inside:auto;
-  }
+  transform:none;
+
+  page-break-after:auto;
+  page-break-inside:auto;
+}
 
   .actions,
   .imgFile,
