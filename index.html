@@ -537,7 +537,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
   color:#003f91;
   line-height:1.1;
   margin-top:20px;
-  transform:translateY(40px);
+  transform:translateY(12px);
 }
 .manager-name-input{
   font-size:32px;
@@ -649,11 +649,22 @@ th:nth-child(7),td:nth-child(7){width:30px}
   width:245px;
 }
 
-.bottom{
+.footer-area{
   position:relative;
   width:100%;
   height:86px;
-  margin-top:40px;
+  margin-top:25px;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.bottom{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:86px;
+  overflow:hidden;
 
   background:linear-gradient(90deg,#001744 0%,#002f86 58%,#0084e8 100%);
   clip-path:polygon(0 18%,58% 52%,100% 0,100% 100%,0 100%);
@@ -671,10 +682,9 @@ th:nth-child(7),td:nth-child(7){width:30px}
 }
 
 .footer{
-  position:relative;
-  margin-top:-60px;
-  margin-left:38px;
-
+  position:absolute;
+  left:38px;
+  top:27px;
   z-index:5;
 
   display:flex;
@@ -721,6 +731,11 @@ th:nth-child(7),td:nth-child(7){width:30px}
 }
 
 @media print{
+
+  *{
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
+  }
 
   @page{
     size:A4;
@@ -781,6 +796,12 @@ tr{
 }
 
 td, th{
+  page-break-inside:avoid;
+}
+
+.footer-area,
+.signature-contact{
+  break-inside:avoid;
   page-break-inside:avoid;
 }
 }
@@ -962,17 +983,19 @@ td, th{
     </div>
   </div>
 
-  <div class="bottom"></div>
+  <div class="footer-area">
+    <div class="bottom"></div>
 
-  <div class="footer">
-    <div class="footer-left">
-      <div class="footer-icon">🌐</div>
-      <div class="footer-brand">FYZEN-LAB</div>
+    <div class="footer">
+      <div class="footer-left">
+        <div class="footer-icon">🌐</div>
+        <div class="footer-brand">FYZEN-LAB</div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-text">SCIENCE WITHOUT LIMITS</div>
     </div>
-
-    <div class="footer-divider"></div>
-
-    <div class="footer-text">SCIENCE WITHOUT LIMITS</div>
   </div>
 
 </div>
