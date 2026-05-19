@@ -473,6 +473,8 @@ th:nth-child(7),td:nth-child(7){width:30px}
   grid-template-columns:1fr 1fr;
   gap:60px;
   margin-top:30px;
+    margin-bottom:0!important;
+}
   align-items:start;
 }
 .signature{
@@ -660,15 +662,22 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
 .bottom{
   position:relative;
+
   left:-38px;
+
   width:calc(100% + 76px);
   height:86px;
-  margin-top:20px;
-  margin-bottom:-1px;
 
-  background:linear-gradient(90deg,#001744 0%,#002f86 58%,#0084e8 100%);
-  clip-path:polygon(0 18%,58% 52%,100% 0,100% 100%,0 100%);
-  overflow:hidden;
+  margin-top:0;
+  margin-bottom:-2px;
+
+  transform:translateY(2px);
+
+  background:linear-gradient(
+    90deg,
+    #001744 0%,
+    #002f86 58%,
+    #0084e8 100%
 }
 
 
