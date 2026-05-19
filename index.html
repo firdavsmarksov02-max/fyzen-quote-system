@@ -1,12 +1,14 @@
+# FYZEN-LAB Fixed index.html
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FYZEN-LAB Quote</title>
+<title>FYZEN-LAB Quote System</title>
 
 <style>
-
 *{
   margin:0;
   padding:0;
@@ -27,80 +29,397 @@ body{
   overflow:visible;
   padding:60px 38px 0;
   box-shadow:0 18px 55px rgba(0,0,0,.16);
-
   display:flex;
   flex-direction:column;
 }
 
-/* FOOTER FIX */
+.top{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:95px;
+  background:linear-gradient(135deg,#001a4d,#006ed1);
+  clip-path:polygon(0 0,100% 0,88% 28%,16% 28%,0 70%);
+}
+
+.header{
+  position:relative;
+  z-index:3;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.brand img{
+  width:96px;
+  height:96px;
+  object-fit:contain;
+}
+
+.brand-text h1{
+  color:#002c74;
+  font-size:32px;
+  font-weight:900;
+}
+
+.brand-text p{
+  color:#00a0e6;
+  font-size:14px;
+  font-weight:900;
+  margin-top:8px;
+}
+
+.offer{
+  border-left:2px solid #d2dfef;
+  padding-left:26px;
+}
+
+.offer h2{
+  color:#002c74;
+  font-size:22px;
+  font-weight:900;
+  margin-bottom:16px;
+}
+
+.meta{
+  display:grid;
+  grid-template-columns:50px 170px;
+  align-items:center;
+  column-gap:12px;
+  margin-bottom:12px;
+  color:#003f91;
+  font-weight:700;
+}
+
+.meta input{
+  width:170px;
+  border:none;
+  border-bottom:2px solid #bfd1e5;
+  outline:none;
+  background:transparent;
+  padding:4px 0;
+  font-size:15px;
+  font-weight:700;
+  color:#003f91;
+}
+
+.info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  margin-top:50px;
+}
+
+.card{
+  border-left:2px solid #d7e3f1;
+  padding-left:25px;
+}
+
+.card-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#003f91;
+  font-weight:900;
+  font-size:20px;
+  margin-bottom:18px;
+}
+
+.icon{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#003f91;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.client-name{
+  width:100%;
+  border:none;
+  border-bottom:2px solid #003f91;
+  padding-bottom:8px;
+  font-size:16px;
+  font-weight:700;
+  outline:none;
+}
+
+.client-text{
+  margin-top:20px;
+  font-size:16px;
+  line-height:1.7;
+}
+
+.blue{
+  color:#003f91;
+  font-weight:900;
+}
+
+.table-wrap{
+  margin-top:35px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+}
+
+th{
+  background:#004d9f;
+  color:#fff;
+  padding:14px 6px;
+  font-size:12px;
+  font-weight:900;
+  border:1px solid rgba(255,255,255,.2);
+}
+
+td{
+  border:1px solid #d9e4f0;
+  padding:14px 10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.product-name,
+.product-art{
+  width:100%;
+  border:none;
+  outline:none;
+  background:transparent;
+  resize:vertical;
+  font-family:Arial,sans-serif;
+}
+
+.product-name{
+  font-size:15px;
+  font-weight:900;
+  min-height:60px;
+}
+
+.product-art{
+  margin-top:10px;
+  font-size:13px;
+  min-height:40px;
+}
+
+.qty,
+.price{
+  width:100%;
+  border:none;
+  outline:none;
+  text-align:center;
+  font-size:16px;
+  font-weight:700;
+}
+
+.lineTotal{
+  font-weight:700;
+}
+
+.remove-btn{
+  width:22px;
+  height:22px;
+  border:none;
+  border-radius:6px;
+  background:#0070cf;
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.actions{
+  margin-top:14px;
+  display:flex;
+  gap:10px;
+}
+
+.actions button{
+  background:#0070cf;
+  border:none;
+  color:#fff;
+  padding:10px 14px;
+  border-radius:8px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.signature-contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  margin-top:18px;
+  align-items:start;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.signature{
+  position:relative;
+  min-height:180px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:30px;
+  padding-top:8px;
+}
+
+.signature::before{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,#c5d8ea,transparent);
+}
+
+.signature-role{
+  color:#b88413;
+  font-size:16px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.signature-name{
+  font-size:32px;
+  font-weight:900;
+  color:#003f91;
+  margin-top:22px;
+}
+
+.signature-line{
+  width:160px;
+  height:2px;
+  margin-top:16px;
+  background:linear-gradient(90deg,#003f91,transparent);
+}
+
+.stamp{
+  width:190px;
+  height:190px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.stamp img{
+  width:180px;
+  height:180px;
+  object-fit:contain;
+  mix-blend-mode:multiply;
+}
+
+.manager-lux{
+  min-height:180px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  text-align:center;
+  padding-top:6px;
+}
+
+.manager-top-input,
+.manager-name-input,
+.manager-phone-input{
+  border:none;
+  background:transparent;
+  outline:none;
+}
+
+.manager-top-input{
+  color:#b88413;
+  font-size:14px;
+  font-weight:900;
+  text-align:center;
+}
+
+.manager-name-input{
+  font-size:25px;
+  font-weight:900;
+  color:#003f91;
+  text-align:center;
+  margin:12px 0;
+}
+
+.manager-divider{
+  height:2px;
+  background:linear-gradient(90deg,transparent,#003f91,transparent);
+  margin:12px 0;
+}
+
+.manager-phone{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+}
+
+.manager-phone span{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  border:2px solid #003f91;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#003f91;
+}
+
+.manager-phone-input{
+  font-size:22px;
+  font-weight:900;
+  color:#003f91;
+}
 
 .footer-area{
   position:relative;
-
   left:-38px;
-
   width:calc(100% + 76px);
-
   margin-top:auto;
-
   height:86px;
-
   break-inside:avoid;
   page-break-inside:avoid;
 }
 
 .bottom{
   position:relative;
-
   width:100%;
   height:86px;
-
-  background:linear-gradient(
-    90deg,
-    #001744 0%,
-    #002f86 58%,
-    #0084e8 100%
-  );
-
-  clip-path:polygon(
-    0 18%,
-    58% 52%,
-    100% 0,
-    100% 100%,
-    0 100%
-  );
-
+  background:linear-gradient(90deg,#001744 0%,#002f86 58%,#0084e8 100%);
+  clip-path:polygon(0 18%,58% 52%,100% 0,100% 100%,0 100%);
   overflow:hidden;
 }
 
 .bottom::before{
   content:"";
-
   position:absolute;
-
   right:35%;
   bottom:0;
-
   width:58px;
   height:86px;
-
   background:#fff;
-
   transform:skewX(-38deg);
 }
 
 .footer{
   position:absolute;
-
   left:40px;
   bottom:22px;
-
   z-index:5;
-
   display:flex;
   align-items:center;
   gap:16px;
-
   color:#fff;
   font-family:Arial,sans-serif;
   font-weight:900;
@@ -115,120 +434,18 @@ body{
 .footer-icon{
   width:32px;
   height:32px;
-
   border:2px solid rgba(255,255,255,.92);
   border-radius:9px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
-  font-size:15px;
 }
 
 .footer-divider{
   width:1px;
   height:24px;
-
   background:rgba(255,255,255,.75);
 }
-
-/* SIGNATURE */
-
-.signature-contact{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-
-  gap:60px;
-
-  margin-top:18px;
-
-  align-items:start;
-
-  break-inside:avoid;
-  page-break-inside:avoid;
-}
-
-.signature{
-  position:relative;
-
-  min-height:180px;
-
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-
-  gap:30px;
-
-  padding-top:8px;
-}
-
-.signature::before{
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  bottom:0;
-
-  width:100%;
-  height:1px;
-
-  background:linear-gradient(
-    90deg,
-    transparent,
-    #c5d8ea,
-    transparent
-  );
-}
-
-.signature-role{
-  color:#b88413;
-  font-size:16px;
-  font-weight:900;
-  margin-bottom:10px;
-}
-
-.signature-name{
-  font-size:32px;
-  font-weight:900;
-  color:#003f91;
-
-  margin-top:22px;
-}
-
-.signature-line{
-  width:160px;
-  height:2px;
-
-  margin-top:16px;
-
-  background:linear-gradient(
-    90deg,
-    #003f91,
-    transparent
-  );
-}
-
-.stamp{
-  width:190px;
-  height:190px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.stamp img{
-  width:180px;
-  height:180px;
-
-  object-fit:contain;
-
-  mix-blend-mode:multiply;
-}
-
-/* PRINT */
 
 @media print{
 
@@ -256,17 +473,17 @@ body{
 
   .page{
     width:980px;
-
     margin:0 auto;
-
     box-shadow:none;
-
     overflow:visible!important;
-
     page-break-after:auto;
     page-break-inside:auto;
-
     display:block!important;
+  }
+
+  .actions,
+  .remove-btn{
+    display:none!important;
   }
 
   table{
@@ -288,24 +505,123 @@ body{
     break-inside:avoid;
     page-break-inside:avoid;
   }
-
 }
 
 </style>
 </head>
-
 <body>
 
 <div class="page">
 
-<!-- YOUR CONTENT -->
+<div class="top"></div>
+
+<div class="header">
+  <div class="brand">
+    <img src="./assets/logo.png">
+
+    <div class="brand-text">
+      <h1>FYZEN-LAB</h1>
+      <p>SCIENCE WITHOUT LIMITS</p>
+    </div>
+  </div>
+
+  <div class="offer">
+    <h2>КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</h2>
+
+    <div class="meta">
+      <div>№</div>
+      <input value="FYZJ-223">
+    </div>
+
+    <div class="meta">
+      <div>Дата:</div>
+      <input type="date">
+    </div>
+  </div>
+</div>
+
+<div class="info">
+
+  <div class="card">
+    <div class="card-title">
+      <div class="icon">👤</div>
+      КОМУ:
+    </div>
+
+    <input class="client-name" value="Уважаемый клиент,">
+
+    <div class="client-text">
+      Благодарим за проявленный интерес к продукции компании
+      <span class="blue">FYZEN-LAB</span>.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <div class="icon">🏢</div>
+      О КОМПАНИИ:
+    </div>
+
+    <div class="client-text">
+      <span class="blue">FYZEN-LAB</span><br><br>
+      Поставщик лабораторного оборудования.
+    </div>
+  </div>
+
+</div>
+
+<div class="table-wrap">
+
+<table id="quoteTable">
+
+<tr>
+  <th>№</th>
+  <th>ОПИСАНИЕ ТОВАРА</th>
+  <th>КОЛ-ВО</th>
+  <th>ЦЕНА</th>
+  <th>ОБЩАЯ СТОИМОСТЬ</th>
+  <th>X</th>
+</tr>
+
+<tr>
+  <td>1</td>
+
+  <td>
+    <textarea class="product-name">Измеритель освещения</textarea>
+    <textarea class="product-art">Артикул: UT383</textarea>
+  </td>
+
+  <td>
+    <input class="qty" type="number" value="1">
+  </td>
+
+  <td>
+    <input class="price" value="1350000">
+  </td>
+
+  <td class="lineTotal">
+    1350000
+  </td>
+
+  <td>
+    <button class="remove-btn">X</button>
+  </td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="actions">
+  <button>+ Добавить товар</button>
+  <button onclick="window.print()">Печать / PDF</button>
+</div>
 
 <div class="signature-contact">
 
   <div class="signature">
 
     <div>
-
       <div class="signature-role">
         Директор компании FYZEN-LAB:
       </div>
@@ -315,7 +631,6 @@ body{
       </div>
 
       <div class="signature-line"></div>
-
     </div>
 
     <div class="stamp">
@@ -324,8 +639,20 @@ body{
 
   </div>
 
-  <div>
-    RIGHT SIDE
+  <div class="manager-lux">
+
+    <input class="manager-top-input" value="СОТРУДНИК ПО ПРОДАЖАМ">
+
+    <input class="manager-name-input" value="Фирдавс Марксов">
+
+    <div class="manager-divider"></div>
+
+    <div class="manager-phone">
+      <span>☎</span>
+
+      <input class="manager-phone-input" value="+998 97 250 18 77">
+    </div>
+
   </div>
 
 </div>
@@ -337,22 +664,13 @@ body{
   <div class="footer">
 
     <div class="footer-left">
-
-      <div class="footer-icon">
-        🌐
-      </div>
-
-      <div>
-        FYZEN-LAB
-      </div>
-
+      <div class="footer-icon">🌐</div>
+      <div>FYZEN-LAB</div>
     </div>
 
     <div class="footer-divider"></div>
 
-    <div>
-      SCIENCE WITHOUT LIMITS
-    </div>
+    <div>SCIENCE WITHOUT LIMITS</div>
 
   </div>
 
@@ -362,3 +680,4 @@ body{
 
 </body>
 </html>
+```
