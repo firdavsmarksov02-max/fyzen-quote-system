@@ -764,59 +764,114 @@ th:nth-child(7),td:nth-child(7){width:30px}
   font-weight:700;
 }
 
-@media print{
-  *{
-    -webkit-print-color-adjust:exact!important;
-    print-color-adjust:exact!important;
+@media print {
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
-  @page{
-    size:A4;
-    margin:0;
+  @page {
+    size: A4;
+    margin: 8mm;
   }
 
-  html, body{
-    margin:0!important;
-    padding:0!important;
-    background:#fff!important;
+  html,
+  body {
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    overflow: visible !important;
   }
 
-  body{
-    width:210mm!important;
-    height:297mm!important;
-    overflow:hidden!important;
-  }
-
-  .page{
-    width:210mm!important;
-    min-height:297mm!important;
-    margin:0!important;
-    padding:14mm 8mm 0!important;
-    box-shadow:none!important;
-    transform:none!important;
-    overflow:hidden!important;
-    position:relative!important;
+  .page {
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 8mm 6mm 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    position: relative !important;
   }
 
   .actions,
   .imgFile,
   .remove-btn,
   #quoteTable th:last-child,
-  #quoteTable td:last-child{
-    display:none!important;
+  #quoteTable td:last-child {
+    display: none !important;
   }
 
-  .footer-area{
-    position:absolute!important;
-    left:0!important;
-    bottom:0!important;
-    width:100%!important;
-    height:86px!important;
-    margin:0!important;
+  /* Jadvalning sahifalarga to‘g‘ri bo‘linishi */
+  .table-wrap {
+    overflow: visible !important;
   }
 
-  .bottom{
-    transform:none!important;
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tbody {
+    display: table-row-group !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: auto !important;
+  }
+
+  th,
+  td {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Matnlar kesilib qolmasligi uchun */
+  textarea {
+    overflow: visible !important;
+    resize: none !important;
+  }
+
+  .product-name,
+  .product-art {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Yakuniy qismlarni birga saqlaydi */
+  .lower,
+  .signature-contact {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Footer endi kontent ustiga chiqmaydi */
+  .footer-area {
+    position: relative !important;
+    left: -6mm !important;
+    bottom: auto !important;
+    width: calc(100% + 12mm) !important;
+    height: 86px !important;
+    margin-top: 10mm !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .bottom {
+    width: 100% !important;
+    height: 86px !important;
+    transform: none !important;
   }
 }
 </style>
@@ -892,16 +947,22 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
   <div class="table-wrap">
     <table id="quoteTable">
-      <tr>
-        <th>№</th>
-        <th>ОПИСАНИЕ ТОВАРА</th>
-        <th>КОЛ-ВО</th>
-        <th>ИЗОБРАЖЕНИЕ</th>
-        <th>ЦЕНА ЗА ЕДИНИЦУ С НДС (UZS)</th>
-        <th>ОБЩАЯ СТОИМОСТЬ С НДС (UZS)</th>
-        <th class="no-print">X</th>
-      </tr>
+  <thead>
+    <tr>
+      <th>№</th>
+      <th>ОПИСАНИЕ ТОВАРА</th>
+      <th>КОЛ-ВО</th>
+      <th>ИЗОБРАЖЕНИЕ</th>
+      <th>ЦЕНА ЗА ЕДИНИЦУ С НДС (UZS)</th>
+      <th>ОБЩАЯ СТОИМОСТЬ С НДС (UZS)</th>
+      <th class="no-print">X</th>
+    </tr>
+  </thead>
 
+  <tbody id="quoteBody">
+    <!-- mahsulot qatorlari -->
+  </tbody>
+</table>
       <tr>
         <td class="num">1</td>
 
@@ -1074,8 +1135,8 @@ function calculate(){
   const rows=document.querySelectorAll('#quoteTable tr');
   let grand=0;
 
-  rows.forEach((row,i)=>{
-    if(i===0)return;
+  rows.forEach((row, i) => {
+  row.querySelector('.num').innerText = i + 1;
 
     row.querySelector('.num').innerText=i;
 
@@ -1121,8 +1182,8 @@ document.addEventListener('change',function(e){
 });
 
 function addRow(){
-  const table=document.getElementById('quoteTable');
-  const row=table.insertRow();
+ const tbody = document.getElementById('quoteBody');
+const row = tbody.insertRow();
 
   row.innerHTML=`
     <td class="num"></td>
