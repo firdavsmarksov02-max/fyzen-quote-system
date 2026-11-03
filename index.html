@@ -252,19 +252,20 @@ body{
 }
 
 .table-wrap{
-  margin-top:35px;
+  margin-top:24px;
 }
 
 table{
   width:100%;
   border-collapse:collapse;
   table-layout:fixed;
+  background:#fff;
 }
 
 th{
   background:#004d9f;
   color:#fff;
-  padding:14px 6px;
+  padding:12px 6px;
   font-size:12px;
   font-weight:900;
   border:1px solid rgba(255,255,255,.2);
@@ -272,12 +273,12 @@ th{
 
 td{
   border:1px solid #d9e4f0;
-  padding:14px 10px;
+  padding:10px 8px;
   text-align:center;
   vertical-align:middle;
   font-size:15px;
   height:auto;
-  min-height:120px;
+  min-height:110px;
 }
 
 th:nth-child(1),td:nth-child(1){width:40px}
@@ -293,8 +294,8 @@ th:nth-child(7),td:nth-child(7){width:30px}
   border:none;
   outline:none;
   background:transparent;
-  font-size:15px;
-  font-weight:900;
+  font-size:14px;
+  font-weight:800;
   line-height:1.35;
   white-space:normal;
   overflow:hidden;
@@ -891,45 +892,34 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
   <div class="table-wrap">
     <table id="quoteTable">
-  <thead>
-    <tr>
-      <th>№</th>
-      <th>ОПИСАНИЕ ТОВАРА</th>
-      <th>КОЛ-ВО</th>
-      <th>ИЗОБРАЖЕНИЕ</th>
-      <th>ЦЕНА ЗА ЕДИНИЦУ С НДС (UZS)</th>
-      <th>ОБЩАЯ СТОИМОСТЬ С НДС (UZS)</th>
-      <th class="no-print">X</th>
-    </tr>
-  </thead>
-
-  <tbody id="quoteBody">
-    <!-- mahsulot qatorlari -->
-  </tbody>
-</table>
-      <tr>
-        <td class="num">1</td>
-
-        <td>
-          <textarea class="product-name" rows="3">Измеритель освещения мини-люксметр UT383</textarea>
-          <textarea class="product-art" rows="2">Артикул: UT383</textarea>
-        </td>
-
-        <td><input class="qty" type="number" value="4"></td>
-
-        <td>
-          <img class="product-img">
-          <input class="imgFile" type="file" accept="image/*">
-        </td>
-
-        <td><input class="price" value="1 350 000,00"></td>
-
-        <td class="lineTotal">0</td>
-
-        <td class="no-print">
-          <button class="remove-btn" onclick="removeRow(this)">X</button>
-        </td>
-      </tr>
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>ОПИСАНИЕ ТОВАРА</th>
+          <th>КОЛ-ВО</th>
+          <th>ИЗОБРАЖЕНИЕ</th>
+          <th>ЦЕНА ЗА ЕДИНИЦУ С НДС (UZS)</th>
+          <th>ОБЩАЯ СТОИМОСТЬ С НДС (UZS)</th>
+          <th class="no-print">X</th>
+        </tr>
+      </thead>
+      <tbody id="quoteBody">
+        <tr>
+          <td class="num">1</td>
+          <td>
+            <textarea class="product-name" rows="3">Измеритель освещения мини-люксметр UT383</textarea>
+            <textarea class="product-art" rows="2">Артикул: UT383</textarea>
+          </td>
+          <td><input class="qty" type="number" min="0" value="4"></td>
+          <td>
+            <img class="product-img" alt="Изображение товара">
+            <input class="imgFile" type="file" accept="image/*">
+          </td>
+          <td><input class="price" value="1 350 000,00"></td>
+          <td class="lineTotal">0</td>
+          <td class="no-print"><button class="remove-btn" onclick="removeRow(this)">X</button></td>
+        </tr>
+      </tbody>
     </table>
   </div>
 
@@ -1076,24 +1066,23 @@ function numberToWordsRu(num){
 }
 
 function calculate(){
-  const rows=document.querySelectorAll('#quoteTable tr');
+  const rows=document.querySelectorAll('#quoteBody tr');
   let grand=0;
 
   rows.forEach((row, i) => {
-  row.querySelector('.num').innerText = i + 1;
+    const numCell=row.querySelector('.num');
+    if(numCell) numCell.textContent=i+1;
 
-    row.querySelector('.num').innerText=i;
-
-    const qty=Number(row.querySelector('.qty').value)||0;
-    const price=parseMoney(row.querySelector('.price').value);
+    const qty=Number(row.querySelector('.qty')?.value)||0;
+    const price=parseMoney(row.querySelector('.price')?.value||0);
     const total=qty*price;
 
-    row.querySelector('.lineTotal').innerText=format(total);
+    const totalCell=row.querySelector('.lineTotal');
+    if(totalCell) totalCell.textContent=format(total);
     grand+=total;
   });
 
-  document.getElementById('grandTotal').innerText=format(grand);
-
+  document.getElementById('grandTotal').textContent=format(grand);
   let words=numberToWordsRu(Math.floor(grand));
   words=words.charAt(0).toUpperCase()+words.slice(1);
   document.getElementById('totalWords').value=words;
