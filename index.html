@@ -707,6 +707,41 @@ th:nth-child(7),td:nth-child(7){width:30px}
   .footer-divider{height:15px}
 }
 
+/* Keep summary, signatures and footer together whenever printing */
+.quote-ending{display:block}
+@media print{
+  .quote-ending{
+    break-inside:avoid !important;
+    page-break-inside:avoid !important;
+  }
+  #quoteTable{
+    width:100% !important;
+    table-layout:fixed !important;
+    border-collapse:collapse !important;
+  }
+  #quoteTable th,#quoteTable td{
+    box-sizing:border-box !important;
+    overflow-wrap:anywhere !important;
+  }
+  #quoteTable th:nth-child(1),#quoteTable td:nth-child(1){width:5% !important}
+  #quoteTable th:nth-child(2),#quoteTable td:nth-child(2){width:29% !important}
+  #quoteTable th:nth-child(3),#quoteTable td:nth-child(3){width:8% !important}
+  #quoteTable th:nth-child(4),#quoteTable td:nth-child(4){width:17% !important}
+  #quoteTable th:nth-child(5),#quoteTable td:nth-child(5){width:20% !important}
+  #quoteTable th:nth-child(6),#quoteTable td:nth-child(6){width:21% !important}
+  #quoteTable th:nth-child(7),#quoteTable td:nth-child(7){display:none !important}
+  #quoteTable th{font-size:9px !important;padding:7px 3px !important}
+  #quoteTable td{font-size:11px !important;padding:7px 4px !important}
+  #quoteTable .qty,#quoteTable .price,#quoteTable .lineTotal{font-size:11px !important}
+  #quoteTable .product-name{font-size:11px !important}
+  #quoteTable .product-art{font-size:10px !important}
+  #quoteTable .product-img{max-width:100% !important;height:auto !important;max-height:80px !important}
+  #quoteTable tr{break-inside:avoid !important;page-break-inside:avoid !important}
+  #quoteTable thead{display:table-header-group !important}
+  .lower{break-inside:avoid !important}
+  .signature-contact{break-inside:avoid !important}
+}
+
 @media print {
 
   * {
@@ -945,6 +980,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
     <button onclick="window.print()">Печать / PDF</button>
   </div>
 
+  <div class="quote-ending">
   <div class="lower">
     <div>
       <div class="term">
@@ -1023,6 +1059,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
       <div class="footer-text">SCIENCE WITHOUT LIMITS</div>
     </div>
   </div>
+  </div><!-- /.quote-ending -->
 
 </div>
 
