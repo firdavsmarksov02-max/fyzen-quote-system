@@ -481,9 +481,9 @@ th:nth-child(7),td:nth-child(7){width:30px}
 }
 .signature{
   position:relative;
-  min-height:172px;
+  min-height:110px;
   display:grid;
-  grid-template-columns:minmax(0,1fr) 174px;
+  grid-template-columns:minmax(0,1fr);
   align-items:start;
   gap:6px;
   padding-top:4px;
@@ -538,30 +538,6 @@ th:nth-child(7),td:nth-child(7){width:30px}
   height:1px;
   margin-top:9px;
   background:linear-gradient(90deg,#003f91,transparent);
-}
-
-.stamp{
-  width:174px;
-  height:168px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  align-self:start;
-}
-
-.stamp img{
-  width:168px;
-  height:168px;
-
-  object-fit:contain;
-  display:block;
-
-  opacity:.96;
-
-  filter:contrast(1.06) saturate(1.08);
-
-  mix-blend-mode:multiply;
 }
 
 .manager-lux{
@@ -834,20 +810,10 @@ th:nth-child(7),td:nth-child(7){width:30px}
     break-inside: avoid !important;
   }
 
-  /* Muhr A4 bosmada avvalgi o'lchamda, matndan alohida joyda */
+  /* Director signature without stamp */
   .signature{
-    grid-template-columns:minmax(0,1fr) 180px !important;
-    min-height:185px !important;
-    gap:4px !important;
-  }
-  .stamp{
-    width:180px !important;
-    height:180px !important;
-  }
-  .stamp img{
-    width:180px !important;
-    height:180px !important;
-    max-width:none !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    min-height:105px !important;
   }
   .signature-contact{
     align-items:start !important;
@@ -1121,9 +1087,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
         <div class="signature-line"></div>
       </div>
 
-<div class="stamp">
-  <img src="./assets/stamp.png.png" alt="stamp">
-</div>
+
     </div>
 
     <div class="manager-lux">
