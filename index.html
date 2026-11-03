@@ -897,43 +897,36 @@ th:nth-child(7),td:nth-child(7){width:30px}
   .quote-ending{page-break-inside:avoid !important;break-inside:avoid !important}
 }
 
-/* Dedicated A4 page footer, repeated by Chromium on every printed page */
-.print-footer{display:none}
-@media print{
-  @page{size:A4;margin:8mm 8mm 18mm}
-  .quote-ending > .footer-area{display:none !important}
-  body > .print-footer{
-    display:block !important;
-    position:fixed !important;
-    left:-8mm !important;
-    bottom:0 !important;
-    width:calc(100% + 16mm) !important;
-    height:52px !important;
-    margin:0 !important;
-    padding:0 !important;
-    break-inside:avoid !important;
+/* True printed page footer using Chromium @page margin boxes */
+@media print {
+  @page {
+    size: A4;
+    margin: 8mm 8mm 19mm;
+    @bottom-center {
+      content: "◉  FYZEN-LAB    │    SCIENCE WITHOUT LIMITS";
+      width: 194mm;
+      height: 12mm;
+      background: linear-gradient(105deg,#051b42,#083574 72%,#0879c7);
+      border-top: 1px solid #38b9e8;
+      color: #fff;
+      font: 700 10pt Arial,Helvetica,sans-serif;
+      letter-spacing: .45px;
+      text-align: center;
+      vertical-align: middle;
+    }
   }
-  body > .print-footer .bottom{height:52px !important}
-  body > .print-footer .footer{height:52px !important}
+  body > .print-footer,
+  .quote-ending > .footer-area {display:none !important}
+  .page {padding-top: 18mm !important}
+  .top {height: 58px !important;clip-path:polygon(0 0,100% 0,100% 7%,88% 30%,16% 30%,0 75%) !important}
+  .top::after{height:43px !important;top:-10px !important}
+  .page:has(#quoteBody tr:only-child) .quote-ending {margin-top:26mm !important}
+  .page:has(#quoteBody tr:nth-child(2):last-child) .quote-ending {margin-top:12mm !important}
 }
 </style>
 </head>
 
 <body>
-  <div class="footer-area print-footer">
-    <div class="bottom"></div>
-
-    <div class="footer">
-      <div class="footer-left">
-        <div class="footer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#c9f5ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4.5 6 4.5 9s-1.5 6-4.5 9c-3-3-4.5-6-4.5-9s1.5-6 4.5-9z"/></svg></div>
-        <div class="footer-brand">FYZEN-LAB</div>
-      </div>
-
-      <div class="footer-divider"></div>
-
-      <div class="footer-text">SCIENCE WITHOUT LIMITS</div>
-    </div>
-  </div>
 
 
 <div class="page">
