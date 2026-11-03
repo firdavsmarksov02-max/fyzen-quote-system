@@ -886,10 +886,45 @@ th:nth-child(7),td:nth-child(7){width:30px}
   .quote-ending{break-inside:avoid !important;page-break-inside:avoid !important}
   .table-wrap{break-inside:auto !important}
 }
+
+/* Dedicated A4 page footer, repeated by Chromium on every printed page */
+.print-footer{display:none}
+@media print{
+  @page{size:A4;margin:8mm 8mm 18mm}
+  .quote-ending > .footer-area{display:none !important}
+  body > .print-footer{
+    display:block !important;
+    position:fixed !important;
+    left:-8mm !important;
+    bottom:0 !important;
+    width:calc(100% + 16mm) !important;
+    height:52px !important;
+    margin:0 !important;
+    padding:0 !important;
+    break-inside:avoid !important;
+  }
+  body > .print-footer .bottom{height:52px !important}
+  body > .print-footer .footer{height:52px !important}
+}
 </style>
 </head>
 
 <body>
+  <div class="footer-area print-footer">
+    <div class="bottom"></div>
+
+    <div class="footer">
+      <div class="footer-left">
+        <div class="footer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#c9f5ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4.5 6 4.5 9s-1.5 6-4.5 9c-3-3-4.5-6-4.5-9s1.5-6 4.5-9z"/></svg></div>
+        <div class="footer-brand">FYZEN-LAB</div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-text">SCIENCE WITHOUT LIMITS</div>
+    </div>
+  </div>
+
 
 <div class="page">
 
