@@ -468,15 +468,11 @@ th:nth-child(7),td:nth-child(7){width:30px}
 }
 .signature{
   position:relative;
-  min-height:130px;
-
-  display:flex;
-  align-items:flex-start;
-
-  justify-content:space-between;
-
-  gap:12px;
-
+  min-height:172px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 174px;
+  align-items:start;
+  gap:6px;
   padding-top:4px;
 }
 .signature::before{
@@ -497,6 +493,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
 .signature-text{
   position:relative;
   z-index:2;
+  min-width:0;
   padding-top:3px;
 }
 
@@ -544,17 +541,18 @@ th:nth-child(7),td:nth-child(7){width:30px}
 }
 
 .stamp{
-  width:130px;
-  height:130px;
+  width:174px;
+  height:168px;
   display:flex;
   align-items:center;
   justify-content:center;
   position:relative;
+  align-self:start;
 }
 
 .stamp img{
-  width:126px;
-  height:126px;
+  width:168px;
+  height:168px;
 
   object-fit:contain;
   display:block;
@@ -567,7 +565,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
 }
 
 .manager-lux{
-  min-height:180px;
+  min-height:172px;
 
   display:flex;
   flex-direction:column;
@@ -799,6 +797,25 @@ th:nth-child(7),td:nth-child(7){width:30px}
   .signature-contact {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+  }
+
+  /* Muhr A4 bosmada avvalgi o'lchamda, matndan alohida joyda */
+  .signature{
+    grid-template-columns:minmax(0,1fr) 180px !important;
+    min-height:185px !important;
+    gap:4px !important;
+  }
+  .stamp{
+    width:180px !important;
+    height:180px !important;
+  }
+  .stamp img{
+    width:180px !important;
+    height:180px !important;
+    max-width:none !important;
+  }
+  .signature-contact{
+    align-items:start !important;
   }
 
   /* Footer endi kontent ustiga chiqmaydi */
