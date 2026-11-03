@@ -871,6 +871,21 @@ th:nth-child(7),td:nth-child(7){width:30px}
     transform: none !important;
   }
 }
+
+/* Long product descriptions and A4 continuation */
+@media print{
+  .offer h2{font-size:18px !important;white-space:nowrap !important}
+  .meta{font-size:13px !important}
+  #quoteTable textarea.product-name,
+  #quoteTable textarea.product-art{
+    field-sizing:content !important;
+    resize:none !important;
+    max-height:none !important;
+    overflow:visible !important;
+  }
+  .quote-ending{break-inside:avoid !important;page-break-inside:avoid !important}
+  .table-wrap{break-inside:auto !important}
+}
 </style>
 </head>
 
@@ -1203,6 +1218,22 @@ function removeRow(btn){
   btn.closest('tr').remove();
   calculate();
 }
+
+// Auto-fit product descriptions for Chrome/Edge A4 printing.
+const printTextareaHeights=new Map();
+window.addEventListener('beforeprint',()=>{
+  document.querySelectorAll('#quoteBody textarea.product-name, #quoteBody textarea.product-art').forEach(el=>{
+    printTextareaHeights.set(el,el.style.height);
+    el.style.setProperty('height',Math.max(el.scrollHeight,el.clientHeight)+'px','important');
+  });
+});
+window.addEventListener('afterprint',()=>{
+  printTextareaHeights.forEach((height,el)=>{
+    if(height) el.style.height=height;
+    else el.style.removeProperty('height');
+  });
+  printTextareaHeights.clear();
+});
 
 calculate();
 </script>
