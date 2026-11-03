@@ -920,8 +920,21 @@ th:nth-child(7),td:nth-child(7){width:30px}
   .page {padding-top: 18mm !important}
   .top {height: 58px !important;clip-path:polygon(0 0,100% 0,100% 7%,88% 30%,16% 30%,0 75%) !important}
   .top::after{height:43px !important;top:-10px !important}
-  .page:has(#quoteBody tr:only-child) .quote-ending {margin-top:26mm !important}
-  .page:has(#quoteBody tr:nth-child(2):last-child) .quote-ending {margin-top:12mm !important}
+  /* Fill the usable A4 height for short quotes without stretching product rows. */
+  .page:has(#quoteBody tr:only-child),
+  .page:has(#quoteBody tr:nth-child(2):last-child) {
+    display:flex !important;
+    flex-direction:column !important;
+    min-height:270mm !important;
+    height:auto !important;
+    box-sizing:border-box !important;
+    padding-bottom:2mm !important;
+  }
+  .page:has(#quoteBody tr:only-child) > .quote-ending,
+  .page:has(#quoteBody tr:nth-child(2):last-child) > .quote-ending {
+    margin-top:auto !important;
+    flex-shrink:0 !important;
+  }
 }
 </style>
 </head>
