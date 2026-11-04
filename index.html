@@ -979,7 +979,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
       <div class="meta">
         <div>№</div>
-        <input value="FYZ-J-200">
+        <input id="quoteNumber" value="FYZ-J-200" readonly aria-label="Номер коммерческого предложения">
       </div>
 
       <div class="meta">
@@ -1060,7 +1060,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
   <div class="actions">
     <button onclick="addRow()">+ Добавить товар</button>
-    <button onclick="window.print()">Печать / PDF</button>
+    <button onclick="printQuotation()">Печать / PDF</button>
   </div>
 
   <div class="quote-ending">
@@ -1145,6 +1145,51 @@ th:nth-child(7),td:nth-child(7){width:30px}
 </div>
 
 <script>
+// Reserve the next quotation number for each Print / PDF button click.
+// localStorage keeps this browser's sequence across reloads.
+const quoteSequenceKey='fyzenQuoteNextNumber';
+const quoteNumberInput=document.getElementById('quoteNumber');
+let quotePrintInProgress=false;
+function readNextQuoteNumber(){
+  const stored=localStorage.getItem(quoteSequenceKey);
+  if(stored===null)return 200;
+  const number=Number(stored);
+  if(!Number.isSafeInteger(number)||number<200)throw new Error('Invalid quotation counter');
+  return number;
+}
+function showNextQuoteNumber(){
+  try{quoteNumberInput.value='FYZ-J-'+readNextQuoteNumber();}
+  catch(error){/* Printing reports unavailable storage without resetting the sequence. */}
+}
+function printQuotation(){
+  if(quotePrintInProgress)return;
+  let number;
+  try{
+    number=readNextQuoteNumber();
+    if(number>=Number.MAX_SAFE_INTEGER)throw new Error('Quotation counter limit');
+    localStorage.setItem(quoteSequenceKey,String(number+1));
+  }catch(error){
+    alert('Не удалось сохранить номер КП. Разрешите хранение данных сайта в браузере и повторите попытку.');
+    return;
+  }
+  quoteNumberInput.value='FYZ-J-'+number;
+  quotePrintInProgress=true;
+  try{window.print();}
+  catch(error){
+    quotePrintInProgress=false;
+    showNextQuoteNumber();
+    alert('Не удалось открыть печать. Попробуйте ещё раз.');
+  }
+}
+window.addEventListener('afterprint',()=>{
+  quotePrintInProgress=false;
+  showNextQuoteNumber();
+});
+window.addEventListener('storage',event=>{
+  if(event.key===quoteSequenceKey&&!quotePrintInProgress)showNextQuoteNumber();
+});
+showNextQuoteNumber();
+
 function format(n){
   return Number(n).toLocaleString('ru-RU',{
     minimumFractionDigits:2,
