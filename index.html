@@ -953,19 +953,6 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
 /* Keep the company wordmark aligned with the lowered quotation heading. */
 .brand-text{position:relative;top:12px}
-
-/* Share a text baseline for both quotation titles at every print size. */
-.header{grid-template-columns:96px max-content minmax(0,1fr);column-gap:18px;row-gap:0;align-items:start}
-.header .brand,.header .brand-text,.header .offer{display:contents}
-.header .brand>img{grid-column:1;grid-row:1 / span 2}
-.header .brand-text h1{grid-column:2;grid-row:1;align-self:baseline;margin-top:12px}
-.header .brand-text p{grid-column:2;grid-row:2;align-self:start;white-space:nowrap}
-.header .offer>h2{grid-column:3;grid-row:1;align-self:baseline;position:static;top:auto;margin-top:12px;padding-left:26px;border-left:2px solid #d2dfef}
-.header .offer-meta{grid-column:3;grid-row:2;padding-left:26px;border-left:2px solid #d2dfef}
-@media print{
- .header{grid-template-columns:78px max-content minmax(0,1fr)!important;column-gap:12px!important;row-gap:0!important}
- .header .offer>h2,.header .offer-meta{padding-left:16px}
-}
 </style>
 </head>
 
@@ -990,7 +977,6 @@ th:nth-child(7),td:nth-child(7){width:30px}
     <div class="offer">
       <h2>КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</h2>
 
-      <div class="offer-meta">
       <div class="meta">
         <div>№</div>
         <input value="FYZ-J-200">
@@ -999,7 +985,6 @@ th:nth-child(7),td:nth-child(7){width:30px}
       <div class="meta">
         <div>Дата:</div>
         <input type="date" value="2025-05-17">
-      </div>
       </div>
     </div>
   </div>
