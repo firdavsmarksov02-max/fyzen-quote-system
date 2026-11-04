@@ -984,7 +984,7 @@ th:nth-child(7),td:nth-child(7){width:30px}
 
       <div class="meta">
         <div>Дата:</div>
-        <input type="date" value="2025-05-17">
+        <input id="quoteDate" type="date" aria-label="Дата коммерческого предложения">
       </div>
     </div>
   </div>
@@ -1145,6 +1145,15 @@ th:nth-child(7),td:nth-child(7){width:30px}
 </div>
 
 <script>
+// Use the visitor's local calendar date; the date input remains editable.
+const quoteDateInput=document.getElementById('quoteDate');
+const quoteToday=new Date();
+quoteDateInput.value=[
+  quoteToday.getFullYear(),
+  String(quoteToday.getMonth()+1).padStart(2,'0'),
+  String(quoteToday.getDate()).padStart(2,'0')
+].join('-');
+
 // Reserve the next quotation number for each Print / PDF button click.
 // localStorage keeps this browser's sequence across reloads.
 const quoteSequenceKey='fyzenQuoteNextNumber';
