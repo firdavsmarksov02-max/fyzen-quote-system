@@ -897,15 +897,17 @@ th:nth-child(7),td:nth-child(7){width:30px}
   .quote-ending{page-break-inside:avoid !important;break-inside:avoid !important}
 }
 
-/* True printed page footer using Chromium @page margin boxes */
+/* Edge-to-edge A4 artwork; keep readable text inside the page. */
 @media print {
   @page {
     size: A4;
-    margin: 8mm 8mm 19mm;
+    margin: 0 0 14mm;
     @bottom-center {
       content: "◉  FYZEN-LAB    │    SCIENCE WITHOUT LIMITS";
-      width: 194mm;
-      height: 12mm;
+      width: 210mm;
+      height: 14mm;
+      margin: 0;
+      padding: 0;
       background: linear-gradient(105deg,#051b42,#083574 72%,#0879c7);
       border-top: 1px solid #38b9e8;
       color: #fff;
@@ -917,18 +919,28 @@ th:nth-child(7),td:nth-child(7){width:30px}
   }
   body > .print-footer,
   .quote-ending > .footer-area {display:none !important}
-  .page {padding-top: 18mm !important}
-  .top {height: 58px !important;clip-path:polygon(0 0,100% 0,100% 7%,88% 30%,16% 30%,0 75%) !important}
+  .page {
+    width: 210mm !important;
+    max-width: none !important;
+    padding: 18mm 8mm 2mm !important;
+    margin: 0 !important;
+  }
+  .top {
+    top: 0 !important;
+    left: 0 !important;
+    width: 210mm !important;
+    height: 58px !important;
+    clip-path:polygon(0 0,100% 0,100% 7%,88% 30%,16% 30%,0 75%) !important;
+  }
   .top::after{height:43px !important;top:-10px !important}
-  /* Fill the usable A4 height for short quotes without stretching product rows. */
+  /* A4 content height is 297 - 14 = 283 mm; rounding allowance avoids a blank page. */
   .page:has(#quoteBody tr:only-child),
   .page:has(#quoteBody tr:nth-child(2):last-child) {
     display:flex !important;
     flex-direction:column !important;
-    min-height:270mm !important;
+    min-height:282.5mm !important;
     height:auto !important;
     box-sizing:border-box !important;
-    padding-bottom:2mm !important;
   }
   .page:has(#quoteBody tr:only-child) > .quote-ending,
   .page:has(#quoteBody tr:nth-child(2):last-child) > .quote-ending {
