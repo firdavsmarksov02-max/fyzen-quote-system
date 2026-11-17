@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FYZEN-LAB — КП | Хусинов Достон</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  background:#e9eff6;
+  font-family:Arial,sans-serif;
+  padding:20px;
+}
+
+.page{
+  width:980px;
+  min-height:auto;
+  margin:auto;
+  background:#fff;
+  position:relative;
+  overflow:visible;
+  padding:46px 38px 0;
+  box-shadow:0 18px 55px rgba(0,0,0,.16);
+}
+
+/* Premium FYZEN-LAB header accent: slim, print-safe, no content overlap */
+.top{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:72px;
+  z-index:1;
+  overflow:hidden;
+  background:linear-gradient(108deg,#03183e 0%,#073471 55%,#0068bf 84%,#087fce 100%);
+  clip-path:polygon(0 0,100% 0,100% 10%,88% 34%,16% 34%,0 78%);
+}
+.top::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:3px;
+  background:linear-gradient(90deg,#39d1f3 0%,#7bdcf7 48%,#d9f6ff 74%,#1b9bdc 100%);
+  opacity:.9;
+}
+.top::after{
+  content:"";
+  position:absolute;
+  right:9%;
+  top:-9px;
+  width:18px;
+  height:58px;
+  background:linear-gradient(90deg,rgba(255,255,255,.94),#d5f5ff);
+  transform:skewX(-38deg);
+  box-shadow:24px 0 0 rgba(0,185,236,.28);
+}
+
+.molecule{
+  position:absolute;
+  top:70px;
+  right:0;
+  width:260px;
+  height:520px;
+  opacity:.34;
+  pointer-events:none;
+  z-index:0;
+  overflow:hidden;
+}
+
+.molecule::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(circle at 18% 8%, #1b7edb 0 3px, transparent 4px),
+    radial-gradient(circle at 34% 18%, #8fc1f0 0 4px, transparent 5px),
+    radial-gradient(circle at 12% 34%, #b9d8f7 0 3px, transparent 4px),
+    radial-gradient(circle at 28% 48%, #1b7edb 0 3px, transparent 4px),
+    radial-gradient(circle at 18% 66%, #8fc1f0 0 4px, transparent 5px),
+    radial-gradient(circle at 36% 82%, #1b7edb 0 3px, transparent 4px);
+}
+
+.molecule::after{
+  content:"";
+  position:absolute;
+  top:0;
+  right:-35px;
+  width:230px;
+  height:520px;
+
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='230' height='520' viewBox='0 0 230 520'%3E%3Cg fill='none' stroke='%238FC1F0' stroke-width='1.2' opacity='.65'%3E%3Cpolygon points='115,20 155,43 155,89 115,112 75,89 75,43'/%3E%3Cpolygon points='155,112 195,135 195,181 155,204 115,181 115,135'/%3E%3Cpolygon points='115,204 155,227 155,273 115,296 75,273 75,227'/%3E%3Cpolygon points='155,330 195,353 195,399 155,422 115,399 115,353'/%3E%3Cpolygon points='105,420 145,443 145,489 105,512 65,489 65,443'/%3E%3Cline x1='155' y1='89' x2='155' y2='112'/%3E%3Cline x1='115' y1='181' x2='115' y2='204'/%3E%3Cline x1='155' y1='273' x2='155' y2='330'/%3E%3Cline x1='115' y1='399' x2='105' y2='420'/%3E%3C/g%3E%3Cg fill='%231B7EDB' opacity='.55'%3E%3Ccircle cx='75' cy='43' r='4'/%3E%3Ccircle cx='155' cy='43' r='4'/%3E%3Ccircle cx='195' cy='135' r='4'/%3E%3Ccircle cx='75' cy='227' r='4'/%3E%3Ccircle cx='195' cy='353' r='4'/%3E%3Ccircle cx='105' cy='512' r='4'/%3E%3C/g%3E%3Cg fill='%238FC1F0' opacity='.18'%3E%3Cpolygon points='160,215 205,240 205,290 160,315 115,290 115,240'/%3E%3Cpolygon points='180,385 225,410 225,460 180,485 135,460 135,410'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:right top;
+}
+.header{
+  position:relative;
+  z-index:3;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:start;
+}
+
+.brand{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  margin-top:0;
+}
+
+.brand img{
+  width:96px;
+  height:96px;
+  object-fit:contain;
+  display:block;
+}
+
+.brand-text h1{
+  color:#002c74;
+  font-size:32px;
+  font-weight:900;
+  line-height:1;
+  white-space:nowrap;
+}
+
+.brand-text p{
+  color:#00a0e6;
+  font-size:14px;
+  font-weight:900;
+  margin-top:8px;
+}
+
+.offer{
+  border-left:2px solid #d2dfef;
+  padding-left:26px;
+}
+
+.offer h2{
+  color:#002c74;
+  font-size:22px;
+  font-weight:900;
+  margin-bottom:16px;
+  position:relative;
+  top:6px;
+  white-space:nowrap;
+}
+
+.meta{
+  display:grid;
+  grid-template-columns:50px 170px;
+  align-items:center;
+  column-gap:12px;
+  margin-bottom:12px;
+  color:#003f91;
+  font-weight:700;
+  font-size:16px;
+}
+
+.meta input{
+  width:170px;
+  border:none;
+  border-bottom:2px solid #bfd1e5;
+  outline:none;
+  background:transparent;
+  padding:4px 0;
+  height:30px;
+  font-size:15px;
+  font-weight:700;
+  color:#003f91;
+}
+
+/* Compact customer and company information section */
+.info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+  margin-top:28px;
+}
+.card{
+  border-left:2px solid #80bced;
+  padding:8px 12px 8px 15px;
+  border-radius:0 9px 9px 0;
+  background:linear-gradient(100deg,rgba(222,239,255,.52),rgba(245,250,255,.25) 62%,rgba(255,255,255,0));
+}
+.card-title{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  color:#003f91;
+  font-weight:900;
+  font-size:16px;
+  margin-bottom:10px;
+}
+.icon{
+  width:31px;
+  height:31px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#0754a7,#1387d1);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:15px;
+}
+.client-name{
+  width:100%;
+  border:none;
+  border-bottom:1px solid #74b7e9;
+  padding-bottom:5px;
+  font-size:14px;
+  font-weight:700;
+  outline:none;
+  text-align:left;
+  color:#061b3d;
+  font-family:Arial,sans-serif;
+}
+.client-text{
+  margin-top:10px;
+  font-size:13px;
+  line-height:1.5;
+  color:#16243a;
+}
+.blue{color:#003f91;font-weight:900}
+.company{font-size:13px;line-height:1.45}
+.company strong{
+  display:block;
+  margin-bottom:5px;
+  font-size:17px;
+  font-weight:900;
+  color:#06162f;
+}
+.company p{
+  margin:0;
+  color:#06162f;
+  font-size:13px;
+  font-weight:600;
+}
+.company-contact{margin-top:10px}
+.company-contact div{
+  display:grid;
+  grid-template-columns:18px 1fr;
+  align-items:center;
+  column-gap:7px;
+  margin-bottom:4px;
+}
+.company-contact span{
+  width:18px;
+  height:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#003f91;
+  font-size:14px;
+}
+.company-contact p{
+  margin:0;
+  color:#003f91;
+  font-size:12px;
+  font-weight:700;
+}
+
+.table-wrap{
+  margin-top:24px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  background:#fff;
+}
+
+th{
+  background:#004d9f;
+  color:#fff;
+  padding:12px 6px;
+  font-size:12px;
+  font-weight:900;
+  border:1px solid rgba(255,255,255,.2);
+}
+
+td{
+  border:1px solid #d9e4f0;
+  padding:10px 8px;
+  text-align:center;
+  vertical-align:middle;
+  font-size:15px;
+  height:auto;
+  min-height:110px;
+}
+
+th:nth-child(1),td:nth-child(1){width:40px}
+th:nth-child(2),td:nth-child(2){width:250px}
+th:nth-child(3),td:nth-child(3){width:80px}
+th:nth-child(4),td:nth-child(4){width:150px}
+th:nth-child(5),td:nth-child(5){width:150px}
+th:nth-child(6),td:nth-child(6){width:165px}
+th:nth-child(7),td:nth-child(7){width:30px}
+
+.product-name{
+  width:100%;
+  border:none;
+  outline:none;
+  background:transparent;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.35;
+  white-space:normal;
+  overflow:hidden;
+  min-height:62px;
+  resize:vertical;
+  font-family:Arial,sans-serif;
+}
+
+.product-art{
+  width:100%;
+  border:none;
+  outline:none;
+  resize:vertical;
+  margin-top:10px;
+  background:transparent;
+  font-size:13px;
+  line-height:1.4;
+  min-height:44px;
+  overflow:hidden;
+  font-family:Arial,sans-serif;
+}
+
+.qty,.price{
+  width:100%;
+  border:none;
+  outline:none;
+  text-align:center;
+  font-size:16px;
+  font-weight:700;
+}
+
+.imgFile{
+  width:100%;
+  font-size:10px;
+  margin-top:8px;
+}
+
+.product-img{
+  width:90px;
+  height:90px;
+  object-fit:contain;
+  display:none;
+  margin:auto;
+}
+
+.lineTotal{
+  font-weight:700;
+  font-size:16px;
+}
+
+.remove-btn{
+  width:22px;
+  height:22px;
+  border-radius:6px;
+  border:none;
+  background:#0070cf;
+  color:#fff;
+  cursor:pointer;
+  font-size:11px;
+  font-weight:900;
+}
+
+.actions{
+  margin-top:14px;
+  display:flex;
+  gap:10px;
+}
+
+.actions button{
+  background:#0070cf;
+  border:none;
+  color:#fff;
+  padding:10px 14px;
+  border-radius:8px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.lower{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:20px;
+  margin-top:10px;
+}
+
+.term{
+  display:grid;
+  grid-template-columns:28px 1fr;
+  gap:8px;
+  align-items:center;
+  border-bottom:1px solid #d6e2f0;
+  padding:6px 0;
+}
+
+.term-icon{
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:#003f91;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.term input{
+  width:100%;
+  border:none;
+  outline:none;
+  background:transparent;
+  font-size:12px;
+  font-weight:600;
+}
+
+.total{
+  border:1px solid #c7d8ea;
+}
+
+.total-head{
+  display:flex;
+  background:#f5f8fc;
+  border-bottom:1px solid #d8e4f1;
+}
+
+.total-label{
+  background:linear-gradient(135deg,#003f91,#0070cf);
+  color:#fff;
+  padding:11px 24px 11px 14px;
+  font-weight:900;
+  clip-path:polygon(0 0,100% 0,82% 100%,0 100%);
+}
+
+.total-number{
+  padding:10px 14px;
+  color:#003f91;
+  font-size:17px;
+  font-weight:900;
+}
+
+.words{
+  padding:10px 14px;
+}
+
+.words textarea{
+  width:100%;
+  border:none;
+  outline:none;
+  resize:none;
+
+  margin-top:6px;
+  height:54px;
+  font-size:13px;
+  line-height:1.4;
+
+  color:#003f91;
+  font-weight:700;
+}
+.signature-contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+
+  margin-top:12px;
+  margin-bottom:0!important;
+
+  align-items:start;
+
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+.signature{
+  position:relative;
+  min-height:110px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  align-items:start;
+  gap:6px;
+  padding-top:4px;
+}
+.signature::before{content:none;display:none;}
+
+.signature-text{
+  position:relative;
+  z-index:2;
+  min-width:0;
+  padding-top:3px;
+}
+
+.signature-role{
+  color:#b88413;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.1px;
+  margin-bottom:6px;
+  white-space:nowrap;
+}
+
+.manager-top-input{
+  border:none;
+  background:transparent;
+  width:100%;
+  text-align:center;
+  color:#b88413;
+  font-size:16px;
+  font-weight:900;
+  letter-spacing:.2px;
+  outline:none;
+  margin-bottom:10px;
+}
+
+.signature-name{
+  font-size:24px;
+  font-weight:900;
+  color:#003f91;
+  line-height:1.1;
+  margin-top:48px;
+  transform:none;
+}
+.manager-name-input{
+  font-size:32px;
+  font-weight:900;
+  color:#003f91;
+  line-height:1.1;
+}
+.signature-line{
+  width:130px;
+  height:1px;
+  margin-top:9px;
+  background:linear-gradient(90deg,#003f91,transparent);
+}
+
+.manager-lux{
+  min-height:172px;
+
+  display:flex;
+  flex-direction:column;
+
+  justify-content:flex-start;
+
+  text-align:center;
+
+  padding-top:6px;
+}
+
+.manager-top-input{
+  border:none;
+  background:transparent;
+  width:100%;
+  text-align:center;
+  color:#b88413;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.3px;
+  outline:none;
+  margin-bottom:10px;
+}
+
+.manager-name-input{
+  border:none;
+  background:transparent;
+  width:100%;
+  text-align:center;
+  font-size:21px;
+  font-weight:900;
+  color:#003f91;
+  outline:none;
+  margin-bottom:7px;
+}
+
+.manager-divider{
+  height:1px;
+  background:linear-gradient(90deg,transparent,#003f91,transparent);
+  margin:6px 0;
+}
+
+.manager-phone{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  margin-top:5px;
+}
+
+.manager-phone span{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  border:2px solid #003f91;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#003f91;
+  font-size:18px;
+}
+
+.manager-phone-input{
+  border:none;
+  background:transparent;
+  font-size:17px;
+  font-weight:900;
+  color:#003f91;
+  outline:none;
+  width:205px;
+}
+
+/* Compact FYZEN-LAB footer: minimal, screen and A4 print friendly */
+.footer-area{
+  position:relative;
+  left:-38px;
+  width:calc(100% + 76px);
+  height:52px;
+  margin-top:12px;
+  overflow:hidden;
+  isolation:isolate;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+.bottom{
+  position:absolute;
+  inset:0;
+  height:52px;
+  width:100%;
+  margin:0;
+  overflow:hidden;
+  background:linear-gradient(100deg,#051b42 0%,#083574 75%,#075ca8 100%);
+  border-top:1px solid #40b8e7;
+}
+.bottom::before{
+  content:"";
+  position:absolute;
+  right:0;
+  top:0;
+  width:25%;
+  height:100%;
+  background:linear-gradient(110deg,rgba(0,122,215,.3),rgba(4,145,223,.78));
+  clip-path:polygon(20% 0,100% 0,100% 100%,0 100%);
+}
+.bottom::after{content:none}
+.footer{
+  position:absolute;
+  inset:0 auto 0 40px;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  font-weight:700;
+  white-space:nowrap;
+}
+.footer-left{display:flex;align-items:center;gap:9px}
+.footer-icon{
+  width:25px;
+  height:25px;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:7px;
+  background:rgba(255,255,255,.06);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.footer-icon svg{display:block;width:16px;height:16px}
+.footer-brand{font-size:12px;font-weight:800;letter-spacing:.25px}
+.footer-divider{height:17px;width:1px;background:rgba(184,222,249,.55)}
+.footer-text{font-size:10.5px;letter-spacing:.45px;font-weight:600}
+@media screen and (max-width:650px){
+  .footer{left:20px;gap:9px}
+  .footer-left{gap:7px}
+  .footer-brand{font-size:11px}
+  .footer-text{font-size:9px;letter-spacing:0}
+  .footer-icon{width:23px;height:23px}
+  .footer-divider{height:15px}
+}
+
+/* Keep summary, signatures and footer together whenever printing */
+.quote-ending{display:block}
+@media print{
+  .quote-ending{
+    break-inside:avoid !important;
+    page-break-inside:avoid !important;
+  }
+  #quoteTable{
+    width:100% !important;
+    table-layout:fixed !important;
+    border-collapse:collapse !important;
+  }
+  #quoteTable th,#quoteTable td{
+    box-sizing:border-box !important;
+    overflow-wrap:anywhere !important;
+  }
+  #quoteTable th:nth-child(1),#quoteTable td:nth-child(1){width:5% !important}
+  #quoteTable th:nth-child(2),#quoteTable td:nth-child(2){width:29% !important}
+  #quoteTable th:nth-child(3),#quoteTable td:nth-child(3){width:8% !important}
+  #quoteTable th:nth-child(4),#quoteTable td:nth-child(4){width:17% !important}
+  #quoteTable th:nth-child(5),#quoteTable td:nth-child(5){width:20% !important}
+  #quoteTable th:nth-child(6),#quoteTable td:nth-child(6){width:21% !important}
+  #quoteTable th:nth-child(7),#quoteTable td:nth-child(7){display:none !important}
+  #quoteTable th{font-size:9px !important;padding:7px 3px !important}
+  #quoteTable td{font-size:11px !important;padding:7px 4px !important}
+  #quoteTable .qty,#quoteTable .price,#quoteTable .lineTotal{font-size:11px !important}
+  #quoteTable .product-name{font-size:11px !important}
+  #quoteTable .product-art{font-size:10px !important}
+  #quoteTable .product-img{max-width:100% !important;height:auto !important;max-height:80px !important}
+  #quoteTable tr{break-inside:avoid !important;page-break-inside:avoid !important}
+  #quoteTable thead{display:table-header-group !important}
+  .lower{break-inside:avoid !important}
+  .signature-contact{break-inside:avoid !important}
+}
+
+@media print {
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 8mm;
+  }
+
+  html,
+  body {
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    overflow: visible !important;
+  }
+
+  .page {
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 8mm 6mm 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    position: relative !important;
+  }
+
+  .actions,
+  .imgFile,
+  .remove-btn,
+  #quoteTable th:last-child,
+  #quoteTable td:last-child {
+    display: none !important;
+  }
+
+  /* Jadvalning sahifalarga to‘g‘ri bo‘linishi */
+  .table-wrap {
+    overflow: visible !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tbody {
+    display: table-row-group !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: auto !important;
+  }
+
+  th,
+  td {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Matnlar kesilib qolmasligi uchun */
+  textarea {
+    overflow: visible !important;
+    resize: none !important;
+  }
+
+  .product-name,
+  .product-art {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Yakuniy qismlarni birga saqlaydi */
+  .lower,
+  .signature-contact {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Director signature without stamp */
+  .signature{
+    grid-template-columns:minmax(0,1fr) !important;
+    min-height:105px !important;
+  }
+  .signature-contact{
+    align-items:start !important;
+  }
+
+  /* Footer endi kontent ustiga chiqmaydi */
+  .footer-area {
+    position: relative !important;
+    left: -6mm !important;
+    bottom: auto !important;
+    width: calc(100% + 12mm) !important;
+    height: 52px !important;
+    margin-top: 5mm !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .bottom {
+    width: 100% !important;
+    height: 52px !important;
+    transform: none !important;
+  }
+}
+
+/* Long product descriptions and A4 continuation */
+@media print{
+  .offer h2{font-size:18px !important;white-space:nowrap !important}
+  .meta{font-size:13px !important}
+  #quoteTable textarea.product-name,
+  #quoteTable textarea.product-art{
+    field-sizing:content !important;
+    resize:none !important;
+    max-height:none !important;
+    overflow:visible !important;
+  }
+  .quote-ending{break-inside:avoid !important;page-break-inside:avoid !important}
+  .table-wrap{break-inside:auto !important}
+}
+
+/* Fit more products on A4 while keeping each row readable */
+@media print{
+  .page{
+    padding-top:4mm !important;
+    padding-left:3mm !important;
+    padding-right:3mm !important;
+  }
+  .header{gap:20px !important}
+  .brand img{width:78px !important;height:78px !important}
+  .brand{gap:10px !important}
+  .brand-text h1{font-size:25px !important}
+  .brand-text p{font-size:10px !important;margin-top:5px !important}
+  .offer{padding-left:16px !important}
+  .offer h2{font-size:17px !important;margin-bottom:8px !important}
+  .meta{margin-bottom:5px !important}
+  .meta input{height:22px !important}
+  .info{margin-top:17px !important;gap:16px !important}
+  .card{padding:5px 8px 5px 12px !important}
+  .card-title{font-size:13px !important;margin-bottom:5px !important}
+  .card .icon{width:25px !important;height:25px !important}
+  .client-text{margin-top:6px !important;font-size:11px !important;line-height:1.35 !important}
+  .client-name{font-size:12px !important}
+  .company strong{font-size:15px !important;margin-bottom:3px !important}
+  .company p{font-size:11px !important}
+  .company-contact{margin-top:5px !important}
+  .company-contact div{margin-bottom:2px !important}
+  .company-contact p{font-size:10px !important}
+  .table-wrap{margin-top:14px !important}
+  #quoteTable td{height:auto !important;min-height:0 !important;padding:5px 4px !important}
+  #quoteTable .product-name,
+  #quoteTable .product-art{
+    display:block !important;
+    width:100% !important;
+    min-height:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+    line-height:1.3 !important;
+    field-sizing:content !important;
+  }
+  #quoteTable .product-art{margin-top:4px !important}
+  #quoteTable .product-img{max-height:65px !important}
+  .quote-ending{page-break-inside:avoid !important;break-inside:avoid !important}
+}
+
+/* Edge-to-edge A4 artwork; keep readable text inside the page. */
+@media print {
+  @page {
+    size: A4;
+    margin: 0 0 14mm;
+    @bottom-center {
+      content: "◉  FYZEN-LAB    │    SCIENCE WITHOUT LIMITS";
+      width: 210mm;
+      height: 14mm;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(105deg,#051b42,#083574 72%,#0879c7);
+      border-top: 1px solid #38b9e8;
+      color: #fff;
+      font: 700 10pt Arial,Helvetica,sans-serif;
+      letter-spacing: .45px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+  body > .print-footer,
+  .quote-ending > .footer-area {display:none !important}
+  .page {
+    width: 210mm !important;
+    max-width: none !important;
+    padding: 18mm 8mm 2mm !important;
+    margin: 0 !important;
+  }
+  .top {
+    top: 0 !important;
+    left: 0 !important;
+    width: 210mm !important;
+    height: 58px !important;
+    clip-path:polygon(0 0,100% 0,100% 7%,88% 30%,16% 30%,0 75%) !important;
+  }
+  .top::after{height:43px !important;top:-10px !important}
+  /* A4 content height is 297 - 14 = 283 mm; rounding allowance avoids a blank page. */
+  .page:has(#quoteBody tr:only-child),
+  .page:has(#quoteBody tr:nth-child(2):last-child) {
+    display:flex !important;
+    flex-direction:column !important;
+    min-height:282.5mm !important;
+    height:auto !important;
+    box-sizing:border-box !important;
+  }
+  .page:has(#quoteBody tr:only-child) > .quote-ending,
+  .page:has(#quoteBody tr:nth-child(2):last-child) > .quote-ending {
+    margin-top:auto !important;
+    flex-shrink:0 !important;
+  }
+}
+
+/* Keep the company wordmark aligned with the lowered quotation heading. */
+.brand-text{position:relative;top:12px}
+</style>
+</head>
+
+<body>
+
+
+<div class="page">
+
+  <div class="top"></div>
+  <div class="molecule"></div>
+
+  <div class="header">
+    <div class="brand">
+      <img src="../assets/photo_2026-05-08_01-44-02.jpg">
+
+      <div class="brand-text">
+        <h1>FYZEN-LAB</h1>
+        <p>SCIENCE WITHOUT LIMITS</p>
+      </div>
+    </div>
+
+    <div class="offer">
+      <h2>КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</h2>
+
+      <div class="meta">
+        <div>№</div>
+        <input id="quoteNumber" value="FYZ-D-200" readonly aria-label="Номер коммерческого предложения">
+      </div>
+
+      <div class="meta">
+        <div>Дата:</div>
+        <input id="quoteDate" type="date" aria-label="Дата коммерческого предложения">
+      </div>
+    </div>
+  </div>
+
+  <div class="info">
+    <div class="card">
+      <div class="card-title">
+        <div class="icon">👤</div>
+        КОМУ:
+      </div>
+
+      <input class="client-name" value="Уважаемый клиент,">
+
+      <div class="client-text">
+        Благодарим за проявленный интерес к продукции компании <span class="blue">FYZEN-LAB</span>.<br><br>
+        Предлагаем Вам ознакомиться с коммерческим предложением на поставку следующего оборудования.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <div class="icon">🏢</div>
+        О КОМПАНИИ:
+      </div>
+
+      <div class="company">
+        <strong>FYZEN-LAB</strong>
+
+        <p>Поставщик лабораторного оборудования и решений для контроля качества.</p>
+
+        <div class="company-contact">
+          <div><span>☎</span><p>+998 87 842 25 25</p></div>
+          <div><span>✉</span><p>info@fyzen-lab.uz</p></div>
+          <div><span>🌐</span><p>fyzen-lab.uz</p></div>
+          <div><span>📍</span><p>Узбекистан</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table id="quoteTable">
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>ОПИСАНИЕ ТОВАРА</th>
+          <th>КОЛ-ВО</th>
+          <th>ИЗОБРАЖЕНИЕ</th>
+          <th>ЦЕНА ЗА ЕДИНИЦУ С НДС (UZS)</th>
+          <th>ОБЩАЯ СТОИМОСТЬ С НДС (UZS)</th>
+          <th class="no-print">X</th>
+        </tr>
+      </thead>
+      <tbody id="quoteBody">
+        <tr>
+          <td class="num">1</td>
+          <td>
+            <textarea class="product-name" rows="3">Измеритель освещения мини-люксметр UT383</textarea>
+            <textarea class="product-art" rows="2">Артикул: UT383</textarea>
+          </td>
+          <td><input class="qty" type="number" min="0" value="4"></td>
+          <td>
+            <img class="product-img" alt="Изображение товара">
+            <input class="imgFile" type="file" accept="image/*">
+          </td>
+          <td><input class="price" value="1 350 000,00"></td>
+          <td class="lineTotal">0</td>
+          <td class="no-print"><button class="remove-btn" onclick="removeRow(this)">X</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="actions">
+    <button onclick="addRow()">+ Добавить товар</button>
+    <button onclick="printQuotation()">Печать / PDF</button>
+  </div>
+
+  <div class="quote-ending">
+  <div class="lower">
+    <div>
+      <div class="term">
+        <div class="term-icon">🛡</div>
+        <input value="Гарантия на оборудование: 12 мес." readonly aria-readonly="true">
+      </div>
+
+      <div class="term">
+        <div class="term-icon">💳</div>
+        <input value="Условия платежа: 100% предоплата" readonly aria-readonly="true">
+      </div>
+
+      <div class="term">
+        <div class="term-icon">🚚</div>
+        <input value="Срок поставки: 12 недель" readonly aria-readonly="true">
+      </div>
+
+      <div class="term">
+        <div class="term-icon">ℹ</div>
+        <input value="Примечания: Цены указаны с учетом НДС" readonly aria-readonly="true">
+      </div>
+    </div>
+
+    <div class="total">
+      <div class="total-head">
+        <div class="total-label">ИТОГО:</div>
+        <div class="total-number">
+          <span id="grandTotal">0</span> UZS
+        </div>
+      </div>
+
+      <div class="words">
+        <strong>Сумма прописью:</strong>
+        <textarea id="totalWords" rows="4" readonly aria-readonly="true"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="signature-contact">
+    <div class="signature">
+      <div class="signature-text">
+        <div class="signature-role">Директор компании FYZEN-LAB:</div>
+        <div class="signature-name">Марксов Ф.Ж.</div>
+        <div class="signature-line"></div>
+      </div>
+
+
+    </div>
+
+    <div class="manager-lux">
+      <input class="manager-top-input" value="СОТРУДНИК ПО ПРОДАЖАМ" readonly aria-readonly="true">
+      <input class="manager-name-input" value="Хусинов Достон" readonly aria-readonly="true">
+
+      <div class="manager-divider"></div>
+
+      <div class="manager-phone">
+        <span>☎</span>
+        <input class="manager-phone-input" value="+998 (87)-250-12-77" readonly aria-readonly="true">
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-area">
+    <div class="bottom"></div>
+
+    <div class="footer">
+      <div class="footer-left">
+        <div class="footer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#c9f5ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4.5 6 4.5 9s-1.5 6-4.5 9c-3-3-4.5-6-4.5-9s1.5-6 4.5-9z"/></svg></div>
+        <div class="footer-brand">FYZEN-LAB</div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-text">SCIENCE WITHOUT LIMITS</div>
+    </div>
+  </div>
+  </div><!-- /.quote-ending -->
+
+</div>
+
+<script>
+// Use the visitor's local calendar date; the date input remains editable.
+const quoteDateInput=document.getElementById('quoteDate');
+const quoteToday=new Date();
+quoteDateInput.value=[
+  quoteToday.getFullYear(),
+  String(quoteToday.getMonth()+1).padStart(2,'0'),
+  String(quoteToday.getDate()).padStart(2,'0')
+].join('-');
+
+// Reserve the next quotation number for each Print / PDF button click.
+// localStorage keeps this browser's sequence across reloads.
+const quoteSequenceKey='fyzenDostonQuoteNextNumber';
+const quoteNumberInput=document.getElementById('quoteNumber');
+let quotePrintInProgress=false;
+function readNextQuoteNumber(){
+  const stored=localStorage.getItem(quoteSequenceKey);
+  if(stored===null)return 200;
+  const number=Number(stored);
+  if(!Number.isSafeInteger(number)||number<200)throw new Error('Invalid quotation counter');
+  return number;
+}
+function showNextQuoteNumber(){
+  try{quoteNumberInput.value='FYZ-D-'+readNextQuoteNumber();}
+  catch(error){/* Printing reports unavailable storage without resetting the sequence. */}
+}
+function printQuotation(){
+  if(quotePrintInProgress)return;
+  let number;
+  try{
+    number=readNextQuoteNumber();
+    if(number>=Number.MAX_SAFE_INTEGER)throw new Error('Quotation counter limit');
+    localStorage.setItem(quoteSequenceKey,String(number+1));
+  }catch(error){
+    alert('Не удалось сохранить номер КП. Разрешите хранение данных сайта в браузере и повторите попытку.');
+    return;
+  }
+  quoteNumberInput.value='FYZ-D-'+number;
+  quotePrintInProgress=true;
+  try{window.print();}
+  catch(error){
+    quotePrintInProgress=false;
+    showNextQuoteNumber();
+    alert('Не удалось открыть печать. Попробуйте ещё раз.');
+  }
+}
+window.addEventListener('afterprint',()=>{
+  quotePrintInProgress=false;
+  showNextQuoteNumber();
+});
+window.addEventListener('storage',event=>{
+  if(event.key===quoteSequenceKey&&!quotePrintInProgress)showNextQuoteNumber();
+});
+showNextQuoteNumber();
+
+function format(n){
+  return Number(n).toLocaleString('ru-RU',{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  });
+}
+
+function parseMoney(value){
+  return Number(String(value).replace(/\s/g,'').replace(',', '.')) || 0;
+}
+
+function formatMoneyInput(input){
+  const num=parseMoney(input.value);
+  input.value=num ? format(num) : '';
+}
+
+function numberToWordsRu(num){
+  const ones=['','один','два','три','четыре','пять','шесть','семь','восемь','девять'];
+  const teens=['десять','одиннадцать','двенадцать','тринадцать','четырнадцать','пятнадцать','шестнадцать','семнадцать','восемнадцать','девятнадцать'];
+  const tens=['','','двадцать','тридцать','сорок','пятьдесят','шестьдесят','семьдесят','восемьдесят','девяносто'];
+  const hundreds=['','сто','двести','триста','четыреста','пятьсот','шестьсот','семьсот','восемьсот','девятьсот'];
+
+  function convert999(n){
+    let result='';
+    const h=Math.floor(n/100);
+    const t=n%100;
+    const d=Math.floor(t/10);
+    const o=t%10;
+
+    if(h) result+=hundreds[h]+' ';
+
+    if(t>=10 && t<20){
+      result+=teens[o]+' ';
+    }else{
+      if(d) result+=tens[d]+' ';
+      if(o) result+=ones[o]+' ';
+    }
+
+    return result.trim();
+  }
+
+  if(num===0) return 'ноль сум';
+
+  let result='';
+  const millions=Math.floor(num/1000000);
+  const thousands=Math.floor((num%1000000)/1000);
+  const rest=num%1000;
+
+  if(millions) result+=convert999(millions)+' миллион ';
+  if(thousands) result+=convert999(thousands)+' тысяч ';
+  if(rest) result+=convert999(rest);
+
+  return result.trim()+' сум';
+}
+
+function calculate(){
+  const rows=document.querySelectorAll('#quoteBody tr');
+  let grand=0;
+
+  rows.forEach((row, i) => {
+    const numCell=row.querySelector('.num');
+    if(numCell) numCell.textContent=i+1;
+
+    const qty=Number(row.querySelector('.qty')?.value)||0;
+    const price=parseMoney(row.querySelector('.price')?.value||0);
+    const total=qty*price;
+
+    const totalCell=row.querySelector('.lineTotal');
+    if(totalCell) totalCell.textContent=format(total);
+    grand+=total;
+  });
+
+  document.getElementById('grandTotal').textContent=format(grand);
+  let words=numberToWordsRu(Math.floor(grand));
+  words=words.charAt(0).toUpperCase()+words.slice(1);
+  document.getElementById('totalWords').value=words;
+}
+
+document.addEventListener('input',calculate);
+
+document.addEventListener('blur',function(e){
+  if(e.target.classList.contains('price')){
+    formatMoneyInput(e.target);
+    calculate();
+  }
+},true);
+
+document.addEventListener('focus',function(e){
+  if(e.target.classList.contains('price')){
+    e.target.value=String(parseMoney(e.target.value) || '');
+  }
+},true);
+
+document.addEventListener('change',function(e){
+  if(e.target.classList.contains('imgFile')){
+    const file=e.target.files[0];
+    if(!file)return;
+
+    const img=e.target.closest('td').querySelector('.product-img');
+    img.src=URL.createObjectURL(file);
+    img.style.display='block';
+  }
+});
+
+function addRow(){
+ const tbody = document.getElementById('quoteBody');
+const row = tbody.insertRow();
+
+  row.innerHTML=`
+    <td class="num"></td>
+
+    <td>
+      <textarea class="product-name" rows="3" placeholder="Название товара"></textarea>
+      <textarea class="product-art" rows="2" placeholder="Артикул:"></textarea>
+    </td>
+
+    <td><input class="qty" type="number" value="1"></td>
+
+    <td>
+      <img class="product-img">
+      <input class="imgFile" type="file" accept="image/*">
+    </td>
+
+    <td><input class="price" value="0"></td>
+
+    <td class="lineTotal">0</td>
+
+    <td class="no-print">
+      <button class="remove-btn" onclick="removeRow(this)">X</button>
+    </td>
+  `;
+
+  calculate();
+}
+
+function removeRow(btn){
+  btn.closest('tr').remove();
+  calculate();
+}
+
+// Compact printable textareas by actual content, restore editor after printing.
+const printTextareaState=new Map();
+window.addEventListener('beforeprint',()=>{
+  document.querySelectorAll('#quoteBody textarea.product-name, #quoteBody textarea.product-art').forEach(el=>{
+    printTextareaState.set(el,{height:el.style.height,priority:el.style.getPropertyPriority('height'),rows:el.rows});
+    el.rows=1;
+    el.style.setProperty('height','auto','important');
+    const needed=Math.max(18,el.scrollHeight);
+    el.style.setProperty('height',needed+'px','important');
+  });
+});
+window.addEventListener('afterprint',()=>{
+  printTextareaState.forEach((state,el)=>{
+    el.rows=state.rows;
+    if(state.height)el.style.setProperty('height',state.height,state.priority);
+    else el.style.removeProperty('height');
+  });
+  printTextareaState.clear();
+});
+
+calculate();
+</script>
+
+</body>
+</html>
